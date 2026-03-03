@@ -19,3 +19,4 @@ C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.Infrastructure\obj\D
 C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.Infrastructure\obj\Debug\net8.0\TechStore.Infrastructure.pdb
 C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.Infrastructure\obj\Debug\net8.0\TechStore.Infrastructure.genruntimeconfig.cache
 C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.Infrastructure\obj\Debug\net8.0\ref\TechStore.Infrastructure.dll
+C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.Infrastructure\obj\Debug\net8.0\TechStore.Infrastructure.sourcelink.json

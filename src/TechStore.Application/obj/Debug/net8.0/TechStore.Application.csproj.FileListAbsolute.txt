@@ -15,3 +15,4 @@ C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.Application\obj\Debu
 C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.Application\obj\Debug\net8.0\refint\TechStore.Application.dll
 C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.Application\obj\Debug\net8.0\TechStore.Application.pdb
 C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.Application\obj\Debug\net8.0\ref\TechStore.Application.dll
+C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.Application\obj\Debug\net8.0\TechStore.Application.sourcelink.json

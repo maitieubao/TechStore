@@ -18,10 +18,25 @@ namespace TechStore.Infrastructure
         {
             services.AddMemoryCache();
 
+            // Auto-detect database provider:
+            // - If DATABASE_URL env var is set (Render PostgreSQL) → use Npgsql
+            // - Otherwise → use SQL Server (local / SmarterASP)
+            var pgUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
             services.AddDbContext<AppDbContext>(options =>
-                options.UseSqlServer(
-                    configuration.GetConnectionString("DefaultConnection"),
-                    b => b.MigrationsAssembly(typeof(AppDbContext).Assembly.FullName)));
+            {
+                if (!string.IsNullOrEmpty(pgUrl))
+                {
+                    // Render PostgreSQL: convert DATABASE_URL to Npgsql format
+                    options.UseNpgsql(pgUrl,
+                        b => b.MigrationsAssembly(typeof(AppDbContext).Assembly.FullName));
+                }
+                else
+                {
+                    options.UseSqlServer(
+                        configuration.GetConnectionString("DefaultConnection"),
+                        b => b.MigrationsAssembly(typeof(AppDbContext).Assembly.FullName));
+                }
+            });
 
             services.AddIdentity<AppUser, IdentityRole>(options =>
             {

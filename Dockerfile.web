@@ -1,0 +1,39 @@
+# ============================================================
+#  TechStore.Web - Multi-stage Dockerfile
+#  Build: docker build -f Dockerfile.web -t techstore-web .
+# ============================================================
+
+# Stage 1: Base runtime image
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+WORKDIR /app
+EXPOSE 8080
+ENV ASPNETCORE_URLS=http://+:8080
+ENV ASPNETCORE_ENVIRONMENT=Production
+
+# Stage 2: Build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+
+# Copy project files (layer caching)
+COPY ["src/TechStore.Web/TechStore.Web.csproj",     "src/TechStore.Web/"]
+COPY ["src/TechStore.Shared/TechStore.Shared.csproj", "src/TechStore.Shared/"]
+
+# Restore
+RUN dotnet restore "src/TechStore.Web/TechStore.Web.csproj"
+
+# Copy all source
+COPY . .
+
+# Build
+WORKDIR "/src/src/TechStore.Web"
+RUN dotnet build "TechStore.Web.csproj" -c Release -o /app/build
+
+# Stage 3: Publish
+FROM build AS publish
+RUN dotnet publish "TechStore.Web.csproj" -c Release -o /app/publish --no-restore
+
+# Stage 4: Final
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "TechStore.Web.dll"]

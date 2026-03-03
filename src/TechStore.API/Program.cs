@@ -1,5 +1,6 @@
 using System.Text;
 using Hangfire;
+using Hangfire.PostgreSql;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -66,11 +67,19 @@ try
     builder.Services.AddInfrastructure(builder.Configuration);
 
     // Hangfire
-    builder.Services.AddHangfire(configuration => configuration
-        .SetDataCompatibilityLevel(CompatibilityLevel.Version_180)
-        .UseSimpleAssemblyNameTypeSerializer()
-        .UseRecommendedSerializerSettings()
-        .UseSqlServerStorage(builder.Configuration.GetConnectionString("DefaultConnection")));
+    var pgUrlHangfire = Environment.GetEnvironmentVariable("DATABASE_URL");
+    builder.Services.AddHangfire(configuration =>
+    {
+        configuration
+            .SetDataCompatibilityLevel(CompatibilityLevel.Version_180)
+            .UseSimpleAssemblyNameTypeSerializer()
+            .UseRecommendedSerializerSettings();
+
+        if (!string.IsNullOrEmpty(pgUrlHangfire))
+            configuration.UsePostgreSqlStorage(c => c.UseNpgsqlConnection(pgUrlHangfire));
+        else
+            configuration.UseSqlServerStorage(builder.Configuration.GetConnectionString("DefaultConnection"));
+    });
 
     builder.Services.AddHangfireServer();
 

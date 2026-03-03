@@ -1,0 +1,73 @@
+# ============================================================
+#  render.yaml - Render.com Infrastructure as Code
+#  Deploy: Connect GitHub repo tới Render, file này tự apply
+# ============================================================
+
+services:
+
+  # ===== TechStore API =====
+  - type: web
+    name: techstore-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile.api
+    dockerContext: .
+    plan: free
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: techstore-db
+          property: connectionString
+      - key: Jwt__Key
+        generateValue: true   # Render tự generate secret key
+      - key: Jwt__Issuer
+        value: TechStoreAPI
+      - key: Jwt__Audience
+        value: TechStoreClient
+      - key: Jwt__ExpireMinutes
+        value: "60"
+      - key: Jwt__RefreshTokenExpireDays
+        value: "7"
+      - key: Email__SmtpHost
+        value: smtp.gmail.com
+      - key: Email__SmtpPort
+        value: "587"
+      - key: Email__SmtpUser
+        sync: false   # Điền tay trong dashboard
+      - key: Email__SmtpPass
+        sync: false   # Điền tay trong dashboard
+      - key: Email__FromEmail
+        sync: false
+      - key: Email__FromName
+        value: TechStore
+      - key: Google__ClientId
+        sync: false   # Điền tay trong dashboard
+
+  # ===== TechStore Web =====
+  - type: web
+    name: techstore-web
+    runtime: docker
+    dockerfilePath: ./Dockerfile.web
+    dockerContext: .
+    plan: free
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: ApiBaseUrl
+        fromService:
+          name: techstore-api
+          type: web
+          property: host
+          envVarKey: API_SERVICE_URL
+      - key: Google__ClientId
+        sync: false
+      - key: Google__ClientSecret
+        sync: false
+
+# ===== PostgreSQL Database =====
+databases:
+  - name: techstore-db
+    plan: free
+    databaseName: techstore
+    user: techstore_user

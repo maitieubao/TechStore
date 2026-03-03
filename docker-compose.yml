@@ -1,0 +1,73 @@
+# ============================================================
+#  docker-compose.yml - Local Development & Testing
+#  Usage: docker-compose up --build
+# ============================================================
+
+version: '3.9'
+
+services:
+
+  # SQL Server (cho local testing)
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: techstore_sqlserver
+    environment:
+      SA_PASSWORD: "TechStore@123!"
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Developer"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P 'TechStore@123!' -Q 'SELECT 1'"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  # TechStore API
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: techstore_api
+    ports:
+      - "5019:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=TechStoreDb;User Id=sa;Password=TechStore@123!;TrustServerCertificate=True;
+      - Jwt__Key=TechStoreSecretKey123456789012345678901234567890!!
+      - Jwt__Issuer=TechStoreAPI
+      - Jwt__Audience=TechStoreClient
+      - Jwt__ExpireMinutes=60
+      - Jwt__RefreshTokenExpireDays=7
+      - Email__SmtpHost=smtp.gmail.com
+      - Email__SmtpPort=587
+      - Email__SmtpUser=baomttd01287@gmail.com
+      - Email__SmtpPass=yxli uyhm twnn ltov
+      - Email__FromEmail=baomttd01287@gmail.com
+      - Email__FromName=TechStore Contact Auto
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # TechStore Web MVC
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    container_name: techstore_web
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ApiBaseUrl=http://api:8080
+      - Google__ClientId=YOUR_GOOGLE_CLIENT_ID
+      - Google__ClientSecret=YOUR_GOOGLE_CLIENT_SECRET
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  sqlserver_data:

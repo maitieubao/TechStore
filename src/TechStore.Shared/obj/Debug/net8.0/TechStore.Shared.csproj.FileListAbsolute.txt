@@ -9,3 +9,4 @@ C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.Shared\obj\Debug\net
 C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.Shared\obj\Debug\net8.0\refint\TechStore.Shared.dll
 C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.Shared\obj\Debug\net8.0\TechStore.Shared.pdb
 C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.Shared\obj\Debug\net8.0\ref\TechStore.Shared.dll
+C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.Shared\obj\Debug\net8.0\TechStore.Shared.sourcelink.json

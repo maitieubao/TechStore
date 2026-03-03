@@ -1,0 +1,16 @@
+**/.vs
+**/.vscode
+**/bin
+**/obj
+**/*.user
+**/*.suo
+publish/
+tests/
+.git
+.gitignore
+*.md
+*.pdf
+*.txt
+*.py
+*.bat
+*.log
