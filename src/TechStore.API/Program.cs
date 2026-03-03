@@ -78,7 +78,8 @@ try
         if (!string.IsNullOrEmpty(pgUrlHangfire))
         {
             var uri = new Uri(pgUrlHangfire);
-            var pgConnStr = $"Host={uri.Host};Port={uri.Port};Database={uri.LocalPath.Substring(1)};Username={uri.UserInfo.Split(':')[0]};Password={uri.UserInfo.Split(':')[1]};SslMode=Require;TrustServerCertificate=True;";
+            var port = uri.Port > 0 ? uri.Port : 5432;
+            var pgConnStr = $"Host={uri.Host};Port={port};Database={uri.LocalPath.Substring(1)};Username={uri.UserInfo.Split(':')[0]};Password={uri.UserInfo.Split(':')[1]};SslMode=Require;TrustServerCertificate=True;";
             configuration.UsePostgreSqlStorage(c => c.UseNpgsqlConnection(pgConnStr));
         }
         else
