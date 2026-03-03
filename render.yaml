@@ -55,10 +55,7 @@ services:
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
       - key: ApiBaseUrl
-        fromService:
-          name: techstore-api
-          type: web
-          envVarKey: RENDER_EXTERNAL_URL
+        sync: false
       - key: Google__ClientId
         sync: false
       - key: Google__ClientSecret
