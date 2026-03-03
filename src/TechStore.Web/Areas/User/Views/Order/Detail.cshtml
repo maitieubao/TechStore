@@ -1,0 +1,148 @@
+@model TechStore.Web.Models.ViewModels.OrderDetailVM
+@{
+    ViewData["Title"] = $"Đơn hàng #{Model.Order.Id}";
+}
+
+<div class="container py-4">
+    <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb small">
+            <li class="breadcrumb-item"><a asp-controller="Order" asp-action="History">Đơn hàng</a></li>
+            <li class="breadcrumb-item active">#@Model.Order.Id</li>
+        </ol>
+    </nav>
+
+    <div class="row g-4">
+        <div class="col-lg-8">
+            <div class="card border-0 bg-darker rounded-4 shadow-sm mb-4">
+                <div class="card-header border-secondary bg-transparent p-4 d-flex justify-content-between align-items-center">
+                    <h5 class="fw-bold mb-0 text-white"><i class="bi bi-receipt me-2"></i>Đơn hàng #@Model.Order.Id</h5>
+                    @{
+                        var statusClass = Model.Order.Status switch
+                        {
+                            "Pending" => "bg-warning text-dark",
+                            "Shipping" => "bg-indigo text-white",
+                            "Delivered" => "bg-success text-white",
+                            "Cancelled" => "bg-danger text-white",
+                            _ => "bg-secondary text-white"
+                        };
+                    }
+                    <span class="badge @statusClass py-2 px-3 fw-semibold rounded-pill" style="font-size: 0.85rem;">
+                        @(Model.Order.Status switch {
+                            "Pending" => "Chờ xác nhận",
+                            "Shipping" => "Đang giao hàng",
+                            "Delivered" => "Hoàn thành",
+                            "Cancelled" => "Đã huỷ",
+                            _ => Model.Order.Status
+                        })
+                    </span>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover table-borderless align-middle mb-0">
+                            <thead style="border-bottom: 2px solid #2d3240;">
+                                <tr>
+                                    <th class="ps-4 py-3">Sản phẩm</th>
+                                    <th class="text-center">Số lượng</th>
+                                    <th class="text-end">Đơn giá</th>
+                                    <th class="text-end pe-4">Thành tiền</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Order.Items)
+                                {
+                                    <tr style="border-bottom: 1px solid #2d3240;">
+                                        <td class="ps-4 py-3 text-white">@item.ProductName</td>
+                                        <td class="text-center text-secondary">@item.Quantity</td>
+                                        <td class="text-end text-secondary">@item.UnitPrice.ToString("N0") ₫</td>
+                                        <td class="text-end text-price fw-bold pe-4">@((item.UnitPrice * item.Quantity).ToString("N0")) ₫</td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot class="bg-darker">
+                                @if (Model.Order.DiscountAmount > 0)
+                                {
+                                    <tr>
+                                        <td colspan="3" class="text-end text-secondary py-3">Giảm giá:</td>
+                                        <td class="text-end text-success pe-4">-@Model.Order.DiscountAmount.ToString("N0") ₫</td>
+                                    </tr>
+                                }
+                                <tr>
+                                    <td colspan="3" class="text-end fw-bold text-white py-3">Tổng cộng:</td>
+                                    <td class="text-end text-price fw-bold fs-5 pe-4">@((Model.Order.TotalAmount - Model.Order.DiscountAmount).ToString("N0")) ₫</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cancel button -->
+            @if (Model.Order.Status == "Pending")
+            {
+                <form asp-controller="Order" asp-action="Cancel" asp-route-id="@Model.Order.Id" method="post" class="text-end">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-outline-danger px-4 rounded-pill" onclick="return confirm('Bạn chắc chắn muốn hủy đơn hàng này?')">
+                        <i class="bi bi-x-circle me-1"></i> Hủy đơn hàng
+                    </button>
+                    <div class="form-text text-danger small mt-2 d-inline-block ps-3">Hành động này không thể hoàn tác</div>
+                </form>
+            }
+        </div>
+
+        <!-- Shipping + Payment -->
+        <div class="col-lg-4">
+            <div class="card border-0 bg-darker rounded-4 shadow-sm mb-4">
+                <div class="card-body p-4">
+                    <h6 class="fw-bold mb-3 text-white"><i class="bi bi-geo-alt text-primary me-2"></i>Thông tin giao hàng</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-3 d-flex align-items-start gap-2">
+                            <i class="bi bi-house text-secondary mt-1"></i>
+                            <span class="small text-light">@Model.Order.ShippingAddress</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center gap-2">
+                            <i class="bi bi-telephone text-secondary"></i>
+                            <span class="small text-light">@Model.Order.PhoneNumber</span>
+                        </li>
+                        @if (!string.IsNullOrEmpty(Model.Order.Note))
+                        {
+                            <li class="d-flex align-items-start gap-2 bg-dark p-3 rounded-3 mt-3">
+                                <i class="bi bi-chat-left-text text-warning mt-1"></i>
+                                <span class="small text-light fst-italic">" @Model.Order.Note "</span>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+
+            @if (Model.Payments.Any())
+            {
+                <div class="card border-0 bg-darker rounded-4 shadow-sm">
+                    <div class="card-body p-4">
+                        <h6 class="fw-bold mb-4 text-white"><i class="bi bi-wallet2 text-success me-2"></i>Lịch sử thanh toán</h6>
+                        <div class="position-relative">
+                            @foreach (var payment in Model.Payments)
+                            {
+                                <div class="mb-3 border-bottom border-secondary pb-3 last-border-none">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <span class="fw-semibold text-white small">@payment.PaymentMethod</span>
+                                        @{
+                                            var pClass = payment.Status == "Paid" ? "bg-success text-white" : "bg-warning text-dark";
+                                        }
+                                        <span class="badge @pClass rounded-pill" style="font-size: 0.7rem;">@payment.Status</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="text-price fw-bold small">@payment.Amount.ToString("N0") ₫</span>
+                                        @if (payment.PaidAt.HasValue)
+                                        {
+                                            <small class="text-secondary"><i class="bi bi-calendar-check me-1"></i>@payment.PaidAt.Value.ToString("dd/MM/yyyy HH:mm")</small>
+                                        }
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

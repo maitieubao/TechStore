@@ -1,0 +1,97 @@
+@model TechStore.Web.Models.ViewModels.AdminOrderListVM
+@{
+    ViewData["Title"] = "Quản lý đơn hàng";
+    Layout = "_AdminLayout";
+}
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4 bg-darker p-4 rounded-4 shadow-sm">
+        <h3 class="fw-bold mb-0 text-white"><i class="bi bi-bag-check text-success me-2"></i>Quản lý đơn hàng</h3>
+        <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index" class="btn btn-outline-light px-4 rounded-pill">
+            <i class="bi bi-arrow-left me-1"></i> Dashboard
+        </a>
+    </div>
+
+    @if (Model.Orders.Any())
+    {
+        <div class="card border-0 bg-darker rounded-4 shadow-sm">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-dark table-hover table-borderless align-middle mb-0">
+                        <thead style="border-bottom: 2px solid #2d3240;">
+                            <tr>
+                                <th class="ps-4 py-3">Mã ĐH</th>
+                                <th>Khách hàng</th>
+                                <th>Ngày đặt</th>
+                                <th class="text-end">Tổng tiền</th>
+                                <th>Trạng thái</th>
+                                <th class="pe-4">Cập nhật</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var order in Model.Orders)
+                            {
+                                <tr style="border-bottom: 1px solid #2d3240;">
+                                    <td class="ps-4 py-3">
+                                        <a asp-controller="Order" asp-action="Detail" asp-area="User" asp-route-id="@order.Id" class="fw-bold text-info text-decoration-none">
+                                            #@order.Id
+                                        </a>
+                                    </td>
+                                    <td class="text-white fw-medium">@order.UserName</td>
+                                    <td class="small text-secondary">
+                                        <i class="bi bi-calendar-event me-1"></i>@order.OrderDate.ToString("dd/MM/yyyy HH:mm")
+                                    </td>
+                                    <td class="text-end text-price fw-bold pe-3">@order.TotalAmount.ToString("N0") ₫</td>
+                                    <td>
+                                        @{
+                                            var statusClass = order.Status switch
+                                            {
+                                                "Pending" => "bg-warning text-dark",
+                                                "Shipping" => "bg-indigo text-white",
+                                                "Delivered" => "bg-success text-white",
+                                                "Cancelled" => "bg-danger text-white",
+                                                _ => "bg-secondary text-white"
+                                            };
+                                        }
+                                        <span class="badge @statusClass py-2 px-3 fw-semibold rounded-pill" style="font-size: 0.75rem;">
+                                            @(order.Status switch {
+                                                "Pending" => "Chờ xác nhận",
+                                                "Shipping" => "Đang giao hàng",
+                                                "Delivered" => "Hoàn thành",
+                                                "Cancelled" => "Đã huỷ",
+                                                _ => order.Status 
+                                            })
+                                        </span>
+                                    </td>
+                                    <td class="pe-4">
+                                        <form asp-area="Admin" asp-controller="OrderManager" asp-action="UpdateStatus" method="post" class="d-flex align-items-center gap-2">
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" name="orderId" value="@order.Id" />
+                                            <select name="status" class="form-select form-select-sm bg-dark border-secondary text-white shadow-none" style="max-width: 140px;" @(order.Status == "Delivered" || order.Status == "Cancelled" ? "disabled" : "")>
+                                                <option value="Pending" selected="@(order.Status == "Pending")">Chờ xác nhận</option>
+                                                <option value="Shipping" selected="@(order.Status == "Shipping")">Đang giao hàng</option>
+                                                <option value="Delivered" selected="@(order.Status == "Delivered")">Hoàn thành</option>
+                                                <option value="Cancelled" selected="@(order.Status == "Cancelled")">Đã huỷ</option>
+                                            </select>
+                                            <button type="submit" class="btn btn-sm btn-outline-success border-0 px-2" title="Lưu cập nhật">
+                                                <i class="bi bi-check-lg fs-5"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="text-center py-5 bg-darker rounded-4 shadow-sm border border-secondary border-opacity-25">
+            <i class="bi bi-box-seam fs-1 d-block mb-3 opacity-50 text-secondary"></i>
+            <h5 class="text-white">Chưa có đơn hàng nào</h5>
+            <p class="text-secondary small">Khi có khách đặt hàng, danh sách sẽ hiển thị tại đây.</p>
+        </div>
+    }
+</div>

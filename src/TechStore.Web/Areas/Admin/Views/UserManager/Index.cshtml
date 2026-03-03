@@ -1,0 +1,113 @@
+@model List<TechStore.Shared.DTOs.UserDto>
+@{
+    ViewData["Title"] = "Quản lý Người Dùng";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom border-secondary">
+    <div>
+        <h2 class="h3 mb-1 text-white fw-bold">Quản Lý Người Dùng</h2>
+        <p class="text-secondary mb-0">Xem danh sách, khóa hoặc xóa tài khoản hệ thống.</p>
+    </div>
+</div>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible bg-success-subtle text-success border-0 fade show" role="alert">
+        <i class="bi bi-check-circle-fill me-2"></i> @TempData["Success"]
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible bg-danger-subtle text-danger border-0 fade show" role="alert">
+        <i class="bi bi-exclamation-triangle-fill me-2"></i> @TempData["Error"]
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+<div class="card bg-dark border-secondary shadow-sm">
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-dark table-hover mb-0 align-middle">
+                <thead>
+                    <tr>
+                        <th class="border-secondary text-secondary fw-medium py-3 ps-4">TÀI KHOẢN</th>
+                        <th class="border-secondary text-secondary fw-medium py-3">HỌ TÊN</th>
+                        <th class="border-secondary text-secondary fw-medium py-3">LIÊN HỆ</th>
+                        <th class="border-secondary text-secondary fw-medium py-3">TRẠNG THÁI</th>
+                        <th class="border-secondary text-secondary fw-medium py-3">VAI TRÒ</th>
+                        <th class="border-secondary text-secondary fw-medium py-3 text-end pe-4">THAO TÁC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="border-secondary ps-4">
+                                <div class="fw-semibold text-white">@item.UserName</div>
+                            </td>
+                            <td class="border-secondary text-light">@item.FullName</td>
+                            <td class="border-secondary text-light">
+                                <small class="d-block"><i class="bi bi-envelope me-1"></i> @item.Email</small>
+                                @if (!string.IsNullOrEmpty(item.PhoneNumber))
+                                {
+                                    <small class="d-block text-secondary"><i class="bi bi-telephone me-1"></i> @item.PhoneNumber</small>
+                                }
+                            </td>
+                            <td class="border-secondary">
+                                @if (item.IsLockedOut)
+                                {
+                                    <span class="badge bg-danger">Đã khóa</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-success">Hoạt động</span>
+                                }
+                            </td>
+                            <td class="border-secondary text-info">
+                                @string.Join(", ", item.Roles)
+                            </td>
+                            <td class="border-secondary text-end pe-4">
+                                <div class="btn-group">
+                                    @if (item.IsLockedOut)
+                                    {
+                                        <form asp-action="UnlockUser" method="post" class="d-inline" onsubmit="return confirm('Mở khóa tài khoản này?');">
+                                            <input type="hidden" name="id" value="@item.Id" />
+                                            <button type="submit" class="btn btn-sm btn-outline-success" title="Mở Khóa">
+                                                <i class="bi bi-unlock"></i>
+                                            </button>
+                                        </form>
+                                    }
+                                    else
+                                    {
+                                        <form asp-action="LockUser" method="post" class="d-inline" onsubmit="return confirm('Khóa tài khoản này?');">
+                                            <input type="hidden" name="id" value="@item.Id" />
+                                            <button type="submit" class="btn btn-sm btn-outline-warning" title="Khóa">
+                                                <i class="bi bi-lock"></i>
+                                            </button>
+                                        </form>
+                                    }
+                                    <form asp-action="DeleteUser" method="post" class="d-inline ms-1" onsubmit="return confirm('Xóa tài khoản này? (Có thể gây lỗi khóa ngoại nếu đã có đơn hàng)');">
+                                        <input type="hidden" name="id" value="@item.Id" />
+                                        <button type="submit" class="btn btn-sm btn-outline-danger" title="Xóa">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                    @if (!Model.Any())
+                    {
+                        <tr>
+                            <td colspan="6" class="text-center text-secondary py-4">
+                                Không có tài khoản nào
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

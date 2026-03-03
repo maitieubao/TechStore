@@ -1,0 +1,155 @@
+@model TechStore.Shared.DTOs.UserProfileDto
+@{
+    ViewData["Title"] = "Hồ sơ của tôi";
+    Layout = "_Layout";
+}
+
+<div class="container py-5">
+    <div class="row gx-lg-5">
+        <!-- Sidebar -->
+        <div class="col-lg-3 mb-4 mb-lg-0">
+            <div class="card border-0 bg-darker rounded-4 p-4 text-center">
+                <div class="position-relative d-inline-block mb-3 mx-auto">
+                    <img src="@(string.IsNullOrEmpty(Model.AvatarUrl) ? "/images/default-avatar.png" : Model.AvatarUrl)" 
+                         class="rounded-circle object-fit-cover shadow" style="width: 120px; height: 120px; border: 3px solid #2d3240;" alt="Avatar" />
+                    
+                    <button class="btn btn-sm btn-primary rounded-circle position-absolute bottom-0 end-0" style="transform: translate(20%, -20%);"
+                            data-bs-toggle="modal" data-bs-target="#avatarModal" title="Đổi ảnh đại diện">
+                        <i class="bi bi-camera"></i>
+                    </button>
+                </div>
+                
+                <h5 class="fw-bold text-white mb-1">@Model.FullName</h5>
+                <p class="text-secondary small mb-3"><i class="bi bi-person-check-fill text-info"></i> Thành viên TechStore</p>
+                <div class="text-start">
+                    <hr class="border-secondary opacity-50">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-envelope text-secondary me-2"></i>
+                        <span class="small text-light text-break">@Model.Email</span>
+                    </div>
+                     <div class="d-flex align-items-center">
+                        <i class="bi bi-calendar3 text-secondary me-2"></i>
+                        <span class="small text-light">Tham gia: @Model.CreatedAt.ToString("MMM yyyy")</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card border-0 bg-darker rounded-4 p-3 mt-4">
+                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <button class="nav-link text-start text-white active mb-2" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab">
+                        <i class="bi bi-person-vcard me-2"></i> Thông tin cá nhân
+                    </button>
+                    <button class="nav-link text-start text-white mb-2" id="v-pills-password-tab" data-bs-toggle="pill" data-bs-target="#v-pills-password" type="button" role="tab">
+                        <i class="bi bi-shield-lock me-2"></i> Đổi mật khẩu
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="col-lg-9">
+            <div class="tab-content" id="v-pills-tabContent">
+                
+                <!-- Tab: Thông tin cá nhân -->
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel">
+                    <div class="card border-0 bg-darker rounded-4">
+                        <div class="card-body p-4 p-lg-5">
+                            <h4 class="fw-bold text-white mb-4"><i class="bi bi-info-circle text-primary me-2"></i>Cập nhật thông tin</h4>
+                            
+                            <form asp-action="UpdateInfo" method="post">
+                                <div class="row g-4 mb-4">
+                                    <div class="col-md-6">
+                                        <label class="form-label text-secondary small">Họ và Tên</label>
+                                        <input type="text" name="FullName" class="form-control bg-dark text-white border-secondary" required value="@Model.FullName" placeholder="Nhập họ tên...">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label text-secondary small">Số Điện Thoại</label>
+                                        <input type="tel" name="PhoneNumber" class="form-control bg-dark text-white border-secondary" value="@Model.PhoneNumber" placeholder="Số điện thoại liên hệ...">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label text-secondary small">Địa Chỉ Giao Hàng</label>
+                                        <input type="text" name="Address" class="form-control bg-dark text-white border-secondary" value="@Model.Address" placeholder="Địa chỉ chi tiết để nhận hàng...">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label text-secondary small">Tên đăng nhập (Username)</label>
+                                        <input type="text" class="form-control bg-dark text-secondary border-secondary" value="@Model.UserName" disabled readonly>
+                                        <div class="form-text text-muted small mt-1">Không thể thay đổi tên đăng nhập.</div>
+                                    </div>
+                                </div>
+                                <div class="text-end">
+                                    <button type="submit" class="btn btn-primary px-4"><i class="bi bi-save me-2"></i>Lưu thay đổi</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Đổi mật khẩu -->
+                <div class="tab-pane fade" id="v-pills-password" role="tabpanel">
+                    <div class="card border-0 bg-darker rounded-4">
+                        <div class="card-body p-4 p-lg-5">
+                             <h4 class="fw-bold text-white mb-4"><i class="bi bi-shield-lock text-warning me-2"></i>Đổi mật khẩu bảo mật</h4>
+                             
+                             <form asp-action="ChangePassword" method="post">
+                                <div class="mb-4">
+                                    <label class="form-label text-secondary small">Mật Khẩu Hiện Tại</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-dark border-secondary text-secondary"><i class="bi bi-key"></i></span>
+                                        <input type="password" name="CurrentPassword" class="form-control bg-dark text-white border-secondary" required placeholder="Nhập mật khẩu cũ...">
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-4 mb-4">
+                                    <div class="col-md-6">
+                                        <label class="form-label text-secondary small">Mật Khẩu Mới</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text bg-dark border-secondary text-secondary"><i class="bi bi-lock"></i></span>
+                                            <input type="password" name="NewPassword" class="form-control bg-dark text-white border-secondary" required placeholder="Tối thiểu 6 ký tự...">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label text-secondary small">Nhập Lại Mật Khẩu</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text bg-dark border-secondary text-secondary"><i class="bi bi-lock-fill"></i></span>
+                                            <input type="password" name="ConfirmPassword" class="form-control bg-dark text-white border-secondary" required placeholder="Xác nhận mật khẩu mới...">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-end">
+                                    <button type="submit" class="btn btn-warning px-4 text-dark fw-semibold"><i class="bi bi-shield-check me-2"></i>Cập nhật mật khẩu</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Đổi Ảnh -->
+<div class="modal fade" id="avatarModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark border-secondary">
+      <div class="modal-header border-secondary">
+        <h5 class="modal-title text-white">Cập nhật ảnh đại diện</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <form asp-action="UploadAvatar" method="post" enctype="multipart/form-data">
+          <div class="modal-body">
+              <div class="mb-3">
+                  <label class="form-label text-secondary">Chọn File Ảnh (JPG, PNG, WEBP)</label>
+                  <input class="form-control bg-dark text-white border-secondary" type="file" name="avatarFile" accept="image/*" required>
+                  <div class="form-text text-muted mt-2">Dung lượng tối đa 2MB.</div>
+              </div>
+          </div>
+          <div class="modal-footer border-secondary">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Hủy</button>
+            <button type="submit" class="btn btn-primary">Tải lên</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>

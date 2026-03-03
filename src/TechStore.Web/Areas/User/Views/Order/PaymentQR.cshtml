@@ -1,0 +1,41 @@
+@{
+    ViewData["Title"] = "Thanh toán QR Code";
+}
+
+<div class="container py-5 text-center">
+    <div class="card shadow-sm mx-auto" style="max-width: 500px;">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0"><i class="bi bi-qr-code"></i> Quét mã để thanh toán</h4>
+        </div>
+        <div class="card-body">
+            <p class="text-muted mb-4">
+                Đơn hàng <strong>#@ViewBag.OrderId</strong> đã được tạo. <br/>
+                Vui lòng quét mã QR bên dưới để hoàn tất thanh toán.
+            </p>
+            
+            <div class="qr-container mb-4 p-3 border rounded bg-light d-inline-block">
+                <img src="@ViewBag.QrUrl" alt="VietQR Payment" class="img-fluid" style="max-width: 300px;" />
+            </div>
+
+            <h3 class="text-primary fw-bold mb-3">@(((decimal)ViewBag.Amount).ToString("N0")) ₫</h3>
+            
+            <div class="alert alert-info small text-start">
+                <i class="bi bi-info-circle-fill me-2"></i> <strong>Lưu ý:</strong>
+                <ul class="mb-0 ps-3">
+                    <li>Nội dung chuyển khoản: <strong>TechStore @ViewBag.OrderId</strong></li>
+                    <li>Vui lòng giữ nguyên nội dung chuyển khoản để thuận tiện cho việc đối soát.</li>
+                    <li>Đây là tính năng thanh toán nhanh qua VietQR.</li>
+                </ul>
+            </div>
+
+            <div class="d-grid gap-2">
+                <a asp-action="Detail" asp-route-id="@ViewBag.OrderId" class="btn btn-outline-primary">
+                    <i class="bi bi-check-circle"></i> Tôi đã thanh toán (Xem đơn hàng)
+                </a>
+                <a asp-controller="Home" asp-action="Index" class="btn btn-link text-decoration-none">
+                    <i class="bi bi-arrow-left"></i> Quay lại trang chủ
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

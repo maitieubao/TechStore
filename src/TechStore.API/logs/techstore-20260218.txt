@@ -1,0 +1,909 @@
+2026-02-18 19:55:15.469 +07:00 [INF] Start installing Hangfire SQL objects...
+2026-02-18 19:55:28.755 +07:00 [INF] Hangfire SQL objects installed.
+2026-02-18 19:55:30.301 +07:00 [INF] User profile is available. Using 'C:\Users\maiti\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-18 19:55:36.052 +07:00 [INF] Executed DbCommand (393ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 19:55:36.257 +07:00 [INF] Executed DbCommand (30ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 19:55:36.549 +07:00 [INF] Executed DbCommand (268ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-18 19:55:36.828 +07:00 [INF] Executed DbCommand (121ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-18 19:55:37.225 +07:00 [INF] Now listening on: http://localhost:5019
+2026-02-18 19:55:37.264 +07:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: (localdb)\mssqllocaldb@TechStoreDb'
+2026-02-18 19:55:37.265 +07:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-02-18 19:55:37.265 +07:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-02-18 19:55:37.332 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-18 19:55:37.333 +07:00 [INF] Hosting environment: Development
+2026-02-18 19:55:37.333 +07:00 [INF] Content root path: C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.API
+2026-02-18 19:55:37.685 +07:00 [INF] Server desktop-gde40bi:14160:4d260c4c successfully announced in 352.6384 ms
+2026-02-18 19:55:37.691 +07:00 [INF] Server desktop-gde40bi:14160:4d260c4c is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-02-18 19:55:37.729 +07:00 [INF] 1 servers were removed due to timeout
+2026-02-18 19:55:37.799 +07:00 [INF] Server desktop-gde40bi:14160:4d260c4c all the dispatchers started
+2026-02-18 19:57:18.472 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/auth/login - application/json 54
+2026-02-18 19:57:18.598 +07:00 [WRN] Failed to determine the https port for redirect.
+2026-02-18 19:57:18.668 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.AuthController.Login (TechStore.API)'
+2026-02-18 19:57:18.711 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.AuthResponseDto]]] Login(TechStore.Shared.DTOs.LoginDto) on controller TechStore.API.Controllers.AuthController (TechStore.API).
+2026-02-18 19:57:19.239 +07:00 [INF] Executed DbCommand (257ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-18 19:57:19.258 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.AuthResponseDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 19:57:19.419 +07:00 [INF] Executed action TechStore.API.Controllers.AuthController.Login (TechStore.API) in 701.3969ms
+2026-02-18 19:57:19.421 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.AuthController.Login (TechStore.API)'
+2026-02-18 19:57:19.426 +07:00 [INF] HTTP POST /api/auth/login responded 400 in 833.4265 ms
+2026-02-18 19:57:19.439 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/auth/login - 400 null application/json; charset=utf-8 968.8934ms
+2026-02-18 19:57:31.248 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/auth/login - application/json 54
+2026-02-18 19:57:31.257 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.AuthController.Login (TechStore.API)'
+2026-02-18 19:57:31.258 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.AuthResponseDto]]] Login(TechStore.Shared.DTOs.LoginDto) on controller TechStore.API.Controllers.AuthController (TechStore.API).
+2026-02-18 19:57:31.365 +07:00 [INF] Executed DbCommand (21ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-18 19:57:31.366 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.AuthResponseDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 19:57:31.367 +07:00 [INF] Executed action TechStore.API.Controllers.AuthController.Login (TechStore.API) in 108.5009ms
+2026-02-18 19:57:31.368 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.AuthController.Login (TechStore.API)'
+2026-02-18 19:57:31.368 +07:00 [INF] HTTP POST /api/auth/login responded 400 in 113.2019 ms
+2026-02-18 19:57:31.369 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/auth/login - 400 null application/json; charset=utf-8 121.361ms
+2026-02-18 20:10:12.562 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/auth/login - application/json 43
+2026-02-18 20:10:12.573 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.AuthController.Login (TechStore.API)'
+2026-02-18 20:10:12.574 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.AuthResponseDto]]] Login(TechStore.Shared.DTOs.LoginDto) on controller TechStore.API.Controllers.AuthController (TechStore.API).
+2026-02-18 20:10:12.619 +07:00 [INF] Executed DbCommand (9ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-18 20:10:13.292 +07:00 [INF] Executed DbCommand (71ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-18 20:10:13.395 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@user_Id='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedAt], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[Token], [r].[UpdatedAt], [r].[UserId]
+FROM [RefreshTokens] AS [r]
+WHERE [r].[UserId] = @user_Id AND ([r].[RevokedAt] IS NOT NULL OR [r].[ExpiresAt] <= GETUTCDATE())
+2026-02-18 20:10:13.890 +07:00 [INF] Executed DbCommand (37ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([CreatedAt], [ExpiresAt], [ReplacedByToken], [RevokedAt], [Token], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2026-02-18 20:10:13.952 +07:00 [INF] Executed DbCommand (9ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-18 20:10:13.954 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.AuthResponseDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 20:10:13.957 +07:00 [INF] Executed action TechStore.API.Controllers.AuthController.Login (TechStore.API) in 1383.5896ms
+2026-02-18 20:10:13.958 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.AuthController.Login (TechStore.API)'
+2026-02-18 20:10:13.958 +07:00 [INF] HTTP POST /api/auth/login responded 200 in 1393.6835 ms
+2026-02-18 20:10:13.958 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/auth/login - 200 null application/json; charset=utf-8 1395.4732ms
+2026-02-18 20:10:14.491 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/orders - null null
+2026-02-18 20:10:14.596 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.OrdersController.GetAll (TechStore.API)'
+2026-02-18 20:10:14.612 +07:00 [INF] Route matched with {action = "GetAll", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.Collections.Generic.List`1[TechStore.Shared.DTOs.OrderDto]]]] GetAll() on controller TechStore.API.Controllers.OrdersController (TechStore.API).
+2026-02-18 20:10:14.620 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-02-18 20:10:15.293 +07:00 [INF] Executed DbCommand (475ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CouponCode], [o].[CreatedAt], [o].[DiscountAmount], [o].[Note], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PhoneNumber], [o].[RowVersion], [o].[ShippingAddress], [o].[Status], [o].[TotalAmount], [o].[UpdatedAt], [o].[UserId], [s].[Id], [s].[CreatedAt], [s].[OrderId], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[UpdatedAt], [s].[Id0], [s].[Brand], [s].[CategoryId], [s].[CreatedAt0], [s].[Description], [s].[IsActive], [s].[LowStockThreshold], [s].[Name], [s].[Price], [s].[RowVersion], [s].[Slug], [s].[Specifications], [s].[StockQuantity], [s].[UpdatedAt0]
+FROM [Orders] AS [o]
+LEFT JOIN (
+    SELECT [o0].[Id], [o0].[CreatedAt], [o0].[OrderId], [o0].[ProductId], [o0].[Quantity], [o0].[UnitPrice], [o0].[UpdatedAt], [p].[Id] AS [Id0], [p].[Brand], [p].[CategoryId], [p].[CreatedAt] AS [CreatedAt0], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt] AS [UpdatedAt0]
+    FROM [OrderItems] AS [o0]
+    INNER JOIN [Products] AS [p] ON [o0].[ProductId] = [p].[Id]
+) AS [s] ON [o].[Id] = [s].[OrderId]
+ORDER BY [o].[OrderDate] DESC, [o].[Id], [s].[Id]
+2026-02-18 20:10:15.577 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.Collections.Generic.List`1[[TechStore.Shared.DTOs.OrderDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 20:10:15.607 +07:00 [INF] Executed action TechStore.API.Controllers.OrdersController.GetAll (TechStore.API) in 994.1104ms
+2026-02-18 20:10:15.607 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.OrdersController.GetAll (TechStore.API)'
+2026-02-18 20:10:15.607 +07:00 [INF] HTTP GET /api/orders responded 200 in 1114.4586 ms
+2026-02-18 20:10:15.608 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/orders - 200 null application/json; charset=utf-8 1116.961ms
+2026-02-18 20:10:15.697 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/payments/create-payment-url - application/json 91
+2026-02-18 20:10:15.700 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.PaymentsController.CreatePaymentUrl (TechStore.API)'
+2026-02-18 20:10:15.711 +07:00 [INF] Route matched with {action = "CreatePaymentUrl", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.String]]] CreatePaymentUrl(TechStore.Shared.DTOs.PaymentRequestDto) on controller TechStore.API.Controllers.PaymentsController (TechStore.API).
+2026-02-18 20:10:15.730 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-02-18 20:10:15.765 +07:00 [INF] Executed action TechStore.API.Controllers.PaymentsController.CreatePaymentUrl (TechStore.API) in 53.6257ms
+2026-02-18 20:10:15.765 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.PaymentsController.CreatePaymentUrl (TechStore.API)'
+2026-02-18 20:10:15.765 +07:00 [INF] HTTP POST /api/payments/create-payment-url responded 400 in 67.7783 ms
+2026-02-18 20:10:15.765 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/payments/create-payment-url - 400 null application/problem+json; charset=utf-8 68.3088ms
+2026-02-18 20:10:37.255 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/auth/login - application/json 43
+2026-02-18 20:10:37.255 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.AuthController.Login (TechStore.API)'
+2026-02-18 20:10:37.255 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.AuthResponseDto]]] Login(TechStore.Shared.DTOs.LoginDto) on controller TechStore.API.Controllers.AuthController (TechStore.API).
+2026-02-18 20:10:37.267 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-18 20:10:37.548 +07:00 [INF] Executed DbCommand (26ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-18 20:10:37.554 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@user_Id='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedAt], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[Token], [r].[UpdatedAt], [r].[UserId]
+FROM [RefreshTokens] AS [r]
+WHERE [r].[UserId] = @user_Id AND ([r].[RevokedAt] IS NOT NULL OR [r].[ExpiresAt] <= GETUTCDATE())
+2026-02-18 20:10:37.607 +07:00 [INF] Executed DbCommand (36ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([CreatedAt], [ExpiresAt], [ReplacedByToken], [RevokedAt], [Token], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2026-02-18 20:10:37.682 +07:00 [INF] Executed DbCommand (73ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-18 20:10:37.682 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.AuthResponseDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 20:10:37.683 +07:00 [INF] Executed action TechStore.API.Controllers.AuthController.Login (TechStore.API) in 427.2522ms
+2026-02-18 20:10:37.683 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.AuthController.Login (TechStore.API)'
+2026-02-18 20:10:37.683 +07:00 [INF] HTTP POST /api/auth/login responded 200 in 427.6190 ms
+2026-02-18 20:10:37.683 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/auth/login - 200 null application/json; charset=utf-8 428.1902ms
+2026-02-18 20:10:38.633 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/orders - null null
+2026-02-18 20:10:38.637 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.OrdersController.GetAll (TechStore.API)'
+2026-02-18 20:10:38.637 +07:00 [INF] Route matched with {action = "GetAll", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.Collections.Generic.List`1[TechStore.Shared.DTOs.OrderDto]]]] GetAll() on controller TechStore.API.Controllers.OrdersController (TechStore.API).
+2026-02-18 20:10:38.668 +07:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CouponCode], [o].[CreatedAt], [o].[DiscountAmount], [o].[Note], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PhoneNumber], [o].[RowVersion], [o].[ShippingAddress], [o].[Status], [o].[TotalAmount], [o].[UpdatedAt], [o].[UserId], [s].[Id], [s].[CreatedAt], [s].[OrderId], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[UpdatedAt], [s].[Id0], [s].[Brand], [s].[CategoryId], [s].[CreatedAt0], [s].[Description], [s].[IsActive], [s].[LowStockThreshold], [s].[Name], [s].[Price], [s].[RowVersion], [s].[Slug], [s].[Specifications], [s].[StockQuantity], [s].[UpdatedAt0]
+FROM [Orders] AS [o]
+LEFT JOIN (
+    SELECT [o0].[Id], [o0].[CreatedAt], [o0].[OrderId], [o0].[ProductId], [o0].[Quantity], [o0].[UnitPrice], [o0].[UpdatedAt], [p].[Id] AS [Id0], [p].[Brand], [p].[CategoryId], [p].[CreatedAt] AS [CreatedAt0], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt] AS [UpdatedAt0]
+    FROM [OrderItems] AS [o0]
+    INNER JOIN [Products] AS [p] ON [o0].[ProductId] = [p].[Id]
+) AS [s] ON [o].[Id] = [s].[OrderId]
+ORDER BY [o].[OrderDate] DESC, [o].[Id], [s].[Id]
+2026-02-18 20:10:38.673 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.Collections.Generic.List`1[[TechStore.Shared.DTOs.OrderDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 20:10:38.674 +07:00 [INF] Executed action TechStore.API.Controllers.OrdersController.GetAll (TechStore.API) in 36.3198ms
+2026-02-18 20:10:38.674 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.OrdersController.GetAll (TechStore.API)'
+2026-02-18 20:10:38.674 +07:00 [INF] HTTP GET /api/orders responded 200 in 40.3654 ms
+2026-02-18 20:10:38.674 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/orders - 200 null application/json; charset=utf-8 40.8804ms
+2026-02-18 20:10:56.341 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/auth/login - application/json 43
+2026-02-18 20:10:56.341 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.AuthController.Login (TechStore.API)'
+2026-02-18 20:10:56.341 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.AuthResponseDto]]] Login(TechStore.Shared.DTOs.LoginDto) on controller TechStore.API.Controllers.AuthController (TechStore.API).
+2026-02-18 20:10:56.350 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-18 20:10:56.767 +07:00 [INF] Executed DbCommand (66ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-18 20:10:56.808 +07:00 [INF] Executed DbCommand (40ms) [Parameters=[@user_Id='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedAt], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[Token], [r].[UpdatedAt], [r].[UserId]
+FROM [RefreshTokens] AS [r]
+WHERE [r].[UserId] = @user_Id AND ([r].[RevokedAt] IS NOT NULL OR [r].[ExpiresAt] <= GETUTCDATE())
+2026-02-18 20:10:56.892 +07:00 [INF] Executed DbCommand (69ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([CreatedAt], [ExpiresAt], [ReplacedByToken], [RevokedAt], [Token], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2026-02-18 20:10:56.939 +07:00 [INF] Executed DbCommand (46ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-18 20:10:56.939 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.AuthResponseDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 20:10:56.939 +07:00 [INF] Executed action TechStore.API.Controllers.AuthController.Login (TechStore.API) in 597.6414ms
+2026-02-18 20:10:56.939 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.AuthController.Login (TechStore.API)'
+2026-02-18 20:10:56.939 +07:00 [INF] HTTP POST /api/auth/login responded 200 in 598.1426 ms
+2026-02-18 20:10:56.939 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/auth/login - 200 null application/json; charset=utf-8 598.5458ms
+2026-02-18 20:10:57.489 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/payments/create-payment-url - application/json 96
+2026-02-18 20:10:57.492 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.PaymentsController.CreatePaymentUrl (TechStore.API)'
+2026-02-18 20:10:57.492 +07:00 [INF] Route matched with {action = "CreatePaymentUrl", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.String]]] CreatePaymentUrl(TechStore.Shared.DTOs.PaymentRequestDto) on controller TechStore.API.Controllers.PaymentsController (TechStore.API).
+2026-02-18 20:10:57.592 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CouponCode], [o].[CreatedAt], [o].[DiscountAmount], [o].[Note], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PhoneNumber], [o].[RowVersion], [o].[ShippingAddress], [o].[Status], [o].[TotalAmount], [o].[UpdatedAt], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Id] = @p
+2026-02-18 20:10:57.596 +07:00 [INF] Executing ForbidResult with authentication schemes ([]).
+2026-02-18 20:10:57.600 +07:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2026-02-18 20:10:57.600 +07:00 [INF] Executed action TechStore.API.Controllers.PaymentsController.CreatePaymentUrl (TechStore.API) in 108.0479ms
+2026-02-18 20:10:57.600 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.PaymentsController.CreatePaymentUrl (TechStore.API)'
+2026-02-18 20:10:57.600 +07:00 [INF] HTTP POST /api/payments/create-payment-url responded 403 in 108.8853 ms
+2026-02-18 20:10:57.601 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/payments/create-payment-url - 403 0 null 111.1802ms
+2026-02-18 20:11:28.066 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/auth/register - application/json 104
+2026-02-18 20:11:28.066 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.AuthController.Register (TechStore.API)'
+2026-02-18 20:11:28.075 +07:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.AuthResponseDto]]] Register(TechStore.Shared.DTOs.RegisterDto) on controller TechStore.API.Controllers.AuthController (TechStore.API).
+2026-02-18 20:11:28.102 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-18 20:11:28.158 +07:00 [INF] Executed DbCommand (41ms) [Parameters=[@normalizedEmail='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @normalizedEmail
+2026-02-18 20:11:28.432 +07:00 [INF] Executed DbCommand (16ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-18 20:11:28.498 +07:00 [INF] Executed DbCommand (34ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (DbType = DateTimeOffset), @p11='?' (Size = 256), @p12='?' (Size = 256), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [Address], [AvatarUrl], [ConcurrencyStamp], [CreatedAt], [Email], [EmailConfirmed], [FullName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+2026-02-18 20:11:28.525 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[@normalizedRoleName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedRoleName
+2026-02-18 20:11:28.610 +07:00 [INF] Executed DbCommand (68ms) [Parameters=[@p='?' (Size = 450), @p1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @p AND [a].[RoleId] = @p1
+2026-02-18 20:11:28.670 +07:00 [INF] Executed DbCommand (55ms) [Parameters=[@normalizedRoleName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedRoleName
+2026-02-18 20:11:28.705 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-18 20:11:28.768 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p20='?' (Size = 450), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p21='?' (Size = 4000), @p6='?' (DbType = DateTime2), @p7='?' (Size = 256), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (DbType = Boolean), @p11='?' (DbType = DateTimeOffset), @p12='?' (Size = 256), @p13='?' (Size = 256), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p2, [Address] = @p3, [AvatarUrl] = @p4, [ConcurrencyStamp] = @p5, [CreatedAt] = @p6, [Email] = @p7, [EmailConfirmed] = @p8, [FullName] = @p9, [LockoutEnabled] = @p10, [LockoutEnd] = @p11, [NormalizedEmail] = @p12, [NormalizedUserName] = @p13, [PasswordHash] = @p14, [PhoneNumber] = @p15, [PhoneNumberConfirmed] = @p16, [SecurityStamp] = @p17, [TwoFactorEnabled] = @p18, [UserName] = @p19
+OUTPUT 1
+WHERE [Id] = @p20 AND [ConcurrencyStamp] = @p21;
+2026-02-18 20:11:28.795 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-18 20:11:28.807 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[@user_Id='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedAt], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[Token], [r].[UpdatedAt], [r].[UserId]
+FROM [RefreshTokens] AS [r]
+WHERE [r].[UserId] = @user_Id AND ([r].[RevokedAt] IS NOT NULL OR [r].[ExpiresAt] <= GETUTCDATE())
+2026-02-18 20:11:28.814 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([CreatedAt], [ExpiresAt], [ReplacedByToken], [RevokedAt], [Token], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2026-02-18 20:11:28.823 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.AuthResponseDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 20:11:28.824 +07:00 [INF] Executed action TechStore.API.Controllers.AuthController.Register (TechStore.API) in 748.1752ms
+2026-02-18 20:11:28.824 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.AuthController.Register (TechStore.API)'
+2026-02-18 20:11:28.824 +07:00 [INF] HTTP POST /api/auth/register responded 200 in 757.9305 ms
+2026-02-18 20:11:28.824 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/auth/register - 200 null application/json; charset=utf-8 758.3062ms
+2026-02-18 20:11:28.960 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/auth/login - application/json 46
+2026-02-18 20:11:28.961 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.AuthController.Login (TechStore.API)'
+2026-02-18 20:11:28.961 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.AuthResponseDto]]] Login(TechStore.Shared.DTOs.LoginDto) on controller TechStore.API.Controllers.AuthController (TechStore.API).
+2026-02-18 20:11:28.967 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-18 20:11:29.211 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-18 20:11:29.216 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@user_Id='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedAt], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[Token], [r].[UpdatedAt], [r].[UserId]
+FROM [RefreshTokens] AS [r]
+WHERE [r].[UserId] = @user_Id AND ([r].[RevokedAt] IS NOT NULL OR [r].[ExpiresAt] <= GETUTCDATE())
+2026-02-18 20:11:29.223 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([CreatedAt], [ExpiresAt], [ReplacedByToken], [RevokedAt], [Token], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2026-02-18 20:11:29.225 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-18 20:11:29.226 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.AuthResponseDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 20:11:29.226 +07:00 [INF] Executed action TechStore.API.Controllers.AuthController.Login (TechStore.API) in 264.9787ms
+2026-02-18 20:11:29.226 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.AuthController.Login (TechStore.API)'
+2026-02-18 20:11:29.226 +07:00 [INF] HTTP POST /api/auth/login responded 200 in 265.3085 ms
+2026-02-18 20:11:29.226 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/auth/login - 200 null application/json; charset=utf-8 265.6012ms
+2026-02-18 20:11:29.654 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/orders - application/json 148
+2026-02-18 20:11:29.655 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.OrdersController.Create (TechStore.API)'
+2026-02-18 20:11:29.663 +07:00 [INF] Route matched with {action = "Create", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.OrderDto]]] Create(TechStore.Shared.DTOs.CreateOrderDto) on controller TechStore.API.Controllers.OrdersController (TechStore.API).
+2026-02-18 20:11:29.907 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-18 20:11:30.206 +07:00 [INF] Executed DbCommand (50ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (Size = 450), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 450), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (DbType = DateTime2), @p12='?' (Size = 450), @p25='?' (DbType = Int32), @p13='?' (Size = 450), @p14='?' (DbType = Int32), @p15='?' (DbType = DateTime2), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (DbType = Int32), @p19='?' (Size = 4000), @p20='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p26='?' (Size = 8) (DbType = Binary), @p21='?' (Size = 450), @p22='?' (Size = 4000), @p23='?' (DbType = Int32), @p24='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([CouponCode], [CreatedAt], [DiscountAmount], [Note], [OrderDate], [PaymentMethod], [PaymentStatus], [PhoneNumber], [ShippingAddress], [Status], [TotalAmount], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id], INSERTED.[RowVersion]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+UPDATE [Products] SET [Brand] = @p13, [CategoryId] = @p14, [CreatedAt] = @p15, [Description] = @p16, [IsActive] = @p17, [LowStockThreshold] = @p18, [Name] = @p19, [Price] = @p20, [Slug] = @p21, [Specifications] = @p22, [StockQuantity] = @p23, [UpdatedAt] = @p24
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p25 AND [RowVersion] = @p26;
+2026-02-18 20:11:30.222 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@p27='?' (DbType = DateTime2), @p28='?' (DbType = Int32), @p29='?' (DbType = Int32), @p30='?' (DbType = Int32), @p31='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p32='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [OrderItems] ([CreatedAt], [OrderId], [ProductId], [Quantity], [UnitPrice], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p27, @p28, @p29, @p30, @p31, @p32);
+2026-02-18 20:11:30.537 +07:00 [INF] Executing CreatedAtActionResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.OrderDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 20:11:30.643 +07:00 [INF] Executed action TechStore.API.Controllers.OrdersController.Create (TechStore.API) in 979.0064ms
+2026-02-18 20:11:30.643 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.OrdersController.Create (TechStore.API)'
+2026-02-18 20:11:30.643 +07:00 [INF] HTTP POST /api/orders responded 201 in 988.4892 ms
+2026-02-18 20:11:30.643 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/orders - 201 null application/json; charset=utf-8 988.8322ms
+2026-02-18 20:11:31.519 +07:00 [INF] Executed DbCommand (14ms) [Parameters=[@p='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @p
+2026-02-18 20:11:31.532 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CouponCode], [o].[CreatedAt], [o].[DiscountAmount], [o].[Note], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PhoneNumber], [o].[RowVersion], [o].[ShippingAddress], [o].[Status], [o].[TotalAmount], [o].[UpdatedAt], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Id] = @p
+2026-02-18 20:11:31.542 +07:00 [WRN] SMTP not configured, skipping email to testpay@test.com: TechStore - Order #2006 Confirmed!
+2026-02-18 20:11:31.548 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/payments/create-payment-url - application/json 99
+2026-02-18 20:11:31.549 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.PaymentsController.CreatePaymentUrl (TechStore.API)'
+2026-02-18 20:11:31.549 +07:00 [INF] Route matched with {action = "CreatePaymentUrl", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.String]]] CreatePaymentUrl(TechStore.Shared.DTOs.PaymentRequestDto) on controller TechStore.API.Controllers.PaymentsController (TechStore.API).
+2026-02-18 20:11:31.559 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CouponCode], [o].[CreatedAt], [o].[DiscountAmount], [o].[Note], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PhoneNumber], [o].[RowVersion], [o].[ShippingAddress], [o].[Status], [o].[TotalAmount], [o].[UpdatedAt], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Id] = @p
+2026-02-18 20:11:31.800 +07:00 [INF] Executed DbCommand (177ms) [Parameters=[@p13='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (Size = 450), @p7='?' (Size = 4000), @p14='?' (Size = 8) (DbType = Binary), @p8='?' (Size = 4000), @p9='?' (Size = 450), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (DbType = DateTime2), @p12='?' (Size = 450), @p15='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = DateTime2), @p20='?' (DbType = Int32), @p21='?' (DbType = DateTime2), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (Size = 4000), @p25='?' (Size = 4000), @p26='?' (Size = 450), @p27='?' (Size = 450), @p28='?' (DbType = DateTime2), @p29='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Orders] SET [CouponCode] = @p0, [CreatedAt] = @p1, [DiscountAmount] = @p2, [Note] = @p3, [OrderDate] = @p4, [PaymentMethod] = @p5, [PaymentStatus] = @p6, [PhoneNumber] = @p7, [ShippingAddress] = @p8, [Status] = @p9, [TotalAmount] = @p10, [UpdatedAt] = @p11, [UserId] = @p12
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p13 AND [RowVersion] = @p14;
+INSERT INTO [Payments] ([Amount], [BankCode], [BankTranNo], [CardType], [CreatedAt], [OrderId], [PaidAt], [PaymentInfo], [PaymentMethod], [ResponseCode], [ResponseMessage], [Status], [TransactionId], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id], INSERTED.[RowVersion]
+VALUES (@p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29);
+2026-02-18 20:11:31.820 +07:00 [INF] VNPAY URL created for Order #2006, TxnRef: 2006_20260218201131
+2026-02-18 20:11:31.820 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 20:11:31.822 +07:00 [INF] Executed action TechStore.API.Controllers.PaymentsController.CreatePaymentUrl (TechStore.API) in 272.4797ms
+2026-02-18 20:11:31.822 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.PaymentsController.CreatePaymentUrl (TechStore.API)'
+2026-02-18 20:11:31.822 +07:00 [INF] HTTP POST /api/payments/create-payment-url responded 200 in 273.4151 ms
+2026-02-18 20:11:31.822 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/payments/create-payment-url - 200 null application/json; charset=utf-8 273.7684ms
+2026-02-18 20:23:12.726 +07:00 [INF] Start installing Hangfire SQL objects...
+2026-02-18 20:23:14.349 +07:00 [INF] Hangfire SQL objects installed.
+2026-02-18 20:23:15.000 +07:00 [INF] User profile is available. Using 'C:\Users\maiti\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-18 20:23:17.383 +07:00 [INF] Executed DbCommand (53ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 20:23:17.560 +07:00 [INF] Executed DbCommand (17ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 20:23:17.603 +07:00 [INF] Executed DbCommand (14ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-18 20:23:17.777 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-18 20:23:18.295 +07:00 [INF] Now listening on: http://localhost:5019
+2026-02-18 20:23:18.314 +07:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: (localdb)\mssqllocaldb@TechStoreDb'
+2026-02-18 20:23:18.314 +07:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-02-18 20:23:18.314 +07:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-02-18 20:23:18.346 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-18 20:23:18.347 +07:00 [INF] Hosting environment: Development
+2026-02-18 20:23:18.347 +07:00 [INF] Content root path: C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.API
+2026-02-18 20:23:18.593 +07:00 [INF] Server desktop-gde40bi:11396:893f8101 successfully announced in 248.5771 ms
+2026-02-18 20:23:18.598 +07:00 [INF] Server desktop-gde40bi:11396:893f8101 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-02-18 20:23:18.724 +07:00 [INF] Server desktop-gde40bi:11396:893f8101 all the dispatchers started
+2026-02-18 20:24:16.847 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/auth/login - application/json 46
+2026-02-18 20:24:17.012 +07:00 [WRN] Failed to determine the https port for redirect.
+2026-02-18 20:24:17.146 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.AuthController.Login (TechStore.API)'
+2026-02-18 20:24:17.184 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.AuthResponseDto]]] Login(TechStore.Shared.DTOs.LoginDto) on controller TechStore.API.Controllers.AuthController (TechStore.API).
+2026-02-18 20:24:17.448 +07:00 [INF] Executed DbCommand (39ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-18 20:24:17.852 +07:00 [INF] Executed DbCommand (25ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-18 20:24:18.015 +07:00 [INF] Executed DbCommand (70ms) [Parameters=[@user_Id='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedAt], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[Token], [r].[UpdatedAt], [r].[UserId]
+FROM [RefreshTokens] AS [r]
+WHERE [r].[UserId] = @user_Id AND ([r].[RevokedAt] IS NOT NULL OR [r].[ExpiresAt] <= GETUTCDATE())
+2026-02-18 20:24:18.447 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([CreatedAt], [ExpiresAt], [ReplacedByToken], [RevokedAt], [Token], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2026-02-18 20:24:18.512 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-18 20:24:18.524 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.AuthResponseDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 20:24:18.593 +07:00 [INF] Executed action TechStore.API.Controllers.AuthController.Login (TechStore.API) in 1402.6282ms
+2026-02-18 20:24:18.594 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.AuthController.Login (TechStore.API)'
+2026-02-18 20:24:18.603 +07:00 [INF] HTTP POST /api/auth/login responded 200 in 1592.9993 ms
+2026-02-18 20:24:18.622 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/auth/login - 200 null application/json; charset=utf-8 1774.9046ms
+2026-02-18 20:24:19.101 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/orders - application/json 153
+2026-02-18 20:24:19.216 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.OrdersController.Create (TechStore.API)'
+2026-02-18 20:24:19.233 +07:00 [INF] Route matched with {action = "Create", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.OrderDto]]] Create(TechStore.Shared.DTOs.CreateOrderDto) on controller TechStore.API.Controllers.OrdersController (TechStore.API).
+2026-02-18 20:24:19.239 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-02-18 20:24:19.476 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-18 20:24:19.857 +07:00 [INF] Executed DbCommand (19ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (Size = 450), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 450), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (DbType = DateTime2), @p12='?' (Size = 450), @p25='?' (DbType = Int32), @p13='?' (Size = 450), @p14='?' (DbType = Int32), @p15='?' (DbType = DateTime2), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (DbType = Int32), @p19='?' (Size = 4000), @p20='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p26='?' (Size = 8) (DbType = Binary), @p21='?' (Size = 450), @p22='?' (Size = 4000), @p23='?' (DbType = Int32), @p24='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([CouponCode], [CreatedAt], [DiscountAmount], [Note], [OrderDate], [PaymentMethod], [PaymentStatus], [PhoneNumber], [ShippingAddress], [Status], [TotalAmount], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id], INSERTED.[RowVersion]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+UPDATE [Products] SET [Brand] = @p13, [CategoryId] = @p14, [CreatedAt] = @p15, [Description] = @p16, [IsActive] = @p17, [LowStockThreshold] = @p18, [Name] = @p19, [Price] = @p20, [Slug] = @p21, [Specifications] = @p22, [StockQuantity] = @p23, [UpdatedAt] = @p24
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p25 AND [RowVersion] = @p26;
+2026-02-18 20:24:19.876 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@p27='?' (DbType = DateTime2), @p28='?' (DbType = Int32), @p29='?' (DbType = Int32), @p30='?' (DbType = Int32), @p31='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p32='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [OrderItems] ([CreatedAt], [OrderId], [ProductId], [Quantity], [UnitPrice], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p27, @p28, @p29, @p30, @p31, @p32);
+2026-02-18 20:24:20.156 +07:00 [INF] Executing CreatedAtActionResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.OrderDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 20:24:20.201 +07:00 [INF] Executed action TechStore.API.Controllers.OrdersController.Create (TechStore.API) in 968.2662ms
+2026-02-18 20:24:20.202 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.OrdersController.Create (TechStore.API)'
+2026-02-18 20:24:20.202 +07:00 [INF] HTTP POST /api/orders responded 201 in 1096.5123 ms
+2026-02-18 20:24:20.203 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/orders - 201 null application/json; charset=utf-8 1102.5908ms
+2026-02-18 20:24:20.350 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/payments/create-payment-url - application/json 99
+2026-02-18 20:24:20.363 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.PaymentsController.CreatePaymentUrl (TechStore.API)'
+2026-02-18 20:24:20.376 +07:00 [INF] Route matched with {action = "CreatePaymentUrl", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.String]]] CreatePaymentUrl(TechStore.Shared.DTOs.PaymentRequestDto) on controller TechStore.API.Controllers.PaymentsController (TechStore.API).
+2026-02-18 20:24:20.438 +07:00 [INF] Executed DbCommand (33ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CouponCode], [o].[CreatedAt], [o].[DiscountAmount], [o].[Note], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PhoneNumber], [o].[RowVersion], [o].[ShippingAddress], [o].[Status], [o].[TotalAmount], [o].[UpdatedAt], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Id] = @p
+2026-02-18 20:24:20.615 +07:00 [INF] Executed DbCommand (54ms) [Parameters=[@p13='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (Size = 450), @p7='?' (Size = 4000), @p14='?' (Size = 8) (DbType = Binary), @p8='?' (Size = 4000), @p9='?' (Size = 450), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (DbType = DateTime2), @p12='?' (Size = 450), @p15='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = DateTime2), @p20='?' (DbType = Int32), @p21='?' (DbType = DateTime2), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (Size = 4000), @p25='?' (Size = 4000), @p26='?' (Size = 450), @p27='?' (Size = 450), @p28='?' (DbType = DateTime2), @p29='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Orders] SET [CouponCode] = @p0, [CreatedAt] = @p1, [DiscountAmount] = @p2, [Note] = @p3, [OrderDate] = @p4, [PaymentMethod] = @p5, [PaymentStatus] = @p6, [PhoneNumber] = @p7, [ShippingAddress] = @p8, [Status] = @p9, [TotalAmount] = @p10, [UpdatedAt] = @p11, [UserId] = @p12
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p13 AND [RowVersion] = @p14;
+INSERT INTO [Payments] ([Amount], [BankCode], [BankTranNo], [CardType], [CreatedAt], [OrderId], [PaidAt], [PaymentInfo], [PaymentMethod], [ResponseCode], [ResponseMessage], [Status], [TransactionId], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id], INSERTED.[RowVersion]
+VALUES (@p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29);
+2026-02-18 20:24:20.642 +07:00 [INF] VNPAY URL created for Order #2007, TxnRef: 2007_20260218202420
+2026-02-18 20:24:20.642 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 20:24:20.644 +07:00 [INF] Executed action TechStore.API.Controllers.PaymentsController.CreatePaymentUrl (TechStore.API) in 268.2454ms
+2026-02-18 20:24:20.644 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.PaymentsController.CreatePaymentUrl (TechStore.API)'
+2026-02-18 20:24:20.644 +07:00 [INF] HTTP POST /api/payments/create-payment-url responded 200 in 291.4862 ms
+2026-02-18 20:24:20.645 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/payments/create-payment-url - 200 null application/json; charset=utf-8 294.6695ms
+2026-02-18 20:24:20.655 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@p='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @p
+2026-02-18 20:24:20.677 +07:00 [INF] Executed DbCommand (20ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CouponCode], [o].[CreatedAt], [o].[DiscountAmount], [o].[Note], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PhoneNumber], [o].[RowVersion], [o].[ShippingAddress], [o].[Status], [o].[TotalAmount], [o].[UpdatedAt], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Id] = @p
+2026-02-18 20:24:20.682 +07:00 [WRN] SMTP not configured, skipping email to testpay@test.com: TechStore - Order #2007 Confirmed!
+2026-02-18 20:28:18.628 +07:00 [INF] 1 servers were removed due to timeout
+2026-02-18 22:14:01.094 +07:00 [INF] Start installing Hangfire SQL objects...
+2026-02-18 22:14:03.364 +07:00 [INF] Hangfire SQL objects installed.
+2026-02-18 22:14:04.203 +07:00 [INF] User profile is available. Using 'C:\Users\maiti\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-18 22:14:06.894 +07:00 [INF] Executed DbCommand (76ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 22:14:07.102 +07:00 [INF] Executed DbCommand (29ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 22:14:08.021 +07:00 [INF] Executed DbCommand (886ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-18 22:14:08.384 +07:00 [INF] Executed DbCommand (190ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-18 22:14:08.702 +07:00 [INF] Now listening on: http://localhost:5019
+2026-02-18 22:14:08.714 +07:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: (localdb)\mssqllocaldb@TechStoreDb'
+2026-02-18 22:14:08.714 +07:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-02-18 22:14:08.715 +07:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-02-18 22:14:08.759 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-18 22:14:08.759 +07:00 [INF] Hosting environment: Development
+2026-02-18 22:14:08.759 +07:00 [INF] Content root path: C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.API
+2026-02-18 22:14:09.062 +07:00 [INF] Server desktop-gde40bi:5768:ae9f3397 successfully announced in 301.7579 ms
+2026-02-18 22:14:09.072 +07:00 [INF] Server desktop-gde40bi:5768:ae9f3397 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-02-18 22:14:09.429 +07:00 [INF] Server desktop-gde40bi:5768:ae9f3397 all the dispatchers started
+2026-02-18 22:14:51.764 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/auth/login - application/json 46
+2026-02-18 22:14:51.894 +07:00 [WRN] Failed to determine the https port for redirect.
+2026-02-18 22:14:51.955 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.AuthController.Login (TechStore.API)'
+2026-02-18 22:14:51.996 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.AuthResponseDto]]] Login(TechStore.Shared.DTOs.LoginDto) on controller TechStore.API.Controllers.AuthController (TechStore.API).
+2026-02-18 22:14:52.266 +07:00 [INF] Executed DbCommand (62ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-18 22:14:52.565 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-18 22:14:52.659 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@user_Id='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedAt], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[Token], [r].[UpdatedAt], [r].[UserId]
+FROM [RefreshTokens] AS [r]
+WHERE [r].[UserId] = @user_Id AND ([r].[RevokedAt] IS NOT NULL OR [r].[ExpiresAt] <= GETUTCDATE())
+2026-02-18 22:14:53.281 +07:00 [INF] Executed DbCommand (93ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([CreatedAt], [ExpiresAt], [ReplacedByToken], [RevokedAt], [Token], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2026-02-18 22:14:53.374 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-18 22:14:53.395 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.AuthResponseDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 22:14:53.452 +07:00 [INF] Executed action TechStore.API.Controllers.AuthController.Login (TechStore.API) in 1448.0028ms
+2026-02-18 22:14:53.454 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.AuthController.Login (TechStore.API)'
+2026-02-18 22:14:53.465 +07:00 [INF] HTTP POST /api/auth/login responded 200 in 1575.7268 ms
+2026-02-18 22:14:53.482 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/auth/login - 200 null application/json; charset=utf-8 1720.1662ms
+2026-02-18 22:14:54.090 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/orders - application/json 125
+2026-02-18 22:14:54.205 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.OrdersController.Create (TechStore.API)'
+2026-02-18 22:14:54.219 +07:00 [INF] Route matched with {action = "Create", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.OrderDto]]] Create(TechStore.Shared.DTOs.CreateOrderDto) on controller TechStore.API.Controllers.OrdersController (TechStore.API).
+2026-02-18 22:14:54.227 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-02-18 22:14:54.511 +07:00 [INF] Executed DbCommand (39ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-18 22:14:54.882 +07:00 [INF] Executed DbCommand (22ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (Size = 450), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 450), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (DbType = DateTime2), @p12='?' (Size = 450), @p25='?' (DbType = Int32), @p13='?' (Size = 450), @p14='?' (DbType = Int32), @p15='?' (DbType = DateTime2), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (DbType = Int32), @p19='?' (Size = 4000), @p20='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p26='?' (Size = 8) (DbType = Binary), @p21='?' (Size = 450), @p22='?' (Size = 4000), @p23='?' (DbType = Int32), @p24='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([CouponCode], [CreatedAt], [DiscountAmount], [Note], [OrderDate], [PaymentMethod], [PaymentStatus], [PhoneNumber], [ShippingAddress], [Status], [TotalAmount], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id], INSERTED.[RowVersion]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+UPDATE [Products] SET [Brand] = @p13, [CategoryId] = @p14, [CreatedAt] = @p15, [Description] = @p16, [IsActive] = @p17, [LowStockThreshold] = @p18, [Name] = @p19, [Price] = @p20, [Slug] = @p21, [Specifications] = @p22, [StockQuantity] = @p23, [UpdatedAt] = @p24
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p25 AND [RowVersion] = @p26;
+2026-02-18 22:14:54.910 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[@p27='?' (DbType = DateTime2), @p28='?' (DbType = Int32), @p29='?' (DbType = Int32), @p30='?' (DbType = Int32), @p31='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p32='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [OrderItems] ([CreatedAt], [OrderId], [ProductId], [Quantity], [UnitPrice], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p27, @p28, @p29, @p30, @p31, @p32);
+2026-02-18 22:14:55.250 +07:00 [INF] Executing CreatedAtActionResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.OrderDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 22:14:55.306 +07:00 [INF] Executed action TechStore.API.Controllers.OrdersController.Create (TechStore.API) in 1085.6508ms
+2026-02-18 22:14:55.307 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.OrdersController.Create (TechStore.API)'
+2026-02-18 22:14:55.307 +07:00 [INF] HTTP POST /api/orders responded 201 in 1213.1511 ms
+2026-02-18 22:14:55.310 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/orders - 201 null application/json; charset=utf-8 1219.4384ms
+2026-02-18 22:14:55.554 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/payments/create-payment-url - application/json 60
+2026-02-18 22:14:55.566 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.PaymentsController.CreatePaymentUrl (TechStore.API)'
+2026-02-18 22:14:55.584 +07:00 [INF] Route matched with {action = "CreatePaymentUrl", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.String]]] CreatePaymentUrl(TechStore.Shared.DTOs.PaymentRequestDto) on controller TechStore.API.Controllers.PaymentsController (TechStore.API).
+2026-02-18 22:14:55.669 +07:00 [INF] Executed DbCommand (25ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CouponCode], [o].[CreatedAt], [o].[DiscountAmount], [o].[Note], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PhoneNumber], [o].[RowVersion], [o].[ShippingAddress], [o].[Status], [o].[TotalAmount], [o].[UpdatedAt], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Id] = @p
+2026-02-18 22:14:55.780 +07:00 [INF] Executed DbCommand (28ms) [Parameters=[@p13='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (Size = 450), @p7='?' (Size = 4000), @p14='?' (Size = 8) (DbType = Binary), @p8='?' (Size = 4000), @p9='?' (Size = 450), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (DbType = DateTime2), @p12='?' (Size = 450), @p15='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = DateTime2), @p20='?' (DbType = Int32), @p21='?' (DbType = DateTime2), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (Size = 4000), @p25='?' (Size = 4000), @p26='?' (Size = 450), @p27='?' (Size = 450), @p28='?' (DbType = DateTime2), @p29='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Orders] SET [CouponCode] = @p0, [CreatedAt] = @p1, [DiscountAmount] = @p2, [Note] = @p3, [OrderDate] = @p4, [PaymentMethod] = @p5, [PaymentStatus] = @p6, [PhoneNumber] = @p7, [ShippingAddress] = @p8, [Status] = @p9, [TotalAmount] = @p10, [UpdatedAt] = @p11, [UserId] = @p12
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p13 AND [RowVersion] = @p14;
+INSERT INTO [Payments] ([Amount], [BankCode], [BankTranNo], [CardType], [CreatedAt], [OrderId], [PaidAt], [PaymentInfo], [PaymentMethod], [ResponseCode], [ResponseMessage], [Status], [TransactionId], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id], INSERTED.[RowVersion]
+VALUES (@p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29);
+2026-02-18 22:14:55.799 +07:00 [INF] VNPAY URL created for Order #2008, TxnRef: 2008_20260218221455
+2026-02-18 22:14:55.800 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 22:14:55.801 +07:00 [INF] Executed action TechStore.API.Controllers.PaymentsController.CreatePaymentUrl (TechStore.API) in 217.679ms
+2026-02-18 22:14:55.802 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.PaymentsController.CreatePaymentUrl (TechStore.API)'
+2026-02-18 22:14:55.802 +07:00 [INF] HTTP POST /api/payments/create-payment-url responded 200 in 244.6317 ms
+2026-02-18 22:14:55.802 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/payments/create-payment-url - 200 null application/json; charset=utf-8 247.8491ms
+2026-02-18 22:14:55.807 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[@p='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @p
+2026-02-18 22:14:55.812 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CouponCode], [o].[CreatedAt], [o].[DiscountAmount], [o].[Note], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PhoneNumber], [o].[RowVersion], [o].[ShippingAddress], [o].[Status], [o].[TotalAmount], [o].[UpdatedAt], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Id] = @p
+2026-02-18 22:14:55.821 +07:00 [WRN] SMTP not configured, skipping email to testpay@test.com: TechStore - Order #2008 Confirmed!
+2026-02-18 22:19:09.162 +07:00 [INF] 1 servers were removed due to timeout
+2026-02-18 22:25:04.188 +07:00 [INF] Start installing Hangfire SQL objects...
+2026-02-18 22:25:08.710 +07:00 [INF] Hangfire SQL objects installed.
+2026-02-18 22:25:09.459 +07:00 [INF] User profile is available. Using 'C:\Users\maiti\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-18 22:25:12.041 +07:00 [INF] Executed DbCommand (44ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 22:25:12.221 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 22:25:12.250 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-18 22:25:12.484 +07:00 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-18 22:25:12.700 +07:00 [INF] Now listening on: http://localhost:5019
+2026-02-18 22:25:12.712 +07:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: (localdb)\mssqllocaldb@TechStoreDb'
+2026-02-18 22:25:12.713 +07:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-02-18 22:25:12.713 +07:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-02-18 22:25:12.804 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-18 22:25:12.805 +07:00 [INF] Hosting environment: Development
+2026-02-18 22:25:12.805 +07:00 [INF] Content root path: C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.API
+2026-02-18 22:25:13.075 +07:00 [INF] Server desktop-gde40bi:9000:68e3ed4a successfully announced in 236.7492 ms
+2026-02-18 22:25:13.079 +07:00 [INF] Server desktop-gde40bi:9000:68e3ed4a is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-02-18 22:25:13.270 +07:00 [INF] Server desktop-gde40bi:9000:68e3ed4a all the dispatchers started
+2026-02-18 22:26:44.850 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/auth/login - application/json 46
+2026-02-18 22:26:44.982 +07:00 [WRN] Failed to determine the https port for redirect.
+2026-02-18 22:26:45.243 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.AuthController.Login (TechStore.API)'
+2026-02-18 22:26:45.285 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.AuthResponseDto]]] Login(TechStore.Shared.DTOs.LoginDto) on controller TechStore.API.Controllers.AuthController (TechStore.API).
+2026-02-18 22:26:45.527 +07:00 [INF] Executed DbCommand (35ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-18 22:26:45.831 +07:00 [INF] Executed DbCommand (14ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-18 22:26:45.979 +07:00 [INF] Executed DbCommand (62ms) [Parameters=[@user_Id='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedAt], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[Token], [r].[UpdatedAt], [r].[UserId]
+FROM [RefreshTokens] AS [r]
+WHERE [r].[UserId] = @user_Id AND ([r].[RevokedAt] IS NOT NULL OR [r].[ExpiresAt] <= GETUTCDATE())
+2026-02-18 22:26:46.279 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([CreatedAt], [ExpiresAt], [ReplacedByToken], [RevokedAt], [Token], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2026-02-18 22:26:46.347 +07:00 [INF] Executed DbCommand (24ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-18 22:26:46.359 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.AuthResponseDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 22:26:46.425 +07:00 [INF] Executed action TechStore.API.Controllers.AuthController.Login (TechStore.API) in 1132.7245ms
+2026-02-18 22:26:46.427 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.AuthController.Login (TechStore.API)'
+2026-02-18 22:26:46.433 +07:00 [INF] HTTP POST /api/auth/login responded 200 in 1455.4357 ms
+2026-02-18 22:26:46.457 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/auth/login - 200 null application/json; charset=utf-8 1609.133ms
+2026-02-18 22:26:46.924 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/orders - application/json 125
+2026-02-18 22:26:47.024 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.OrdersController.Create (TechStore.API)'
+2026-02-18 22:26:47.037 +07:00 [INF] Route matched with {action = "Create", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.OrderDto]]] Create(TechStore.Shared.DTOs.CreateOrderDto) on controller TechStore.API.Controllers.OrdersController (TechStore.API).
+2026-02-18 22:26:47.042 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-02-18 22:26:47.282 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-18 22:26:47.621 +07:00 [INF] Executed DbCommand (20ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (Size = 450), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 450), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (DbType = DateTime2), @p12='?' (Size = 450), @p25='?' (DbType = Int32), @p13='?' (Size = 450), @p14='?' (DbType = Int32), @p15='?' (DbType = DateTime2), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (DbType = Int32), @p19='?' (Size = 4000), @p20='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p26='?' (Size = 8) (DbType = Binary), @p21='?' (Size = 450), @p22='?' (Size = 4000), @p23='?' (DbType = Int32), @p24='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([CouponCode], [CreatedAt], [DiscountAmount], [Note], [OrderDate], [PaymentMethod], [PaymentStatus], [PhoneNumber], [ShippingAddress], [Status], [TotalAmount], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id], INSERTED.[RowVersion]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+UPDATE [Products] SET [Brand] = @p13, [CategoryId] = @p14, [CreatedAt] = @p15, [Description] = @p16, [IsActive] = @p17, [LowStockThreshold] = @p18, [Name] = @p19, [Price] = @p20, [Slug] = @p21, [Specifications] = @p22, [StockQuantity] = @p23, [UpdatedAt] = @p24
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p25 AND [RowVersion] = @p26;
+2026-02-18 22:26:47.640 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@p27='?' (DbType = DateTime2), @p28='?' (DbType = Int32), @p29='?' (DbType = Int32), @p30='?' (DbType = Int32), @p31='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p32='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [OrderItems] ([CreatedAt], [OrderId], [ProductId], [Quantity], [UnitPrice], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p27, @p28, @p29, @p30, @p31, @p32);
+2026-02-18 22:26:47.958 +07:00 [INF] Executing CreatedAtActionResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.OrderDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 22:26:48.012 +07:00 [INF] Executed action TechStore.API.Controllers.OrdersController.Create (TechStore.API) in 974.4024ms
+2026-02-18 22:26:48.012 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.OrdersController.Create (TechStore.API)'
+2026-02-18 22:26:48.012 +07:00 [INF] HTTP POST /api/orders responded 201 in 1085.2928 ms
+2026-02-18 22:26:48.014 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/orders - 201 null application/json; charset=utf-8 1089.8267ms
+2026-02-18 22:26:48.082 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/payments/create-payment-url - application/json 60
+2026-02-18 22:26:48.095 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.PaymentsController.CreatePaymentUrl (TechStore.API)'
+2026-02-18 22:26:48.108 +07:00 [INF] Route matched with {action = "CreatePaymentUrl", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.String]]] CreatePaymentUrl(TechStore.Shared.DTOs.PaymentRequestDto) on controller TechStore.API.Controllers.PaymentsController (TechStore.API).
+2026-02-18 22:26:48.212 +07:00 [INF] Executed DbCommand (47ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CouponCode], [o].[CreatedAt], [o].[DiscountAmount], [o].[Note], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PhoneNumber], [o].[RowVersion], [o].[ShippingAddress], [o].[Status], [o].[TotalAmount], [o].[UpdatedAt], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Id] = @p
+2026-02-18 22:26:48.439 +07:00 [INF] Executed DbCommand (141ms) [Parameters=[@p13='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (Size = 450), @p7='?' (Size = 4000), @p14='?' (Size = 8) (DbType = Binary), @p8='?' (Size = 4000), @p9='?' (Size = 450), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (DbType = DateTime2), @p12='?' (Size = 450), @p15='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = DateTime2), @p20='?' (DbType = Int32), @p21='?' (DbType = DateTime2), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (Size = 4000), @p25='?' (Size = 4000), @p26='?' (Size = 450), @p27='?' (Size = 450), @p28='?' (DbType = DateTime2), @p29='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Orders] SET [CouponCode] = @p0, [CreatedAt] = @p1, [DiscountAmount] = @p2, [Note] = @p3, [OrderDate] = @p4, [PaymentMethod] = @p5, [PaymentStatus] = @p6, [PhoneNumber] = @p7, [ShippingAddress] = @p8, [Status] = @p9, [TotalAmount] = @p10, [UpdatedAt] = @p11, [UserId] = @p12
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p13 AND [RowVersion] = @p14;
+INSERT INTO [Payments] ([Amount], [BankCode], [BankTranNo], [CardType], [CreatedAt], [OrderId], [PaidAt], [PaymentInfo], [PaymentMethod], [ResponseCode], [ResponseMessage], [Status], [TransactionId], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id], INSERTED.[RowVersion]
+VALUES (@p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29);
+2026-02-18 22:26:48.460 +07:00 [INF] VNPAY URL created for Order #2009, TxnRef: 2009_20260218222648
+2026-02-18 22:26:48.461 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 22:26:48.463 +07:00 [INF] Executed action TechStore.API.Controllers.PaymentsController.CreatePaymentUrl (TechStore.API) in 354.9131ms
+2026-02-18 22:26:48.463 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.PaymentsController.CreatePaymentUrl (TechStore.API)'
+2026-02-18 22:26:48.463 +07:00 [INF] HTTP POST /api/payments/create-payment-url responded 200 in 379.2745 ms
+2026-02-18 22:26:48.463 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/payments/create-payment-url - 200 null application/json; charset=utf-8 381.0885ms
+2026-02-18 22:26:48.523 +07:00 [INF] Executed DbCommand (41ms) [Parameters=[@p='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @p
+2026-02-18 22:26:48.529 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CouponCode], [o].[CreatedAt], [o].[DiscountAmount], [o].[Note], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PhoneNumber], [o].[RowVersion], [o].[ShippingAddress], [o].[Status], [o].[TotalAmount], [o].[UpdatedAt], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Id] = @p
+2026-02-18 22:26:48.539 +07:00 [WRN] SMTP not configured, skipping email to testpay@test.com: TechStore - Order #2009 Confirmed!
+2026-02-18 22:30:13.157 +07:00 [INF] 1 servers were removed due to timeout
+2026-02-18 22:44:12.184 +07:00 [INF] Start installing Hangfire SQL objects...
+2026-02-18 22:44:14.981 +07:00 [INF] Hangfire SQL objects installed.
+2026-02-18 22:44:15.652 +07:00 [INF] User profile is available. Using 'C:\Users\maiti\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-18 22:44:18.141 +07:00 [INF] Executed DbCommand (50ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 22:44:18.374 +07:00 [INF] Executed DbCommand (55ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 22:44:18.509 +07:00 [INF] Executed DbCommand (108ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-18 22:44:18.678 +07:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-18 22:44:18.889 +07:00 [INF] Now listening on: http://localhost:5019
+2026-02-18 22:44:18.901 +07:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: (localdb)\mssqllocaldb@TechStoreDb'
+2026-02-18 22:44:18.901 +07:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-02-18 22:44:18.902 +07:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-02-18 22:44:18.934 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-18 22:44:18.935 +07:00 [INF] Hosting environment: Development
+2026-02-18 22:44:18.935 +07:00 [INF] Content root path: C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.API
+2026-02-18 22:44:19.144 +07:00 [INF] Server desktop-gde40bi:13256:b22b31d1 successfully announced in 208.7449 ms
+2026-02-18 22:44:19.152 +07:00 [INF] Server desktop-gde40bi:13256:b22b31d1 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-02-18 22:44:19.417 +07:00 [INF] Server desktop-gde40bi:13256:b22b31d1 all the dispatchers started
+2026-02-18 22:45:25.133 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/auth/login - application/json 46
+2026-02-18 22:45:25.286 +07:00 [WRN] Failed to determine the https port for redirect.
+2026-02-18 22:45:25.363 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.AuthController.Login (TechStore.API)'
+2026-02-18 22:45:25.407 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.AuthResponseDto]]] Login(TechStore.Shared.DTOs.LoginDto) on controller TechStore.API.Controllers.AuthController (TechStore.API).
+2026-02-18 22:45:25.650 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-18 22:45:25.941 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-18 22:45:26.139 +07:00 [INF] Executed DbCommand (58ms) [Parameters=[@user_Id='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedAt], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[Token], [r].[UpdatedAt], [r].[UserId]
+FROM [RefreshTokens] AS [r]
+WHERE [r].[UserId] = @user_Id AND ([r].[RevokedAt] IS NOT NULL OR [r].[ExpiresAt] <= GETUTCDATE())
+2026-02-18 22:45:26.504 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([CreatedAt], [ExpiresAt], [ReplacedByToken], [RevokedAt], [Token], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2026-02-18 22:45:26.540 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-18 22:45:26.549 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.AuthResponseDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 22:45:26.597 +07:00 [INF] Executed action TechStore.API.Controllers.AuthController.Login (TechStore.API) in 1182.7352ms
+2026-02-18 22:45:26.598 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.AuthController.Login (TechStore.API)'
+2026-02-18 22:45:26.604 +07:00 [INF] HTTP POST /api/auth/login responded 200 in 1324.6248 ms
+2026-02-18 22:45:26.624 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/auth/login - 200 null application/json; charset=utf-8 1492.3877ms
+2026-02-18 22:45:27.207 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/orders - application/json 125
+2026-02-18 22:45:27.319 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.OrdersController.Create (TechStore.API)'
+2026-02-18 22:45:27.332 +07:00 [INF] Route matched with {action = "Create", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.OrderDto]]] Create(TechStore.Shared.DTOs.CreateOrderDto) on controller TechStore.API.Controllers.OrdersController (TechStore.API).
+2026-02-18 22:45:27.336 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-02-18 22:45:27.909 +07:00 [INF] Executed DbCommand (329ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-18 22:45:28.271 +07:00 [INF] Executed DbCommand (23ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (Size = 450), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 450), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (DbType = DateTime2), @p12='?' (Size = 450), @p25='?' (DbType = Int32), @p13='?' (Size = 450), @p14='?' (DbType = Int32), @p15='?' (DbType = DateTime2), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (DbType = Int32), @p19='?' (Size = 4000), @p20='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p26='?' (Size = 8) (DbType = Binary), @p21='?' (Size = 450), @p22='?' (Size = 4000), @p23='?' (DbType = Int32), @p24='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([CouponCode], [CreatedAt], [DiscountAmount], [Note], [OrderDate], [PaymentMethod], [PaymentStatus], [PhoneNumber], [ShippingAddress], [Status], [TotalAmount], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id], INSERTED.[RowVersion]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+UPDATE [Products] SET [Brand] = @p13, [CategoryId] = @p14, [CreatedAt] = @p15, [Description] = @p16, [IsActive] = @p17, [LowStockThreshold] = @p18, [Name] = @p19, [Price] = @p20, [Slug] = @p21, [Specifications] = @p22, [StockQuantity] = @p23, [UpdatedAt] = @p24
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p25 AND [RowVersion] = @p26;
+2026-02-18 22:45:28.289 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@p27='?' (DbType = DateTime2), @p28='?' (DbType = Int32), @p29='?' (DbType = Int32), @p30='?' (DbType = Int32), @p31='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p32='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [OrderItems] ([CreatedAt], [OrderId], [ProductId], [Quantity], [UnitPrice], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p27, @p28, @p29, @p30, @p31, @p32);
+2026-02-18 22:45:28.564 +07:00 [INF] Executing CreatedAtActionResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.OrderDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-18 22:45:28.614 +07:00 [INF] Executed action TechStore.API.Controllers.OrdersController.Create (TechStore.API) in 1282.5438ms
+2026-02-18 22:45:28.614 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.OrdersController.Create (TechStore.API)'
+2026-02-18 22:45:28.615 +07:00 [INF] HTTP POST /api/orders responded 201 in 1403.8771 ms
+2026-02-18 22:45:28.616 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/orders - 201 null application/json; charset=utf-8 1408.2255ms
+2026-02-18 22:45:28.778 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/payments/create-payment-url - application/json 60
+2026-02-18 22:45:28.791 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.PaymentsController.CreatePaymentUrl (TechStore.API)'
+2026-02-18 22:45:28.804 +07:00 [INF] Route matched with {action = "CreatePaymentUrl", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.String]]] CreatePaymentUrl(TechStore.Shared.DTOs.PaymentRequestDto) on controller TechStore.API.Controllers.PaymentsController (TechStore.API).
+2026-02-18 22:45:28.914 +07:00 [INF] Executed DbCommand (68ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CouponCode], [o].[CreatedAt], [o].[DiscountAmount], [o].[Note], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PhoneNumber], [o].[RowVersion], [o].[ShippingAddress], [o].[Status], [o].[TotalAmount], [o].[UpdatedAt], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Id] = @p
+2026-02-18 22:45:29.031 +07:00 [INF] Executed DbCommand (23ms) [Parameters=[@p13='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (Size = 450), @p7='?' (Size = 4000), @p14='?' (Size = 8) (DbType = Binary), @p8='?' (Size = 4000), @p9='?' (Size = 450), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (DbType = DateTime2), @p12='?' (Size = 450), @p15='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = DateTime2), @p20='?' (DbType = Int32), @p21='?' (DbType = DateTime2), @p22='?' (Size = 4000), @p23='?' (Size = 4000), @p24='?' (Size = 4000), @p25='?' (Size = 4000), @p26='?' (Size = 450), @p27='?' (Size = 450), @p28='?' (DbType = DateTime2), @p29='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Orders] SET [CouponCode] = @p0, [CreatedAt] = @p1, [DiscountAmount] = @p2, [Note] = @p3, [OrderDate] = @p4, [PaymentMethod] = @p5, [PaymentStatus] = @p6, [PhoneNumber] = @p7, [ShippingAddress] = @p8, [Status] = @p9, [TotalAmount] = @p10, [UpdatedAt] = @p11, [UserId] = @p12
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p13 AND [RowVersion] = @p14;
+INSERT INTO [Payments] ([Amount], [BankCode], [BankTranNo], [CardType], [CreatedAt], [OrderId], [PaidAt], [PaymentInfo], [PaymentMethod], [ResponseCode], [ResponseMessage], [Status], [TransactionId], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id], INSERTED.[RowVersion]
+VALUES (@p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29);
+2026-02-18 22:45:29.047 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[@p='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @p
+2026-02-18 22:45:29.051 +07:00 [INF] VNPAY URL created for Order #2010, TxnRef: 2010_20260218224529
+2026-02-18 22:45:29.051 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-18 22:45:29.053 +07:00 [INF] Executed action TechStore.API.Controllers.PaymentsController.CreatePaymentUrl (TechStore.API) in 249.2836ms
+2026-02-18 22:45:29.053 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.PaymentsController.CreatePaymentUrl (TechStore.API)'
+2026-02-18 22:45:29.053 +07:00 [INF] HTTP POST /api/payments/create-payment-url responded 200 in 272.9405 ms
+2026-02-18 22:45:29.054 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/payments/create-payment-url - 200 null application/json; charset=utf-8 275.4435ms
+2026-02-18 22:45:29.060 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CouponCode], [o].[CreatedAt], [o].[DiscountAmount], [o].[Note], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PhoneNumber], [o].[RowVersion], [o].[ShippingAddress], [o].[Status], [o].[TotalAmount], [o].[UpdatedAt], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Id] = @p
+2026-02-18 22:45:29.072 +07:00 [WRN] SMTP not configured, skipping email to testpay@test.com: TechStore - Order #2010 Confirmed!
+2026-02-18 22:49:19.181 +07:00 [INF] 1 servers were removed due to timeout
+2026-02-18 23:02:32.521 +07:00 [INF] Start installing Hangfire SQL objects...
+2026-02-18 23:02:36.290 +07:00 [INF] Hangfire SQL objects installed.
+2026-02-18 23:02:37.009 +07:00 [INF] User profile is available. Using 'C:\Users\maiti\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-18 23:02:40.459 +07:00 [INF] Executed DbCommand (142ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 23:02:40.856 +07:00 [INF] Executed DbCommand (203ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-18 23:02:40.903 +07:00 [INF] Executed DbCommand (14ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-18 23:02:41.186 +07:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-18 23:02:41.537 +07:00 [INF] Now listening on: http://localhost:5019
+2026-02-18 23:02:41.550 +07:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: (localdb)\mssqllocaldb@TechStoreDb'
+2026-02-18 23:02:41.550 +07:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-02-18 23:02:41.550 +07:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-02-18 23:02:41.766 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-18 23:02:41.767 +07:00 [INF] Hosting environment: Development
+2026-02-18 23:02:41.767 +07:00 [INF] Content root path: C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.API
+2026-02-18 23:02:42.110 +07:00 [INF] Server desktop-gde40bi:13512:aa85d484 successfully announced in 362.8013 ms
+2026-02-18 23:02:42.117 +07:00 [INF] Server desktop-gde40bi:13512:aa85d484 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-02-18 23:02:42.343 +07:00 [INF] Server desktop-gde40bi:13512:aa85d484 all the dispatchers started

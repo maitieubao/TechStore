@@ -1,0 +1,262 @@
+@model TechStore.Web.Models.ViewModels.ProductDetailVM
+@{
+    ViewData["Title"] = Model.Product.Name;
+}
+
+<div class="container py-4">
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb small bg-darker px-3 py-2 rounded-pill d-inline-flex shadow-sm border border-secondary border-opacity-25">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index" class="text-secondary text-decoration-none hover-white"><i class="bi bi-house me-1"></i>Trang chủ</a></li>
+            <li class="breadcrumb-item"><a asp-controller="Product" asp-action="Index" class="text-secondary text-decoration-none hover-white">Sản phẩm</a></li>
+            <li class="breadcrumb-item">
+                <a asp-controller="Product" asp-action="Index" asp-route-categoryId="@Model.Product.CategoryId" class="text-secondary text-decoration-none hover-white">@Model.Product.CategoryName</a>
+            </li>
+            <li class="breadcrumb-item active text-white fw-medium" aria-current="page">@Model.Product.Name</li>
+        </ol>
+    </nav>
+
+        <!-- Image Gallery -->
+        <div class="col-lg-5">
+            <div class="card border-0 bg-darker rounded-4 overflow-hidden mb-3 shadow-sm group">
+                <div class="card-body d-flex align-items-center justify-content-center p-4 bg-dark bg-opacity-50" style="aspect-ratio: 1;">
+                    <img id="mainImage" src="@(Model.Product.ImageUrls.FirstOrDefault() ?? "/images/no-image.png")" 
+                         alt="@Model.Product.Name" class="img-fluid transition-transform group-hover-scale" style="object-fit: contain; max-height: 100%; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));" />
+                </div>
+            </div>
+            
+            @if (Model.Product.ImageUrls?.Count > 1)
+            {
+                <div class="d-flex gap-2 overflow-auto py-2" style="scrollbar-width: none;">
+                    @foreach (var imgUrl in Model.Product.ImageUrls)
+                    {
+                        <div class="border border-secondary rounded-3 bg-dark p-1 cursor-pointer thumbnail-container hover-border-primary transition-colors" 
+                             style="width: 80px; height: 80px; flex-shrink: 0;"
+                             onclick="document.getElementById('mainImage').src='@imgUrl'">
+                            <img src="@imgUrl" class="w-100 h-100 rounded-2" style="object-fit: contain;" />
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+
+        <!-- Info -->
+        <div class="col-lg-7">
+            <!-- ... existing info ... -->
+            <small class="text-info fw-semibold text-uppercase" style="letter-spacing: 0.5px;">@Model.Product.CategoryName</small>
+            <h1 class="h3 fw-bold mt-1">@Model.Product.Name</h1>
+
+            <!-- Rating -->
+            @if (Model.Reviews.Any())
+            {
+                var avg = Model.Reviews.Average(r => r.Rating);
+                <div class="d-flex align-items-center gap-2 my-2">
+                    <span class="text-warning">
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            <i class="bi @(i <= avg ? "bi-star-fill" : "bi-star")"></i>
+                        }
+                    </span>
+                    <span class="text-secondary small">(@Model.Reviews.Count đánh giá)</span>
+                </div>
+            }
+
+            @if (Model.Product.IsCombo)
+            {
+                <div class="mb-3">
+                    <span class="badge bg-warning bg-opacity-25 text-warning border border-warning border-opacity-50 px-3 py-2 rounded-pill fw-bold">
+                        <i class="bi bi-gift me-1"></i> DEAL COMBO TIẾT KIỆM
+                    </span>
+                </div>
+            }
+
+            <div class="d-flex align-items-center gap-3 my-3">
+                <span class="text-price display-6 fw-bold">@Model.Product.Price.ToString("N0") ₫</span>
+                @if (Model.Product.IsCombo && Model.Product.OriginalPrice.HasValue && Model.Product.OriginalPrice > Model.Product.Price)
+                {
+                    <span class="text-secondary text-decoration-line-through fs-4 pt-2">@Model.Product.OriginalPrice.Value.ToString("N0") ₫</span>
+                    <span class="badge bg-danger rounded-pill px-2 py-1 small">
+                        -@(Math.Round(((Model.Product.OriginalPrice.Value - Model.Product.Price) / Model.Product.OriginalPrice.Value) * 100))%
+                    </span>
+                }
+            </div>
+
+            <p class="text-secondary mb-4 lh-lg">@Model.Product.Description</p>
+
+            <!-- Specs -->
+            <div class="card border-0 bg-darker rounded-4 shadow-sm">
+                <div class="card-body p-0">
+                    <table class="table table-dark table-borderless table-hover mb-0 align-middle">
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #2d3240;">
+                                <td class="text-secondary fw-semibold ps-4 py-3" style="width: 150px;"><i class="bi bi-tag me-2"></i>Thương hiệu</td>
+                                <td class="text-white pe-4">@Model.Product.Brand</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #2d3240;">
+                                <td class="text-secondary fw-semibold ps-4 py-3"><i class="bi bi-box-seam me-2"></i>Tình trạng</td>
+                                <td class="pe-4">
+                                    @if (Model.Product.StockQuantity > 0)
+                                    {
+                                        <span class="badge bg-success-subtle text-success rounded-pill px-3"><i class="bi bi-check-circle me-1"></i> Còn hàng (@Model.Product.StockQuantity)</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-danger-subtle text-danger rounded-pill px-3"><i class="bi bi-x-circle me-1"></i> Hết hàng</span>
+                                    }
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-secondary fw-semibold ps-4 py-3 align-top"><i class="bi bi-cpu me-2"></i>Thông số</td>
+                                <td class="text-white pe-4 py-3">@(Model.Product.Specifications ?? "Đang cập nhật")</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Add to Cart -->
+            @if (Model.Product.StockQuantity > 0)
+            {
+                <form asp-area="User" asp-controller="Cart" asp-action="Add" method="post" class="mt-4">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="productId" value="@Model.Product.Id" />
+                    <div class="d-flex gap-3 align-items-center bg-darker p-3 rounded-4 shadow-sm border border-secondary border-opacity-25 mt-4">
+                        <div class="input-group" style="width: 140px;">
+                            <button class="btn btn-dark border-secondary hover-primary transition-colors" type="button" onclick="changeQty(-1)"><i class="bi bi-dash"></i></button>
+                            <input type="number" name="quantity" id="qtyInput" value="1" min="1" max="@Model.Product.StockQuantity"
+                                   class="form-control bg-dark text-white border-secondary text-center fw-bold" />
+                            <button class="btn btn-dark border-secondary hover-primary transition-colors" type="button" onclick="changeQty(1)"><i class="bi bi-plus"></i></button>
+                        </div>
+                        <button type="submit" class="btn btn-gradient flex-grow-1 rounded-pill py-2 shadow-sm hover-lift">
+                            <i class="bi bi-cart-plus me-2 fs-5"></i> <span class="fw-semibold">Thêm vào giỏ</span>
+                        </button>
+                        <button type="button" class="btn btn-outline-danger wishlist-btn rounded-circle d-flex align-items-center justify-content-center hover-lift" 
+                                style="width: 45px; height: 45px;"
+                                data-id="@Model.Product.Id" 
+                                data-auth="@User.Identity?.IsAuthenticated.ToString().ToLower()"
+                                title="Thêm vào yêu thích">
+                            <i class="bi bi-heart fs-5"></i>
+                        </button>
+                    </div>
+                </form>
+            }
+        </div>
+    </div>
+
+    <!-- REVIEWS -->
+    <div class="mt-5">
+        <h4 class="fw-bold mb-3">
+            <i class="bi bi-chat-square-text"></i> Đánh giá (@Model.Reviews.Count)
+        </h4>
+
+        @if (Model.Reviews.Any())
+        {
+            <div class="mb-5">
+                @foreach (var review in Model.Reviews)
+                {
+                    <div class="card border-0 bg-darker rounded-4 mb-3 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 40px; height: 40px; font-size: 1.2rem;">
+                                        @(review.UserName.Substring(0, 1).ToUpper())
+                                    </div>
+                                    <div>
+                                        <strong class="d-block text-white">@review.UserName</strong>
+                                        <span class="text-warning small">
+                                            @for (int i = 1; i <= 5; i++)
+                                            {
+                                                <i class="bi @(i <= review.Rating ? "bi-star-fill" : "bi-star")"></i>
+                                            }
+                                        </span>
+                                    </div>
+                                </div>
+                                <small class="text-secondary"><i class="bi bi-clock me-1"></i> @review.CreatedAt.ToString("dd/MM/yyyy HH:mm")</small>
+                            </div>
+                            @if (!string.IsNullOrEmpty(review.Comment))
+                            {
+                                <p class="mb-0 mt-3 text-light" style="line-height: 1.6;">@review.Comment</p>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="text-center py-5 bg-darker rounded-4 mb-5">
+                <i class="bi bi-chat-square-text text-secondary display-4 mb-3"></i>
+                <p class="text-secondary mb-0">Chưa có đánh giá nào cho sản phẩm này.</p>
+            </div>
+        }
+
+        <!-- Add Review Form -->
+        @if (User.Identity?.IsAuthenticated ?? false)
+        {
+            <div class="card border-0 bg-darker rounded-4 shadow-sm">
+                <div class="card-body p-4">
+                    <h5 class="fw-bold text-white mb-3">Viết đánh giá của bạn</h5>
+                    <form asp-controller="Product" asp-action="Review" method="post">
+                        <input type="hidden" name="ProductId" value="@Model.Product.Id" />
+                        
+                        <div class="mb-3">
+                            <label class="form-label text-secondary small">Xếp hạng (1 - 5 sao)</label>
+                            <select name="Rating" class="form-select bg-dark text-white border-secondary w-auto" required>
+                                <option value="5" selected>5 - Tuyệt vời</option>
+                                <option value="4">4 - Rất tốt</option>
+                                <option value="3">3 - Bình thường</option>
+                                <option value="2">2 - Tệ</option>
+                                <option value="1">1 - Rất tệ</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label text-secondary small">Nội dung đánh giá</label>
+                            <textarea name="Comment" class="form-control bg-dark text-white border-secondary" rows="4" placeholder="Chia sẻ trải nghiệm của bạn về sản phẩm này..." required></textarea>
+                        </div>
+
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-primary px-4"><i class="bi bi-send me-2"></i>Gửi đánh giá</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="alert bg-darker border-secondary d-flex align-items-center mb-0 rounded-4">
+                <i class="bi bi-info-circle-fill text-info fs-4 me-3"></i>
+                <div>
+                    Vui lòng <a asp-controller="Account" asp-action="Login" asp-route-returnUrl="/product/@Model.Product.Slug" class="text-primary fw-bold text-decoration-none">Đăng nhập</a> để viết đánh giá.
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- RELATED -->
+    @if (Model.RelatedProducts.Any())
+    {
+        <div class="mt-5">
+            <h4 class="fw-bold mb-3">Sản phẩm liên quan</h4>
+            <div class="row g-3">
+                @foreach (var product in Model.RelatedProducts)
+                {
+                    <div class="col-6 col-md-3">
+                        @await Html.PartialAsync("_ProductCard", product)
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        function changeQty(delta) {
+            const input = document.getElementById('qtyInput');
+            let val = parseInt(input.value) + delta;
+            if (val < 1) val = 1;
+            if (val > parseInt(input.max)) val = parseInt(input.max);
+            input.value = val;
+        }
+    </script>
+}

@@ -1,0 +1,220 @@
+2026-02-20 10:47:04.351 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=8&sortBy=price&sortDescending=true - null null
+2026-02-20 10:47:04.748 +07:00 [WRN] Failed to determine the https port for redirect.
+2026-02-20 10:47:05.214 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/19/2026 1:38:09 PM', Current time (UTC): '2/20/2026 3:47:05 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-20 10:47:05.296 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/19/2026 1:38:09 PM', Current time (UTC): '2/20/2026 3:47:05 AM'.
+2026-02-20 10:47:05.316 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-20 10:47:05.483 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.PagedResultDto`1[TechStore.Shared.DTOs.ProductDto]]]] GetAll(TechStore.Shared.DTOs.ProductFilterDto) on controller TechStore.API.Controllers.ProductsController (TechStore.API).
+2026-02-20 10:47:05.516 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-02-20 10:47:06.599 +07:00 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+2026-02-20 10:47:07.072 +07:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-02-20 10:47:07.200 +07:00 [INF] Executed DbCommand (56ms) [Parameters=[@p='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[Brand], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[IsActive], [p0].[LowStockThreshold], [p0].[Name], [p0].[Price], [p0].[RowVersion], [p0].[Slug], [p0].[Specifications], [p0].[StockQuantity], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt], [p1].[Id], [p1].[CreatedAt], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[UpdatedAt], [r].[Id], [r].[Comment], [r].[CreatedAt], [r].[ProductId], [r].[Rating], [r].[UpdatedAt], [r].[UserId]
+FROM (
+    SELECT [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit)
+    ORDER BY [p].[Price] DESC
+    OFFSET @p ROWS FETCH NEXT @p1 ROWS ONLY
+) AS [p0]
+LEFT JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+LEFT JOIN [Reviews] AS [r] ON [p0].[Id] = [r].[ProductId]
+ORDER BY [p0].[Price] DESC, [p0].[Id], [c].[Id], [p1].[Id]
+2026-02-20 10:47:07.484 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.PagedResultDto`1[[TechStore.Shared.DTOs.ProductDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-20 10:47:07.612 +07:00 [INF] Executed action TechStore.API.Controllers.ProductsController.GetAll (TechStore.API) in 2113.0193ms
+2026-02-20 10:47:07.616 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-20 10:47:07.626 +07:00 [INF] HTTP GET /api/products responded 200 in 2905.0817 ms
+2026-02-20 10:47:07.637 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=8&sortBy=price&sortDescending=true - 200 null application/json; charset=utf-8 3297.0828ms
+2026-02-20 10:47:07.751 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=4&sortBy=newest&sortDescending=true - null null
+2026-02-20 10:47:07.838 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/19/2026 1:38:09 PM', Current time (UTC): '2/20/2026 3:47:07 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-20 10:47:07.845 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/19/2026 1:38:09 PM', Current time (UTC): '2/20/2026 3:47:07 AM'.
+2026-02-20 10:47:07.847 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-20 10:47:07.850 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.PagedResultDto`1[TechStore.Shared.DTOs.ProductDto]]]] GetAll(TechStore.Shared.DTOs.ProductFilterDto) on controller TechStore.API.Controllers.ProductsController (TechStore.API).
+2026-02-20 10:47:07.900 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+2026-02-20 10:47:07.939 +07:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-02-20 10:47:08.131 +07:00 [INF] Executed DbCommand (107ms) [Parameters=[@p='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[Brand], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[IsActive], [p0].[LowStockThreshold], [p0].[Name], [p0].[Price], [p0].[RowVersion], [p0].[Slug], [p0].[Specifications], [p0].[StockQuantity], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt], [p1].[Id], [p1].[CreatedAt], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[UpdatedAt], [r].[Id], [r].[Comment], [r].[CreatedAt], [r].[ProductId], [r].[Rating], [r].[UpdatedAt], [r].[UserId]
+FROM (
+    SELECT [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit)
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @p ROWS FETCH NEXT @p1 ROWS ONLY
+) AS [p0]
+LEFT JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+LEFT JOIN [Reviews] AS [r] ON [p0].[Id] = [r].[ProductId]
+ORDER BY [p0].[CreatedAt] DESC, [p0].[Id], [c].[Id], [p1].[Id]
+2026-02-20 10:47:08.197 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.PagedResultDto`1[[TechStore.Shared.DTOs.ProductDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-20 10:47:08.206 +07:00 [INF] Executed action TechStore.API.Controllers.ProductsController.GetAll (TechStore.API) in 348.9084ms
+2026-02-20 10:47:08.208 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-20 10:47:08.209 +07:00 [INF] HTTP GET /api/products responded 200 in 380.1351 ms
+2026-02-20 10:47:08.213 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=4&sortBy=newest&sortDescending=true - 200 null application/json; charset=utf-8 461.6394ms
+2026-02-20 10:47:08.250 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/categories - null null
+2026-02-20 10:47:08.272 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/19/2026 1:38:09 PM', Current time (UTC): '2/20/2026 3:47:08 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-20 10:47:08.279 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/19/2026 1:38:09 PM', Current time (UTC): '2/20/2026 3:47:08 AM'.
+2026-02-20 10:47:08.281 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API)'
+2026-02-20 10:47:08.297 +07:00 [INF] Route matched with {action = "GetAll", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.Collections.Generic.List`1[TechStore.Shared.DTOs.CategoryDto]]]] GetAll() on controller TechStore.API.Controllers.CategoriesController (TechStore.API).
+2026-02-20 10:47:08.339 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-02-20 10:47:08.348 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.Collections.Generic.List`1[[TechStore.Shared.DTOs.CategoryDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-20 10:47:08.360 +07:00 [INF] Executed action TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API) in 57.9519ms
+2026-02-20 10:47:08.362 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API)'
+2026-02-20 10:47:08.364 +07:00 [INF] HTTP GET /api/categories responded 200 in 101.0730 ms
+2026-02-20 10:47:08.366 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/categories - 200 null application/json; charset=utf-8 116.4303ms
+2026-02-20 10:47:08.874 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/wishlist - null null
+2026-02-20 10:47:08.879 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/19/2026 1:38:09 PM', Current time (UTC): '2/20/2026 3:47:08 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-20 10:47:08.889 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/19/2026 1:38:09 PM', Current time (UTC): '2/20/2026 3:47:08 AM'.
+2026-02-20 10:47:08.912 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-20 10:47:08.927 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-20 10:47:08.929 +07:00 [INF] HTTP GET /api/wishlist responded 401 in 49.8865 ms
+2026-02-20 10:47:08.932 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/wishlist - 401 0 null 58.1568ms
+2026-02-20 10:47:09.004 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/cart - null null
+2026-02-20 10:47:09.025 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/19/2026 1:38:09 PM', Current time (UTC): '2/20/2026 3:47:09 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-20 10:47:09.037 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/19/2026 1:38:09 PM', Current time (UTC): '2/20/2026 3:47:09 AM'.
+2026-02-20 10:47:09.043 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-20 10:47:09.046 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-20 10:47:09.048 +07:00 [INF] HTTP GET /api/cart responded 401 in 23.9505 ms
+2026-02-20 10:47:09.053 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/cart - 401 0 null 48.9314ms
+2026-02-20 10:58:52.986 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=8&sortBy=price&sortDescending=true - null null
+2026-02-20 10:58:52.996 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/19/2026 1:38:09 PM', Current time (UTC): '2/20/2026 3:58:52 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-20 10:58:53.004 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/19/2026 1:38:09 PM', Current time (UTC): '2/20/2026 3:58:52 AM'.
+2026-02-20 10:58:53.010 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-20 10:58:53.011 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.PagedResultDto`1[TechStore.Shared.DTOs.ProductDto]]]] GetAll(TechStore.Shared.DTOs.ProductFilterDto) on controller TechStore.API.Controllers.ProductsController (TechStore.API).
+2026-02-20 10:58:53.060 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+2026-02-20 10:58:53.132 +07:00 [INF] Executed DbCommand (64ms) [Parameters=[@p='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[Brand], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[IsActive], [p0].[LowStockThreshold], [p0].[Name], [p0].[Price], [p0].[RowVersion], [p0].[Slug], [p0].[Specifications], [p0].[StockQuantity], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt], [p1].[Id], [p1].[CreatedAt], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[UpdatedAt], [r].[Id], [r].[Comment], [r].[CreatedAt], [r].[ProductId], [r].[Rating], [r].[UpdatedAt], [r].[UserId]
+FROM (
+    SELECT [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit)
+    ORDER BY [p].[Price] DESC
+    OFFSET @p ROWS FETCH NEXT @p1 ROWS ONLY
+) AS [p0]
+LEFT JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+LEFT JOIN [Reviews] AS [r] ON [p0].[Id] = [r].[ProductId]
+ORDER BY [p0].[Price] DESC, [p0].[Id], [c].[Id], [p1].[Id]
+2026-02-20 10:58:53.166 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.PagedResultDto`1[[TechStore.Shared.DTOs.ProductDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-20 10:58:53.169 +07:00 [INF] Executed action TechStore.API.Controllers.ProductsController.GetAll (TechStore.API) in 154.7776ms
+2026-02-20 10:58:53.176 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-20 10:58:53.182 +07:00 [INF] HTTP GET /api/products responded 200 in 187.7553 ms
+2026-02-20 10:58:53.187 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=8&sortBy=price&sortDescending=true - 200 null application/json; charset=utf-8 200.5255ms
+2026-02-20 10:58:53.204 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=4&sortBy=newest&sortDescending=true - null null
+2026-02-20 10:58:53.213 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/19/2026 1:38:09 PM', Current time (UTC): '2/20/2026 3:58:53 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-20 10:58:53.228 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/19/2026 1:38:09 PM', Current time (UTC): '2/20/2026 3:58:53 AM'.
+2026-02-20 10:58:53.315 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-20 10:58:53.317 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.PagedResultDto`1[TechStore.Shared.DTOs.ProductDto]]]] GetAll(TechStore.Shared.DTOs.ProductFilterDto) on controller TechStore.API.Controllers.ProductsController (TechStore.API).
+2026-02-20 10:58:53.334 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+2026-02-20 10:58:53.368 +07:00 [INF] Executed DbCommand (15ms) [Parameters=[@p='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[Brand], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[IsActive], [p0].[LowStockThreshold], [p0].[Name], [p0].[Price], [p0].[RowVersion], [p0].[Slug], [p0].[Specifications], [p0].[StockQuantity], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt], [p1].[Id], [p1].[CreatedAt], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[UpdatedAt], [r].[Id], [r].[Comment], [r].[CreatedAt], [r].[ProductId], [r].[Rating], [r].[UpdatedAt], [r].[UserId]
+FROM (
+    SELECT [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit)
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @p ROWS FETCH NEXT @p1 ROWS ONLY
+) AS [p0]
+LEFT JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+LEFT JOIN [Reviews] AS [r] ON [p0].[Id] = [r].[ProductId]
+ORDER BY [p0].[CreatedAt] DESC, [p0].[Id], [c].[Id], [p1].[Id]
+2026-02-20 10:58:53.436 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.PagedResultDto`1[[TechStore.Shared.DTOs.ProductDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-20 10:58:53.443 +07:00 [INF] Executed action TechStore.API.Controllers.ProductsController.GetAll (TechStore.API) in 115.74ms
+2026-02-20 10:58:53.451 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-20 10:58:53.453 +07:00 [INF] HTTP GET /api/products responded 200 in 241.3456 ms
+2026-02-20 10:58:53.463 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=4&sortBy=newest&sortDescending=true - 200 null application/json; charset=utf-8 258.3656ms
+2026-02-20 10:58:53.466 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/categories - null null
+2026-02-20 10:58:53.476 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/19/2026 1:38:09 PM', Current time (UTC): '2/20/2026 3:58:53 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-20 10:58:53.481 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/19/2026 1:38:09 PM', Current time (UTC): '2/20/2026 3:58:53 AM'.
+2026-02-20 10:58:53.483 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API)'
+2026-02-20 10:58:53.484 +07:00 [INF] Route matched with {action = "GetAll", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.Collections.Generic.List`1[TechStore.Shared.DTOs.CategoryDto]]]] GetAll() on controller TechStore.API.Controllers.CategoriesController (TechStore.API).
+2026-02-20 10:58:53.492 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-02-20 10:58:53.498 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.Collections.Generic.List`1[[TechStore.Shared.DTOs.CategoryDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-20 10:58:53.503 +07:00 [INF] Executed action TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API) in 16.1545ms
+2026-02-20 10:58:53.515 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API)'
+2026-02-20 10:58:53.522 +07:00 [INF] HTTP GET /api/categories responded 200 in 46.0162 ms
+2026-02-20 10:58:53.545 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/categories - 200 null application/json; charset=utf-8 78.9738ms
+2026-02-20 10:58:53.581 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/wishlist - null null
+2026-02-20 10:58:53.609 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/19/2026 1:38:09 PM', Current time (UTC): '2/20/2026 3:58:53 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-20 10:58:53.614 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/19/2026 1:38:09 PM', Current time (UTC): '2/20/2026 3:58:53 AM'.
+2026-02-20 10:58:53.621 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-20 10:58:53.628 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-20 10:58:53.630 +07:00 [INF] HTTP GET /api/wishlist responded 401 in 21.7198 ms
+2026-02-20 10:58:53.634 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/wishlist - 401 0 null 53.6684ms
+2026-02-20 10:58:53.651 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/cart - null null
+2026-02-20 10:58:53.665 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/19/2026 1:38:09 PM', Current time (UTC): '2/20/2026 3:58:53 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-20 10:58:53.680 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/19/2026 1:38:09 PM', Current time (UTC): '2/20/2026 3:58:53 AM'.
+2026-02-20 10:58:53.683 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-20 10:58:53.685 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-20 10:58:53.686 +07:00 [INF] HTTP GET /api/cart responded 401 in 21.5557 ms
+2026-02-20 10:58:53.696 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/cart - 401 0 null 44.7784ms

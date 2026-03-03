@@ -1,0 +1,423 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6E289083-1446-E3E7-ABB0-F0264C5419DC}|src\\TechStore.API\\TechStore.API.csproj|c:\\users\\maiti\\onedrive\\desktop\\net\\techstore\\src\\techstore.api\\middlewares\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E289083-1446-E3E7-ABB0-F0264C5419DC}|src\\TechStore.API\\TechStore.API.csproj|solutionrelative:src\\techstore.api\\middlewares\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E289083-1446-E3E7-ABB0-F0264C5419DC}|src\\TechStore.API\\TechStore.API.csproj|c:\\users\\maiti\\onedrive\\desktop\\net\\techstore\\src\\techstore.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E289083-1446-E3E7-ABB0-F0264C5419DC}|src\\TechStore.API\\TechStore.API.csproj|solutionrelative:src\\techstore.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEADD601-58C8-5D0F-24ED-1DA10C9D9AAA}|src\\TechStore.Web\\TechStore.Web.csproj|c:\\users\\maiti\\onedrive\\desktop\\net\\techstore\\src\\techstore.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEADD601-58C8-5D0F-24ED-1DA10C9D9AAA}|src\\TechStore.Web\\TechStore.Web.csproj|solutionrelative:src\\techstore.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEADD601-58C8-5D0F-24ED-1DA10C9D9AAA}|src\\TechStore.Web\\TechStore.Web.csproj|c:\\users\\maiti\\onedrive\\desktop\\net\\techstore\\src\\techstore.web\\models\\viewmodels\\createproductvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEADD601-58C8-5D0F-24ED-1DA10C9D9AAA}|src\\TechStore.Web\\TechStore.Web.csproj|solutionrelative:src\\techstore.web\\models\\viewmodels\\createproductvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEADD601-58C8-5D0F-24ED-1DA10C9D9AAA}|src\\TechStore.Web\\TechStore.Web.csproj|c:\\users\\maiti\\onedrive\\desktop\\net\\techstore\\src\\techstore.web\\models\\viewmodels\\viewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEADD601-58C8-5D0F-24ED-1DA10C9D9AAA}|src\\TechStore.Web\\TechStore.Web.csproj|solutionrelative:src\\techstore.web\\models\\viewmodels\\viewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEADD601-58C8-5D0F-24ED-1DA10C9D9AAA}|src\\TechStore.Web\\TechStore.Web.csproj|c:\\users\\maiti\\onedrive\\desktop\\net\\techstore\\src\\techstore.web\\extensions\\extensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEADD601-58C8-5D0F-24ED-1DA10C9D9AAA}|src\\TechStore.Web\\TechStore.Web.csproj|solutionrelative:src\\techstore.web\\extensions\\extensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEADD601-58C8-5D0F-24ED-1DA10C9D9AAA}|src\\TechStore.Web\\TechStore.Web.csproj|c:\\users\\maiti\\onedrive\\desktop\\net\\techstore\\src\\techstore.web\\services\\apiservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEADD601-58C8-5D0F-24ED-1DA10C9D9AAA}|src\\TechStore.Web\\TechStore.Web.csproj|solutionrelative:src\\techstore.web\\services\\apiservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEADD601-58C8-5D0F-24ED-1DA10C9D9AAA}|src\\TechStore.Web\\TechStore.Web.csproj|c:\\users\\maiti\\onedrive\\desktop\\net\\techstore\\src\\techstore.web\\services\\interfaces\\iapiservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEADD601-58C8-5D0F-24ED-1DA10C9D9AAA}|src\\TechStore.Web\\TechStore.Web.csproj|solutionrelative:src\\techstore.web\\services\\interfaces\\iapiservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEADD601-58C8-5D0F-24ED-1DA10C9D9AAA}|src\\TechStore.Web\\TechStore.Web.csproj|c:\\users\\maiti\\onedrive\\desktop\\net\\techstore\\src\\techstore.web\\areas\\user\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEADD601-58C8-5D0F-24ED-1DA10C9D9AAA}|src\\TechStore.Web\\TechStore.Web.csproj|solutionrelative:src\\techstore.web\\areas\\user\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C05E2B9E-57A7-B3DC-FE83-3BC91846A09E}|src\\TechStore.Domain\\TechStore.Domain.csproj|c:\\users\\maiti\\onedrive\\desktop\\net\\techstore\\src\\techstore.domain\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C05E2B9E-57A7-B3DC-FE83-3BC91846A09E}|src\\TechStore.Domain\\TechStore.Domain.csproj|solutionrelative:src\\techstore.domain\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C05E2B9E-57A7-B3DC-FE83-3BC91846A09E}|src\\TechStore.Domain\\TechStore.Domain.csproj|c:\\users\\maiti\\onedrive\\desktop\\net\\techstore\\src\\techstore.domain\\entities\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C05E2B9E-57A7-B3DC-FE83-3BC91846A09E}|src\\TechStore.Domain\\TechStore.Domain.csproj|solutionrelative:src\\techstore.domain\\entities\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C05E2B9E-57A7-B3DC-FE83-3BC91846A09E}|src\\TechStore.Domain\\TechStore.Domain.csproj|c:\\users\\maiti\\onedrive\\desktop\\net\\techstore\\src\\techstore.domain\\entities\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C05E2B9E-57A7-B3DC-FE83-3BC91846A09E}|src\\TechStore.Domain\\TechStore.Domain.csproj|solutionrelative:src\\techstore.domain\\entities\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C05E2B9E-57A7-B3DC-FE83-3BC91846A09E}|src\\TechStore.Domain\\TechStore.Domain.csproj|c:\\users\\maiti\\onedrive\\desktop\\net\\techstore\\src\\techstore.domain\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C05E2B9E-57A7-B3DC-FE83-3BC91846A09E}|src\\TechStore.Domain\\TechStore.Domain.csproj|solutionrelative:src\\techstore.domain\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F701A54-BB0A-6A78-BAC8-2288D68411EB}|src\\TechStore.Infrastructure\\TechStore.Infrastructure.csproj|c:\\users\\maiti\\onedrive\\desktop\\net\\techstore\\src\\techstore.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F701A54-BB0A-6A78-BAC8-2288D68411EB}|src\\TechStore.Infrastructure\\TechStore.Infrastructure.csproj|solutionrelative:src\\techstore.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F701A54-BB0A-6A78-BAC8-2288D68411EB}|src\\TechStore.Infrastructure\\TechStore.Infrastructure.csproj|c:\\users\\maiti\\onedrive\\desktop\\net\\techstore\\src\\techstore.infrastructure\\services\\smtpemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F701A54-BB0A-6A78-BAC8-2288D68411EB}|src\\TechStore.Infrastructure\\TechStore.Infrastructure.csproj|solutionrelative:src\\techstore.infrastructure\\services\\smtpemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F701A54-BB0A-6A78-BAC8-2288D68411EB}|src\\TechStore.Infrastructure\\TechStore.Infrastructure.csproj|c:\\users\\maiti\\onedrive\\desktop\\net\\techstore\\src\\techstore.infrastructure\\services\\localfileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F701A54-BB0A-6A78-BAC8-2288D68411EB}|src\\TechStore.Infrastructure\\TechStore.Infrastructure.csproj|solutionrelative:src\\techstore.infrastructure\\services\\localfileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F701A54-BB0A-6A78-BAC8-2288D68411EB}|src\\TechStore.Infrastructure\\TechStore.Infrastructure.csproj|c:\\users\\maiti\\onedrive\\desktop\\net\\techstore\\src\\techstore.infrastructure\\services\\hangfirebackgroundjobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F701A54-BB0A-6A78-BAC8-2288D68411EB}|src\\TechStore.Infrastructure\\TechStore.Infrastructure.csproj|solutionrelative:src\\techstore.infrastructure\\services\\hangfirebackgroundjobservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F701A54-BB0A-6A78-BAC8-2288D68411EB}|src\\TechStore.Infrastructure\\TechStore.Infrastructure.csproj|c:\\users\\maiti\\onedrive\\desktop\\net\\techstore\\src\\techstore.infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F701A54-BB0A-6A78-BAC8-2288D68411EB}|src\\TechStore.Infrastructure\\TechStore.Infrastructure.csproj|solutionrelative:src\\techstore.infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F701A54-BB0A-6A78-BAC8-2288D68411EB}|src\\TechStore.Infrastructure\\TechStore.Infrastructure.csproj|c:\\users\\maiti\\onedrive\\desktop\\net\\techstore\\src\\techstore.infrastructure\\payments\\payosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F701A54-BB0A-6A78-BAC8-2288D68411EB}|src\\TechStore.Infrastructure\\TechStore.Infrastructure.csproj|solutionrelative:src\\techstore.infrastructure\\payments\\payosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F701A54-BB0A-6A78-BAC8-2288D68411EB}|src\\TechStore.Infrastructure\\TechStore.Infrastructure.csproj|c:\\users\\maiti\\onedrive\\desktop\\net\\techstore\\src\\techstore.infrastructure\\identity\\identityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F701A54-BB0A-6A78-BAC8-2288D68411EB}|src\\TechStore.Infrastructure\\TechStore.Infrastructure.csproj|solutionrelative:src\\techstore.infrastructure\\identity\\identityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F701A54-BB0A-6A78-BAC8-2288D68411EB}|src\\TechStore.Infrastructure\\TechStore.Infrastructure.csproj|c:\\users\\maiti\\onedrive\\desktop\\net\\techstore\\src\\techstore.infrastructure\\identity\\identityseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F701A54-BB0A-6A78-BAC8-2288D68411EB}|src\\TechStore.Infrastructure\\TechStore.Infrastructure.csproj|solutionrelative:src\\techstore.infrastructure\\identity\\identityseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B8A86FF-30D5-29AC-97B7-15B8D895EA99}|src\\TechStore.Application\\TechStore.Application.csproj|c:\\users\\maiti\\onedrive\\desktop\\net\\techstore\\src\\techstore.application\\common\\interfaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B8A86FF-30D5-29AC-97B7-15B8D895EA99}|src\\TechStore.Application\\TechStore.Application.csproj|solutionrelative:src\\techstore.application\\common\\interfaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B8A86FF-30D5-29AC-97B7-15B8D895EA99}|src\\TechStore.Application\\TechStore.Application.csproj|c:\\users\\maiti\\onedrive\\desktop\\net\\techstore\\src\\techstore.application\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B8A86FF-30D5-29AC-97B7-15B8D895EA99}|src\\TechStore.Application\\TechStore.Application.csproj|solutionrelative:src\\techstore.application\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ExceptionMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.API\\Middlewares\\ExceptionMiddleware.cs",
+              "RelativeDocumentMoniker": "src\\TechStore.API\\Middlewares\\ExceptionMiddleware.cs",
+              "ToolTip": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.API\\Middlewares\\ExceptionMiddleware.cs",
+              "RelativeToolTip": "src\\TechStore.API\\Middlewares\\ExceptionMiddleware.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T07:23:04.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "src\\TechStore.API\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "src\\TechStore.API\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T02:57:35.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Web\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "src\\TechStore.Web\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Web\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "src\\TechStore.Web\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T02:57:05.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ViewModels.cs",
+              "DocumentMoniker": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Web\\Models\\ViewModels\\ViewModels.cs",
+              "RelativeDocumentMoniker": "src\\TechStore.Web\\Models\\ViewModels\\ViewModels.cs",
+              "ToolTip": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Web\\Models\\ViewModels\\ViewModels.cs",
+              "RelativeToolTip": "src\\TechStore.Web\\Models\\ViewModels\\ViewModels.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T02:56:33.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CreateProductVM.cs",
+              "DocumentMoniker": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Web\\Models\\ViewModels\\CreateProductVM.cs",
+              "RelativeDocumentMoniker": "src\\TechStore.Web\\Models\\ViewModels\\CreateProductVM.cs",
+              "ToolTip": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Web\\Models\\ViewModels\\CreateProductVM.cs",
+              "RelativeToolTip": "src\\TechStore.Web\\Models\\ViewModels\\CreateProductVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T02:56:25.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Extensions.cs",
+              "DocumentMoniker": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Web\\Extensions\\Extensions.cs",
+              "RelativeDocumentMoniker": "src\\TechStore.Web\\Extensions\\Extensions.cs",
+              "ToolTip": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Web\\Extensions\\Extensions.cs",
+              "RelativeToolTip": "src\\TechStore.Web\\Extensions\\Extensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T02:56:11.838Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ApiServices.cs",
+              "DocumentMoniker": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Web\\Services\\ApiServices.cs",
+              "RelativeDocumentMoniker": "src\\TechStore.Web\\Services\\ApiServices.cs",
+              "ToolTip": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Web\\Services\\ApiServices.cs",
+              "RelativeToolTip": "src\\TechStore.Web\\Services\\ApiServices.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAQwGsAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T02:54:09.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IApiServices.cs",
+              "DocumentMoniker": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Web\\Services\\Interfaces\\IApiServices.cs",
+              "RelativeDocumentMoniker": "src\\TechStore.Web\\Services\\Interfaces\\IApiServices.cs",
+              "ToolTip": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Web\\Services\\Interfaces\\IApiServices.cs",
+              "RelativeToolTip": "src\\TechStore.Web\\Services\\Interfaces\\IApiServices.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAwCYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T02:53:14.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Web\\Areas\\User\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "src\\TechStore.Web\\Areas\\User\\Controllers\\CartController.cs",
+              "ToolTip": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Web\\Areas\\User\\Controllers\\CartController.cs",
+              "RelativeToolTip": "src\\TechStore.Web\\Areas\\User\\Controllers\\CartController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBsAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T02:53:05.783Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Domain\\Entities\\Product.cs",
+              "RelativeDocumentMoniker": "src\\TechStore.Domain\\Entities\\Product.cs",
+              "ToolTip": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Domain\\Entities\\Product.cs",
+              "RelativeToolTip": "src\\TechStore.Domain\\Entities\\Product.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T02:38:03.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Domain\\Entities\\Payment.cs",
+              "RelativeDocumentMoniker": "src\\TechStore.Domain\\Entities\\Payment.cs",
+              "ToolTip": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Domain\\Entities\\Payment.cs",
+              "RelativeToolTip": "src\\TechStore.Domain\\Entities\\Payment.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAABAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T02:37:59.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Domain\\Entities\\AppUser.cs",
+              "RelativeDocumentMoniker": "src\\TechStore.Domain\\Entities\\AppUser.cs",
+              "ToolTip": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Domain\\Entities\\AppUser.cs",
+              "RelativeToolTip": "src\\TechStore.Domain\\Entities\\AppUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T02:37:57.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Domain\\Entities\\Category.cs",
+              "RelativeDocumentMoniker": "src\\TechStore.Domain\\Entities\\Category.cs",
+              "ToolTip": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Domain\\Entities\\Category.cs",
+              "RelativeToolTip": "src\\TechStore.Domain\\Entities\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T02:37:52.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Infrastructure\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "src\\TechStore.Infrastructure\\DependencyInjection.cs",
+              "ToolTip": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Infrastructure\\DependencyInjection.cs",
+              "RelativeToolTip": "src\\TechStore.Infrastructure\\DependencyInjection.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T02:34:09.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SmtpEmailService.cs",
+              "DocumentMoniker": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Infrastructure\\Services\\SmtpEmailService.cs",
+              "RelativeDocumentMoniker": "src\\TechStore.Infrastructure\\Services\\SmtpEmailService.cs",
+              "ToolTip": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Infrastructure\\Services\\SmtpEmailService.cs",
+              "RelativeToolTip": "src\\TechStore.Infrastructure\\Services\\SmtpEmailService.cs",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAAAEoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T02:33:15.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "LocalFileService.cs",
+              "DocumentMoniker": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Infrastructure\\Services\\LocalFileService.cs",
+              "RelativeDocumentMoniker": "src\\TechStore.Infrastructure\\Services\\LocalFileService.cs",
+              "ToolTip": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Infrastructure\\Services\\LocalFileService.cs",
+              "RelativeToolTip": "src\\TechStore.Infrastructure\\Services\\LocalFileService.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T02:33:06.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "HangfireBackgroundJobService.cs",
+              "DocumentMoniker": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Infrastructure\\Services\\HangfireBackgroundJobService.cs",
+              "RelativeDocumentMoniker": "src\\TechStore.Infrastructure\\Services\\HangfireBackgroundJobService.cs",
+              "ToolTip": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Infrastructure\\Services\\HangfireBackgroundJobService.cs",
+              "RelativeToolTip": "src\\TechStore.Infrastructure\\Services\\HangfireBackgroundJobService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T02:33:02.683Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Infrastructure\\Persistence\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "src\\TechStore.Infrastructure\\Persistence\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Infrastructure\\Persistence\\AppDbContext.cs",
+              "RelativeToolTip": "src\\TechStore.Infrastructure\\Persistence\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T02:32:42.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "PayOSService.cs",
+              "DocumentMoniker": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Infrastructure\\Payments\\PayOSService.cs",
+              "RelativeDocumentMoniker": "src\\TechStore.Infrastructure\\Payments\\PayOSService.cs",
+              "ToolTip": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Infrastructure\\Payments\\PayOSService.cs",
+              "RelativeToolTip": "src\\TechStore.Infrastructure\\Payments\\PayOSService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T02:32:23.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "IdentityService.cs",
+              "DocumentMoniker": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Infrastructure\\Identity\\IdentityService.cs",
+              "RelativeDocumentMoniker": "src\\TechStore.Infrastructure\\Identity\\IdentityService.cs",
+              "ToolTip": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Infrastructure\\Identity\\IdentityService.cs",
+              "RelativeToolTip": "src\\TechStore.Infrastructure\\Identity\\IdentityService.cs",
+              "ViewState": "AgIAACQBAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T02:32:06.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "IdentitySeeder.cs",
+              "DocumentMoniker": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Infrastructure\\Identity\\IdentitySeeder.cs",
+              "RelativeDocumentMoniker": "src\\TechStore.Infrastructure\\Identity\\IdentitySeeder.cs",
+              "ToolTip": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Infrastructure\\Identity\\IdentitySeeder.cs",
+              "RelativeToolTip": "src\\TechStore.Infrastructure\\Identity\\IdentitySeeder.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T02:32:00.608Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "IGenericRepository.cs",
+              "DocumentMoniker": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Application\\Common\\Interfaces\\IGenericRepository.cs",
+              "RelativeDocumentMoniker": "src\\TechStore.Application\\Common\\Interfaces\\IGenericRepository.cs",
+              "ToolTip": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Application\\Common\\Interfaces\\IGenericRepository.cs",
+              "RelativeToolTip": "src\\TechStore.Application\\Common\\Interfaces\\IGenericRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T02:30:53.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Application\\Mappings\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "src\\TechStore.Application\\Mappings\\MappingProfile.cs",
+              "ToolTip": "C:\\Users\\maiti\\OneDrive\\Desktop\\NET\\TechStore\\src\\TechStore.Application\\Mappings\\MappingProfile.cs",
+              "RelativeToolTip": "src\\TechStore.Application\\Mappings\\MappingProfile.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T02:30:08.502Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+--- PAGE 1 ---
+   1  
+Lập trình web nâng cao (.NET) Assignment 
+ 
+ 
+ 
+ 
+Module/môn: Lập trình web nâng cao 
+(.NET) 
+Số hiệu assignment:  % điểm: 60% 
+Người điều phối của FPT Polytechnic:  Ngày ban hành:  
+Bài assignment này đòi hỏi sinh viên phải thực hiện trong suốt khóa học 
+Tương ứng với mục tiêu môn học: 
+- Lập trình Web với Asp.Net Core MVC 
+- Thiết kế Web Api Asp.net core 
+- Bảo mật Asp.net core, web Api 
+- Hostig web  
+ 
+ 
+ 
+======================== 
+ 
+Assignment 
+Lập trình web nâng cao (C#)  
+Thiết kế web bán thức ăn nhanh trực tuyến 
+ 
+Mục tiêu cụ thể Sau bài assignment này , sinh viên cần đặt được: 
+- Lập tình Web với Asp.Net Core MVC 
+- Các chức năng CRUD với EF code first 
+- Các kỹ thuật Data Annotation, Fluent API, Dependency Injection 
+- Thiết kế Web Api Asp.net core 
+- Sử dụng các nội dung từ Web Api Asp.net core 
+- Kỹ thuật JSON Web Token 
+- Deploy web asp.net core 
+Các công cụ cần có - .Net Core frame work 
+- Visual Studio 2017 trở lên 
+- MS SQL server 2012 hoặc MySQL 
+- Postman 
+Tài nguyên Thư mục tài nguyên đi kèm 
+ĐẶT VẤN ĐỀ 
+Hiện nay các mô hình kinh doanh qua hệ thống e-commerce ngày càng đa dạng. Từ thực 
+tế đó, ứng dụng web tự động hóa quá trình quản lý và bán hàng trực tuyến được thiết kế 
+để phù hợp với mọi cửa hàng nhỏ và vừa ra đời. Một cửa hàng bán thức ăn nhanh trực 
+tuyến giúp mọi người có thể mua được các món ăn, thức uống yêu thích ngay cả khi 
+ngồi ở nhà hoặc nơi làm việc, điều này mang lại sự tiện nghi và dễ dàng tiếp cận cho tất 
+--- PAGE 2 ---
+   2  
+Lập trình web nâng cao (.NET) Assignment 
+ 
+ 
+cả khách hàng. 
+Về phía khách hàng thì Một cửa hàng bán thức ăn nhanh trực tuyến cho phép khách 
+hàng tự kiểm soát thời gian, ghi rõ chi tiết đơn hàng và chủ động mỗi khi có nhu cầu. 
+Khách hàng sẽ không phải mang một cái bụng đói xếp hàng dài để đặt đồ ăn, thay vào 
+đó có thể thoải mái khám phá các món trên menu và đặt đồ mà không cần thông qua 
+nhân viên.  
+Nhà hàng cũng có thể đưa ra nhiều hình thức thanh toán qua hệ thống ví điện tử: MoMo, 
+VN Pay, Zalo Pay, v..v…giúp tăng lợi nhuận và giảm chi phí vận hành. Khách hàng vẫn 
+có cơ hội trò chuyện với nhân viên khi mua đồ ăn hoặc yêu cầu vận chuyển. Hơn nữa 
+việc khách hàng đặt đồ ăn online sẽ giúp nhân viên có thêm thời gian để tập trung tạo ra 
+những món ăn ngon, sáng tạo, và thu hút thị giấc. Tốc độ phục vụ nhanh hơn và khách 
+hàng không phải mất thời gian chờ đợi. Chỉ với vài thao tác đơn giản trên thiết bị di 
+động, đơn hàng sẽ được chuẩn bị và giao đi bất kỳ lúc nào, bất kỳ nơi đâu. 
+Với các lợi thế như mô tả bên trên, sinh viên cần xây dựng ứng dụng web đáp ứng một 
+các yêu cầu bên dưới 
+YÊU CẦU 
+Asm thực  hiện cá nhân mỗi sinh viên. 
+Ứng dụng cần đáp ứng được những chức năng cơ bản sau: 
+- Đối với nhóm người dùng Khách viếng thăm (Guest): 
+o Đăng ký tài khoản trên hệ thống (thông tin đăng ký ít nhất là 6 thông tin). 
+o Duyệt các loại thức ăn nhanh + thực đơn riêng theo combo. 
+o Xem thông tin chi tiết thức ăn nhanh + thực đơn riêng theo combo. 
+o Tìm kiếm cơ bản: Tìm món ăn theo tên 
+o Tìm kiếm nâng cao: Tìm món ăn theo tên, giá cả, chủng loại, thông tin, chủ đề.  
+- Đối với nhóm người dùng khách hàng (Customer):  
+o Đăng nhập hệ thống Site khách hàng + lựa chọn đăng nhập qua Google 
+o Cập nhật thông tin cá nhân của tài khoản 
+o Đặt món ăn và thanh toán 
+o Xem thông tin lịch sử quá trình đặt món ăn qua các hóa đơn  
+o Theo dõi tình trạng các hóa đơn mới mua 
+- Đối với nhóm người dùng quản trị (Admin): 
+o Đăng nhập hệ thống Site quản lý 
+o Cập nhật thông tin cá nhân của tài khoản 
+o Quản lý các tài khỏan của người dùng (Danh sách, Thêm, Xóa, Cập nhật). Lưu ý không xóa tài khoản 
+Admin hiện đang sử dụng. 
+o Quản lý các loại món ăn nhanh (,Danh sách, Thêm, Xóa, Cập nhật) 
+o Quản lý các combo (Danh sách,Thêm, Xóa, Cập nhật) 
+o Quản lý đơn đặt hàng (đã giao, chưa giao, đang giao) 
+ 
+ 
+Y1. Thiết kế cơ sở dữ liệu 
+--- PAGE 3 ---
+   3  
+Lập trình web nâng cao (.NET) Assignment 
+ 
+ 
+- Tạo CSDL 
+- Thiết kế mô hình ERD và các bảng phù hợp đáp ứng các chức năng bên trên 
+- Nhập dữ liệu sẵn cho các bảng dữ liệu 
+ 
+Y2. Những yêu cầu về hình thức sản phẩm 
+- Phát triển giao diện clien và admin thích hợp, có thể sử dụng các mẫu template có sẵn nhưng phải 
+layout lại phù hợp với yêu cầu Asm 
+- Template và layout cần đồng nhất cho ứng dụng 
+ 
+Y3. Đáp ứng được các yêu cầu chức năng Đối với nhóm người dùng Khách viếng thăm (Guest) 
+Y4. Đáp ứng được các yêu cầu chức năng Đối với nhóm người dùng khách hàng (Customer) 
+Y5. Đáp ứng được các yêu cầu chức năng Đối với nhóm người dùng quản trị (Admin) 
+- Viết RestApi cho chức năng Quản lý các loại món ăn nhanh (,Danh sách, Thêm, Xóa, Cập nhật), 
+webpage admin thực hiện các thao tác liên quan chức năng này thông qua RestApi đó 
+Y6. . Các yêu cầu bảo mật và quản lý 
+- Sử dụng Dependency Injection 
+- Sử dụng các kỹ thuật Model Validation, Data Validation, Data Annotation, Fluent API ràng buộc 
+csdl và validation các form 
+- Bảo mật RestApi với kỹ thuật JWT 
+- Upload website lên hosting 
+ 
+ 
+MÔ TẢ SẢN PHẨM PHẢI NỘP 
+1. Thư mục BaoCao chứa file BaoCao.doc 
+2. Thư mục Source chứa toàn bộ ứng dụng 
+3. Thư mục Database chứa file database.sql chứa mã script tạo CSDL hoặc file .mdf và .ldf 
+của CSDL 
+Tên của file nén được quy định là <Mã sinh viên>_Mã Môn_Assignment.zip (ví dụ: 
+TeoNVPS10005_SOF2041_Assignment.zip). Nộp bài đúng nơi yêu cầu của giảng viên hướng dẫn. 
+THANG ĐÁNH GIÁ 
+ 
+A 
+70%‐100%) 
+- Đáp ứng tất cả các yêu cầu 
+- Đạt điểm tối đa 100% nếu có thêm chức năng 
+--- PAGE 4 ---
+   4  
+Lập trình web nâng cao (.NET) Assignment 
+ 
+ 
+ 
+ 
+B 
+60%‐ 
+69% 
+ 
+- Thiếu Y6 
+C 
+50%‐ 
+59% 
+- Thiếu Y5, Y6 
+TRƯỢT 
+< 50% 
+(không đáp ứng 
+yêu cầu nộp bài) 
+- Không nộp đủ các sản phẩm được mô tả trong mục 
+Sản phẩm phải nộp 
+- Ứng dụng không chạy 
+ 
+ 

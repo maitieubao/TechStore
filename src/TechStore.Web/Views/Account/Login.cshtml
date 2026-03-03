@@ -1,0 +1,100 @@
+@model TechStore.Web.Models.ViewModels.LoginVM
+@{
+    ViewData["Title"] = "Đăng nhập";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5 col-lg-4">
+            <div class="card border-0 bg-darker rounded-4 shadow-lg overflow-hidden position-relative group">
+                <!-- Background decorative blob -->
+                <div class="position-absolute top-0 start-0 w-100 h-100 text-primary opacity-10 pointer-events-none" style="background: radial-gradient(circle at top right, currentColor 0%, transparent 60%);"></div>
+                
+                <div class="card-body p-5 position-relative z-1">
+                    <div class="text-center mb-4">
+                        <div class="bg-dark rounded-circle mx-auto d-flex align-items-center justify-content-center border border-secondary mb-3 shadow" style="width: 65px; height: 65px;">
+                            <i class="bi bi-lightning-charge-fill text-warning fs-3"></i>
+                        </div>
+                        <h4 class="fw-bold text-white mb-2">Chào mừng trở lại!</h4>
+                        <p class="text-secondary small">Đăng nhập để vào hệ thống TechStore</p>
+                    </div>
+
+                    <div asp-validation-summary="All" class="alert alert-danger bg-danger-subtle text-danger border-0 small py-2 rounded-3" style="display: @(ViewData.ModelState.ErrorCount > 0 ? "block" : "none")"></div>
+
+                    <form asp-action="Login" method="post">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="ReturnUrl" value="@Model.ReturnUrl" />
+
+                        <div class="mb-4">
+                            <label class="form-label small fw-semibold text-secondary">Tên đăng nhập</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-dark border-secondary text-secondary"><i class="bi bi-person"></i></span>
+                                <input type="text" name="UserName" class="form-control bg-dark text-white border-secondary focus-ring-primary" placeholder="Nhập username..."
+                                       value="@Model.UserName" required />
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <label class="form-label small fw-semibold text-secondary mb-0">Mật khẩu</label>
+                                <a asp-action="ForgotPassword" class="small text-info text-decoration-none">Quên mật khẩu?</a>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-text bg-dark border-secondary text-secondary"><i class="bi bi-lock"></i></span>
+                                <input type="password" name="Password" class="form-control bg-dark text-white border-secondary focus-ring-primary" placeholder="••••••••" required />
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-gradient w-100 mb-3 py-2 rounded-pill shadow-sm hover-lift fw-medium">
+                            <i class="bi bi-box-arrow-in-right me-2"></i> Đăng nhập
+                        </button>
+                    </form>
+
+                    <!-- Social Divider -->
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <hr class="flex-grow-1 border-secondary opacity-50" />
+                        <span class="text-secondary small">hoặc</span>
+                        <hr class="flex-grow-1 border-secondary opacity-50" />
+                    </div>
+
+                    <!-- Google Sign-In Button -->
+                    <div id="g_id_onload"
+                         data-client_id="@ViewData["GoogleClientId"]"
+                         data-context="signin"
+                         data-ux_mode="popup"
+                         data-callback="handleGoogleLogin"
+                         data-auto_prompt="false">
+                    </div>
+                    <div class="g_id_signin d-flex justify-content-center"
+                         data-type="standard"
+                         data-shape="pill"
+                         data-theme="outline"
+                         data-text="signin_with"
+                         data-size="large"
+                         data-width="360">
+                    </div>
+
+                    <p class="text-center text-secondary small mt-3 mb-0">
+                        Chưa có tài khoản? <a asp-action="Register" class="text-primary fw-semibold text-decoration-none">Đăng ký ngay</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Hidden form for Google login post-back -->
+<form id="googleLoginForm" asp-action="GoogleCallback" method="post" style="display:none;">
+    @Html.AntiForgeryToken()
+    <input type="hidden" id="googleCredential" name="credential" />
+</form>
+
+@section Scripts {
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+        function handleGoogleLogin(response) {
+            document.getElementById('googleCredential').value = response.credential;
+            document.getElementById('googleLoginForm').submit();
+        }
+    </script>
+}

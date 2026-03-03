@@ -1,0 +1,7 @@
+@model List<TechStore.Shared.DTOs.CategoryDto>
+@foreach (var cat in Model)
+{
+    <li>
+        <a class="dropdown-item" asp-controller="Product" asp-action="Index" asp-route-categoryId="@cat.Id">@cat.Name</a>
+    </li>
+}

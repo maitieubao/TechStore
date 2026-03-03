@@ -1,0 +1,58 @@
+@model TechStore.Shared.DTOs.ContactDto
+@{
+    ViewData["Title"] = "Liên hệ";
+}
+
+<div class="container py-5">
+    <div class="row align-items-center">
+        <div class="col-lg-6">
+            <h1 class="fw-bold mb-3">Liên hệ với <span class="text-gradient">TechStore</span></h1>
+            <p class="lead text-secondary">Chúng tôi luôn lắng nghe ý kiến của bạn.</p>
+            <div class="list-group list-group-flush mb-4 small bg-transparent">
+                <div class="list-group-item bg-transparent d-flex align-items-center border-0 px-0">
+                    <span class="fs-4 me-3 text-gradient"><i class="bi bi-geo-alt-fill"></i></span>
+                    <div>
+                        <strong class="d-block text-white">Địa chỉ</strong>
+                        <span class="text-secondary">123 Đường Nguyễn Huệ, Phường Bến Nghé, Quận 1, TP.HCM</span>
+                    </div>
+                </div>
+                <div class="list-group-item bg-transparent d-flex align-items-center border-0 px-0">
+                    <span class="fs-4 me-3 text-gradient"><i class="bi bi-telephone-fill"></i></span>
+                    <div>
+                        <strong class="d-block text-white">Hotline</strong>
+                        <span class="text-secondary">0909 123 456 (8h00 - 21h00, T2 - CN)</span>
+                    </div>
+                </div>
+                <div class="list-group-item bg-transparent d-flex align-items-center border-0 px-0">
+                    <span class="fs-4 me-3 text-gradient"><i class="bi bi-envelope-fill"></i></span>
+                    <div>
+                        <strong class="d-block text-white">Email</strong>
+                        <span class="text-secondary">support@techstore.vn</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card border-secondary-subtle">
+                <div class="card-body p-4">
+                    <h5 class="fw-bold mb-3">Gửi tin nhắn</h5>
+                    <form asp-controller="Home" asp-action="Contact" method="post">
+                        <div class="mb-3">
+                            <input asp-for="Name" class="form-control" placeholder="Họ và tên" />
+                            <span asp-validation-for="Name" class="text-danger small"></span>
+                        </div>
+                        <div class="mb-3">
+                            <input asp-for="Email" class="form-control" placeholder="Email của bạn" />
+                            <span asp-validation-for="Email" class="text-danger small"></span>
+                        </div>
+                        <div class="mb-3">
+                            <textarea asp-for="Message" class="form-control" rows="4" placeholder="Nội dung tin nhắn..."></textarea>
+                            <span asp-validation-for="Message" class="text-danger small"></span>
+                        </div>
+                        <button type="submit" class="btn btn-gradient w-100">Gửi ngay</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

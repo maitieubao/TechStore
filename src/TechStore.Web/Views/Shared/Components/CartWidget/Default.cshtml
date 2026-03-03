@@ -1,0 +1,5 @@
+@model TechStore.Shared.DTOs.CartSummaryDto
+@if (Model.TotalItems > 0)
+{
+    <span class="badge rounded-pill bg-danger">@Model.TotalItems</span>
+}

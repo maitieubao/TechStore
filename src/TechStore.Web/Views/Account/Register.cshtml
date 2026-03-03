@@ -1,0 +1,81 @@
+@model TechStore.Web.Models.ViewModels.RegisterVM
+@{
+    ViewData["Title"] = "Đăng ký";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5 col-lg-4">
+            <div class="card border-0 bg-darker rounded-4 shadow-lg overflow-hidden position-relative group">
+                <!-- Background decorative blob -->
+                <div class="position-absolute bottom-0 end-0 w-100 h-100 text-info opacity-10 pointer-events-none" style="background: radial-gradient(circle at bottom left, currentColor 0%, transparent 60%);"></div>
+
+                <div class="card-body p-4 p-md-5 position-relative z-1">
+                    <div class="text-center mb-4">
+                        <div class="bg-dark rounded-circle mx-auto d-flex align-items-center justify-content-center border border-secondary mb-3 shadow" style="width: 65px; height: 65px;">
+                            <i class="bi bi-person-plus-fill text-info fs-3"></i>
+                        </div>
+                        <h4 class="fw-bold text-white mb-2">Đăng Ký Tài Khoản</h4>
+                        <p class="text-secondary small">Tạo mới để nhận các ưu đãi từ TechStore</p>
+                    </div>
+
+                    <div asp-validation-summary="All" class="alert alert-danger bg-danger-subtle text-danger border-0 small py-2 rounded-3" style="display: @(ViewData.ModelState.ErrorCount > 0 ? "block" : "none")"></div>
+
+                    <form asp-action="Register" method="post">
+                        @Html.AntiForgeryToken()
+
+                        <div class="mb-3">
+                            <label class="form-label small fw-semibold text-secondary">Họ và tên</label>
+                            <input type="text" name="FullName" class="form-control bg-dark text-white border-secondary focus-ring-primary py-2" placeholder="Nguyễn Văn A"
+                                   value="@Model.FullName" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label small fw-semibold text-secondary">Tên đăng nhập</label>
+                            <input type="text" name="UserName" class="form-control bg-dark text-white border-secondary focus-ring-primary py-2" placeholder="Nhập username..."
+                                   value="@Model.UserName" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label small fw-semibold text-secondary">Email</label>
+                            <input type="email" name="Email" class="form-control bg-dark text-white border-secondary focus-ring-primary py-2" placeholder="email@example.com"
+                                   value="@Model.Email" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label small fw-semibold text-secondary">Số điện thoại</label>
+                            <input type="tel" name="PhoneNumber" class="form-control bg-dark text-white border-secondary focus-ring-primary py-2" placeholder="09xxxxxxx"
+                                   value="@Model.PhoneNumber" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label small fw-semibold text-secondary">Địa chỉ</label>
+                            <input type="text" name="Address" class="form-control bg-dark text-white border-secondary focus-ring-primary py-2" placeholder="Nhập địa chỉ..."
+                                   value="@Model.Address" />
+                        </div>
+
+                        <div class="row gx-3">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label small fw-semibold text-secondary">Mật khẩu</label>
+                                <input type="password" name="Password" class="form-control bg-dark text-white border-secondary focus-ring-primary py-2" placeholder="••••••••" required />
+                            </div>
+
+                            <div class="col-md-6 mb-4">
+                                <label class="form-label small fw-semibold text-secondary">Xác nhận mật khẩu</label>
+                                <input type="password" name="ConfirmPassword" class="form-control bg-dark text-white border-secondary focus-ring-primary py-2" placeholder="••••••••" required />
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-gradient w-100 mb-4 py-2 rounded-pill shadow-sm hover-lift fw-medium">
+                            <i class="bi bi-stars me-2"></i> Tạo tài khoản
+                        </button>
+                    </form>
+
+                    <p class="text-center text-secondary small mb-0">
+                        Đã có tài khoản? <a asp-action="Login" class="text-info fw-semibold text-decoration-none">Đăng nhập</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

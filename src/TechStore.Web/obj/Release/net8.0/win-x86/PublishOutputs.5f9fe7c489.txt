@@ -1,0 +1,16 @@
+C:\Users\maiti\OneDrive\Desktop\NET\TechStore\publish\web\TechStore.Web.exe
+C:\Users\maiti\OneDrive\Desktop\NET\TechStore\publish\web\appsettings.Development.json
+C:\Users\maiti\OneDrive\Desktop\NET\TechStore\publish\web\appsettings.json
+C:\Users\maiti\OneDrive\Desktop\NET\TechStore\publish\web\appsettings.Production.json
+C:\Users\maiti\OneDrive\Desktop\NET\TechStore\publish\web\TechStore.Web.dll
+C:\Users\maiti\OneDrive\Desktop\NET\TechStore\publish\web\TechStore.Web.deps.json
+C:\Users\maiti\OneDrive\Desktop\NET\TechStore\publish\web\TechStore.Web.runtimeconfig.json
+C:\Users\maiti\OneDrive\Desktop\NET\TechStore\publish\web\TechStore.Web.pdb
+C:\Users\maiti\OneDrive\Desktop\NET\TechStore\publish\web\Microsoft.AspNetCore.Authentication.Google.dll
+C:\Users\maiti\OneDrive\Desktop\NET\TechStore\publish\web\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\maiti\OneDrive\Desktop\NET\TechStore\publish\web\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\maiti\OneDrive\Desktop\NET\TechStore\publish\web\Microsoft.IdentityModel.Logging.dll
+C:\Users\maiti\OneDrive\Desktop\NET\TechStore\publish\web\Microsoft.IdentityModel.Tokens.dll
+C:\Users\maiti\OneDrive\Desktop\NET\TechStore\publish\web\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\maiti\OneDrive\Desktop\NET\TechStore\publish\web\TechStore.Shared.dll
+C:\Users\maiti\OneDrive\Desktop\NET\TechStore\publish\web\TechStore.Shared.pdb

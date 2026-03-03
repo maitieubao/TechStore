@@ -1,0 +1,200 @@
+@model TechStore.Web.Models.ViewModels.AdminProductListVM
+@{
+    ViewData["Title"] = "Quản lý sản phẩm";
+    Layout = "_AdminLayout";
+}
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold mb-0"><i class="bi bi-box"></i> Quản lý sản phẩm</h2>
+        <div class="d-flex gap-2">
+            <a asp-action="Create" class="btn btn-primary d-flex align-items-center gap-2">
+                <i class="bi bi-plus-lg"></i> Thêm mới
+            </a>
+            <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index" class="btn btn-outline-secondary d-flex align-items-center gap-2">
+                <i class="bi bi-arrow-left"></i> Dashboard
+            </a>
+        </div>
+    </div>
+
+    <!-- Filter Section -->
+    <div class="card border-0 bg-darker rounded-4 shadow-sm mb-4">
+        <div class="card-body p-4">
+            <form asp-action="Index" method="get" class="row g-3">
+                <!-- Keep page parameter if navigating but we usually reset to page 1 on filter, so no need -->
+                <div class="col-md-4">
+                    <label class="form-label text-secondary small fw-bold">Tìm kiếm</label>
+                    <input type="text" name="Search" class="form-control bg-dark text-white border-secondary focus-ring-primary" placeholder="Tên sản phẩm..." value="@Model.Filter.Search">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label text-secondary small fw-bold">Danh mục</label>
+                    <select name="CategoryId" class="form-select bg-dark text-white border-secondary focus-ring-primary">
+                        <option value="">Tất cả danh mục</option>
+                        @foreach (var cat in Model.Categories)
+                        {
+                            if (Model.Filter.CategoryId == cat.Id)
+                            {
+                                <option value="@cat.Id" selected>@cat.Name</option>
+                            }
+                            else
+                            {
+                                <option value="@cat.Id">@cat.Name</option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label text-secondary small fw-bold">Trạng thái tồn kho</label>
+                    <select name="InStock" class="form-select bg-dark text-white border-secondary focus-ring-primary">
+                        <option value="">Tất cả</option>
+                        @if (Model.Filter.InStock == true)
+                        {
+                            <option value="true" selected>Còn hàng (Tồn > 0)</option>
+                            <option value="false">Hết hàng (Tồn = 0)</option>
+                        }
+                        else if (Model.Filter.InStock == false)
+                        {
+                            <option value="true">Còn hàng (Tồn > 0)</option>
+                            <option value="false" selected>Hết hàng (Tồn = 0)</option>
+                        }
+                        else
+                        {
+                            <option value="true">Còn hàng (Tồn > 0)</option>
+                            <option value="false">Hết hàng (Tồn = 0)</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label text-secondary small fw-bold">Trạng thái Kinh doanh</label>
+                    <select name="IsActive" class="form-select bg-dark text-white border-secondary focus-ring-primary">
+                        <option value="">Tất cả</option>
+                        @if (Model.Filter.IsActive == true)
+                        {
+                            <option value="true" selected>Đang bán</option>
+                            <option value="false">Ngừng bán (Đã xoá)</option>
+                        }
+                        else if (Model.Filter.IsActive == false)
+                        {
+                            <option value="true">Đang bán</option>
+                            <option value="false" selected>Ngừng bán (Đã xoá)</option>
+                        }
+                        else
+                        {
+                            <option value="true">Đang bán</option>
+                            <option value="false">Ngừng bán (Đã xoá)</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-1 d-flex align-items-end gap-2">
+                    <button type="submit" class="btn btn-primary flex-grow-1">
+                        <i class="bi bi-funnel"></i> Lọc
+                    </button>
+                    <a asp-action="Index" class="btn btn-outline-secondary" title="Đặt lại">
+                        <i class="bi bi-arrow-clockwise"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    @if (Model.Products.Items?.Any() ?? false)
+    {
+        <div class="card border-0 bg-darker rounded-4 shadow-sm mb-4">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-dark table-hover table-borderless align-middle mb-0">
+                        <thead style="border-bottom: 2px solid #2d3240;">
+                            <tr>
+                                <th class="ps-4 py-3">ID</th>
+                                <th>Hình ảnh</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Danh mục</th>
+                                <th class="text-end">Giá</th>
+                                <th class="text-center">Tồn kho</th>
+                                <th class="text-end pe-4">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var p in Model.Products.Items)
+                            {
+                                <tr style="border-bottom: 1px solid #2d3240;">
+                                    <td class="ps-4 py-3 fw-bold text-info">#@p.Id</td>
+                                    <td>
+                                        <div class="bg-white rounded p-1 d-inline-block shadow-sm">
+                                            <img src="@(p.ImageUrls.FirstOrDefault() ?? "/images/no-image.png")"
+                                                 style="width: 40px; height: 40px; object-fit: contain;" class="rounded" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="fw-bold text-white mb-1">
+                                            @p.Name
+                                            @if (!p.IsActive)
+                                            {
+                                                <span class="badge bg-danger ms-2" style="font-size: 0.7em;">Ngừng bán</span>
+                                            }
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-secondary text-white rounded-pill px-3 py-2">@p.CategoryName</span>
+                                    </td>
+                                    <td class="text-end text-price fw-bold pe-3">@p.Price.ToString("N0") ₫</td>
+                                    <td class="text-center">
+                                        @if (p.StockQuantity > 0)
+                                        {
+                                            <span class="badge bg-success-subtle text-success rounded-pill px-3 py-2">@p.StockQuantity</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-danger-subtle text-danger rounded-pill px-3 py-2">Hết</span>
+                                        }
+                                    </td>
+                                    <td class="text-end pe-4">
+                                        <div class="d-flex gap-2 justify-content-end">
+                                            <a asp-action="ManageImages" asp-route-id="@p.Id" 
+                                               class="btn btn-sm btn-outline-warning rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;" title="Hình ảnh">
+                                                <i class="bi bi-images"></i>
+                                            </a>
+                                            <a asp-action="Edit" asp-route-id="@p.Id" 
+                                               class="btn btn-sm btn-outline-info rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;" title="Sửa">
+                                                <i class="bi bi-pencil"></i>
+                                            </a>
+                                            <form asp-action="Delete" asp-route-id="@p.Id" method="post" 
+                                                  onsubmit="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?');">
+                                                <button type="submit" class="btn btn-sm btn-outline-danger rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;" title="Xóa">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        @if (Model.Products.TotalPages > 1)
+        {
+            <nav>
+                <ul class="pagination justify-content-center">
+                    @for (int i = 1; i <= Model.Products.TotalPages; i++)
+                    {
+                        <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                            <a class="page-link" asp-area="Admin" asp-controller="ProductManager" asp-action="Index" 
+                               asp-route-page="@i"
+                               asp-route-Search="@Model.Filter.Search"
+                               asp-route-CategoryId="@Model.Filter.CategoryId"
+                               asp-route-InStock="@Model.Filter.InStock"
+                               asp-route-IsActive="@Model.Filter.IsActive">@i</a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+        }
+    }
+    else
+    {
+        <p class="text-secondary">Chưa có sản phẩm nào.</p>
+    }
+</div>

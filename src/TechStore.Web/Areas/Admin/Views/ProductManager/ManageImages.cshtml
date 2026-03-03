@@ -1,0 +1,101 @@
+@model TechStore.Shared.DTOs.ProductDto
+@{
+    ViewData["Title"] = "Quản lý hình ảnh Sản phẩm";
+    Layout = "_AdminLayout";
+}
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="h3 mb-1 text-white">Quản lý hình ảnh</h1>
+            <p class="text-secondary mb-0">Sản phẩm: <span class="text-info fw-semibold">@Model.Name</span></p>
+        </div>
+        <a asp-action="Index" class="btn btn-outline-secondary d-flex align-items-center gap-2">
+            <i class="bi bi-arrow-left"></i> Quay lại
+        </a>
+    </div>
+
+    <div class="row">
+        <!-- Upload Form -->
+        <div class="col-md-4 mb-4">
+            <div class="card border-0 bg-darker h-100">
+                <div class="card-body p-4">
+                    <h5 class="card-title text-white mb-3">Tải ảnh mới</h5>
+                    <form asp-action="UploadImage" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="productId" value="@Model.Id" />
+                        
+                        <div class="mb-3">
+                            <label class="form-label text-secondary">Chọn File Ảnh</label>
+                            <input type="file" name="file" class="form-control bg-dark text-white border-secondary mb-2" accept="image/*" required />
+                            <div class="form-text text-muted small mt-1">Định dạng hỗ trợ: JPG, PNG, WEBP (Max: 5MB)</div>
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="form-check form-switch w-100 p-0">
+                                <label class="text-white d-flex align-items-center justify-content-between cursor-pointer w-100" for="isPrimaryCheck">
+                                    <span class="fw-medium small"><i class="bi bi-star-fill text-warning me-2"></i>Đặt làm ảnh đại diện</span>
+                                    <input class="form-check-input ms-0 mt-0 float-none" type="checkbox" name="isPrimary" value="true" id="isPrimaryCheck" style="width: 2.5em; cursor: pointer;">
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-gradient w-100 rounded-pill shadow-sm hover-lift fw-bold">
+                            <i class="bi bi-cloud-upload me-2"></i> Tải lên ngay
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Gallery -->
+        <div class="col-md-8">
+            <div class="card border-0 bg-darker h-100">
+                <div class="card-body p-4">
+                    <h5 class="card-title text-white mb-3">Thư viện ảnh đã tải lên</h5>
+                    
+                    @if (Model.ImageUrls != null && Model.ImageUrls.Any())
+                    {
+                        <div class="row g-3">
+                            @foreach (var imgUrl in Model.ImageUrls)
+                            {
+                                <div class="col-6 col-md-4 col-lg-3">
+                                    <div class="position-relative rounded overflow-hidden shadow-sm group" style="aspect-ratio: 1; border: 1px solid #2d3240;"
+                                         onmouseover="this.querySelector('.action-overlay').style.opacity='1'" 
+                                         onmouseout="this.querySelector('.action-overlay').style.opacity='0'">
+                                        <img src="@imgUrl" alt="Product Image" class="w-100 h-100 transition-transform group-hover-scale" style="object-fit: contain; background: #1a1d24;" />
+                                        
+                                        <!-- Overlay Actions -->
+                                        <div class="action-overlay position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center" 
+                                             style="background: rgba(0,0,0,0.6); opacity: 0; transition: opacity 0.2s; backdrop-filter: blur(2px);">
+                                            
+                                            <form asp-action="DeleteImage" method="post" onsubmit="return confirm('Xóa ảnh này chứ?');">
+                                                <input type="hidden" name="productId" value="@Model.Id" />
+                                                <input type="hidden" name="imageId" value="0" /> <!-- Need API to return ImageId in DTO if want realistic delete -->
+                                                <button type="submit" class="btn btn-danger btn-sm rounded-circle d-flex align-items-center justify-content-center shadow hover-lift" style="width: 40px; height: 40px;" title="Xóa ảnh">
+                                                    <i class="bi bi-trash fs-5"></i>
+                                                </button>
+                                            </form>
+
+                                        </div>
+
+                                        @if (imgUrl == Model.ImageUrls.FirstOrDefault())
+                                        {
+                                            <span class="position-absolute top-0 start-0 badge bg-gradient m-2 shadow-sm fs-7">Ảnh chính</span>
+                                        }
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="text-center py-5">
+                            <i class="bi bi-images display-1 mb-3 text-secondary opacity-50"></i>
+                            <p class="text-secondary">Sản phẩm này chưa có hình ảnh nào.</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

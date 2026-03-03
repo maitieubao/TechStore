@@ -1,0 +1,1287 @@
+2026-02-19 16:47:43.761 +07:00 [INF] Execution RecurringJobScheduler recovered from the Faulted state after 00:00:17.0698745 and is in the Running state now
+2026-02-19 16:47:43.805 +07:00 [INF] Execution DelayedJobScheduler recovered from the Faulted state after 00:00:17.0857218 and is in the Running state now
+2026-02-19 16:50:00.301 +07:00 [INF] 1 servers were removed due to timeout
+2026-02-19 19:35:50.820 +07:00 [INF] Start installing Hangfire SQL objects...
+2026-02-19 19:35:58.119 +07:00 [INF] Hangfire SQL objects installed.
+2026-02-19 19:35:58.941 +07:00 [INF] User profile is available. Using 'C:\Users\maiti\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-19 19:36:01.985 +07:00 [INF] Executed DbCommand (57ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-19 19:36:02.301 +07:00 [INF] Executed DbCommand (133ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-19 19:36:02.484 +07:00 [INF] Executed DbCommand (99ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-19 19:36:03.011 +07:00 [INF] Executed DbCommand (348ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-19 19:36:03.718 +07:00 [INF] Now listening on: http://localhost:5019
+2026-02-19 19:36:03.792 +07:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: (localdb)\mssqllocaldb@TechStoreDb'
+2026-02-19 19:36:03.809 +07:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-02-19 19:36:03.813 +07:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-02-19 19:36:03.852 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-19 19:36:03.858 +07:00 [INF] Hosting environment: Development
+2026-02-19 19:36:03.860 +07:00 [INF] Content root path: C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.API
+2026-02-19 19:36:04.045 +07:00 [INF] Server desktop-gde40bi:9124:95678180 successfully announced in 198.4944 ms
+2026-02-19 19:36:04.059 +07:00 [INF] Server desktop-gde40bi:9124:95678180 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-02-19 19:36:04.235 +07:00 [INF] 1 servers were removed due to timeout
+2026-02-19 19:36:04.309 +07:00 [INF] Server desktop-gde40bi:9124:95678180 all the dispatchers started
+2026-02-19 19:37:39.086 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=8&sortBy=price&sortDescending=true - null null
+2026-02-19 19:37:39.323 +07:00 [WRN] Failed to determine the https port for redirect.
+2026-02-19 19:37:39.680 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/16/2026 9:03:28 AM', Current time (UTC): '2/19/2026 12:37:39 PM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-19 19:37:39.931 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/16/2026 9:03:28 AM', Current time (UTC): '2/19/2026 12:37:39 PM'.
+2026-02-19 19:37:40.780 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:37:40.840 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.PagedResultDto`1[TechStore.Shared.DTOs.ProductDto]]]] GetAll(TechStore.Shared.DTOs.ProductFilterDto) on controller TechStore.API.Controllers.ProductsController (TechStore.API).
+2026-02-19 19:37:40.883 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-02-19 19:37:41.433 +07:00 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+2026-02-19 19:37:41.699 +07:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-02-19 19:37:41.926 +07:00 [INF] Executed DbCommand (138ms) [Parameters=[@p='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[Brand], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[IsActive], [p0].[LowStockThreshold], [p0].[Name], [p0].[Price], [p0].[RowVersion], [p0].[Slug], [p0].[Specifications], [p0].[StockQuantity], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt], [p1].[Id], [p1].[CreatedAt], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[UpdatedAt], [r].[Id], [r].[Comment], [r].[CreatedAt], [r].[ProductId], [r].[Rating], [r].[UpdatedAt], [r].[UserId]
+FROM (
+    SELECT [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit)
+    ORDER BY [p].[Price] DESC
+    OFFSET @p ROWS FETCH NEXT @p1 ROWS ONLY
+) AS [p0]
+LEFT JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+LEFT JOIN [Reviews] AS [r] ON [p0].[Id] = [r].[ProductId]
+ORDER BY [p0].[Price] DESC, [p0].[Id], [c].[Id], [p1].[Id]
+2026-02-19 19:37:42.188 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.PagedResultDto`1[[TechStore.Shared.DTOs.ProductDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:37:42.282 +07:00 [INF] Executed action TechStore.API.Controllers.ProductsController.GetAll (TechStore.API) in 1412.8288ms
+2026-02-19 19:37:42.331 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:37:42.429 +07:00 [INF] HTTP GET /api/products responded 200 in 3125.2239 ms
+2026-02-19 19:37:42.452 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=8&sortBy=price&sortDescending=true - 200 null application/json; charset=utf-8 3368.5714ms
+2026-02-19 19:37:42.564 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=4&sortBy=newest&sortDescending=true - null null
+2026-02-19 19:37:42.810 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/16/2026 9:03:28 AM', Current time (UTC): '2/19/2026 12:37:42 PM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-19 19:37:43.089 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/16/2026 9:03:28 AM', Current time (UTC): '2/19/2026 12:37:42 PM'.
+2026-02-19 19:37:43.274 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:37:43.278 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.PagedResultDto`1[TechStore.Shared.DTOs.ProductDto]]]] GetAll(TechStore.Shared.DTOs.ProductFilterDto) on controller TechStore.API.Controllers.ProductsController (TechStore.API).
+2026-02-19 19:37:43.450 +07:00 [INF] Executed DbCommand (110ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+2026-02-19 19:37:43.846 +07:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-02-19 19:37:43.926 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[@p='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[Brand], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[IsActive], [p0].[LowStockThreshold], [p0].[Name], [p0].[Price], [p0].[RowVersion], [p0].[Slug], [p0].[Specifications], [p0].[StockQuantity], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt], [p1].[Id], [p1].[CreatedAt], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[UpdatedAt], [r].[Id], [r].[Comment], [r].[CreatedAt], [r].[ProductId], [r].[Rating], [r].[UpdatedAt], [r].[UserId]
+FROM (
+    SELECT [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit)
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @p ROWS FETCH NEXT @p1 ROWS ONLY
+) AS [p0]
+LEFT JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+LEFT JOIN [Reviews] AS [r] ON [p0].[Id] = [r].[ProductId]
+ORDER BY [p0].[CreatedAt] DESC, [p0].[Id], [c].[Id], [p1].[Id]
+2026-02-19 19:37:43.958 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.PagedResultDto`1[[TechStore.Shared.DTOs.ProductDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:37:43.967 +07:00 [INF] Executed action TechStore.API.Controllers.ProductsController.GetAll (TechStore.API) in 673.3288ms
+2026-02-19 19:37:44.269 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:37:44.272 +07:00 [INF] HTTP GET /api/products responded 200 in 1465.8395 ms
+2026-02-19 19:37:44.276 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=4&sortBy=newest&sortDescending=true - 200 null application/json; charset=utf-8 1712.1236ms
+2026-02-19 19:37:44.290 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/categories - null null
+2026-02-19 19:37:44.318 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/16/2026 9:03:28 AM', Current time (UTC): '2/19/2026 12:37:44 PM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-19 19:37:44.325 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/16/2026 9:03:28 AM', Current time (UTC): '2/19/2026 12:37:44 PM'.
+2026-02-19 19:37:44.327 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API)'
+2026-02-19 19:37:44.343 +07:00 [INF] Route matched with {action = "GetAll", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.Collections.Generic.List`1[TechStore.Shared.DTOs.CategoryDto]]]] GetAll() on controller TechStore.API.Controllers.CategoriesController (TechStore.API).
+2026-02-19 19:37:44.384 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-02-19 19:37:44.397 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.Collections.Generic.List`1[[TechStore.Shared.DTOs.CategoryDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-19 19:37:44.420 +07:00 [INF] Executed action TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API) in 73.0851ms
+2026-02-19 19:37:44.825 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API)'
+2026-02-19 19:37:44.827 +07:00 [INF] HTTP GET /api/categories responded 200 in 517.5653 ms
+2026-02-19 19:37:44.832 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/categories - 200 null application/json; charset=utf-8 541.0449ms
+2026-02-19 19:37:45.292 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/wishlist - null null
+2026-02-19 19:37:45.702 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/16/2026 9:03:28 AM', Current time (UTC): '2/19/2026 12:37:45 PM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-19 19:37:45.763 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/16/2026 9:03:28 AM', Current time (UTC): '2/19/2026 12:37:45 PM'.
+2026-02-19 19:37:45.922 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-19 19:37:46.126 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-19 19:37:46.129 +07:00 [INF] HTTP GET /api/wishlist responded 401 in 428.1796 ms
+2026-02-19 19:37:46.135 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/wishlist - 401 0 null 843.2028ms
+2026-02-19 19:37:46.218 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/cart - null null
+2026-02-19 19:37:46.238 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/16/2026 9:03:28 AM', Current time (UTC): '2/19/2026 12:37:46 PM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-19 19:37:46.265 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/16/2026 9:03:28 AM', Current time (UTC): '2/19/2026 12:37:46 PM'.
+2026-02-19 19:37:46.292 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-19 19:37:46.353 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-19 19:37:46.825 +07:00 [INF] HTTP GET /api/cart responded 401 in 587.4895 ms
+2026-02-19 19:37:48.264 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/cart - 401 0 null 2045.8775ms
+2026-02-19 19:37:48.461 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=8&sortBy=price&sortDescending=true - null null
+2026-02-19 19:37:50.268 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/16/2026 9:03:28 AM', Current time (UTC): '2/19/2026 12:37:50 PM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-19 19:37:50.280 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/16/2026 9:03:28 AM', Current time (UTC): '2/19/2026 12:37:50 PM'.
+2026-02-19 19:37:50.283 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:37:50.285 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.PagedResultDto`1[TechStore.Shared.DTOs.ProductDto]]]] GetAll(TechStore.Shared.DTOs.ProductFilterDto) on controller TechStore.API.Controllers.ProductsController (TechStore.API).
+2026-02-19 19:37:50.396 +07:00 [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+2026-02-19 19:37:51.092 +07:00 [INF] Executed DbCommand (21ms) [Parameters=[@p='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[Brand], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[IsActive], [p0].[LowStockThreshold], [p0].[Name], [p0].[Price], [p0].[RowVersion], [p0].[Slug], [p0].[Specifications], [p0].[StockQuantity], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt], [p1].[Id], [p1].[CreatedAt], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[UpdatedAt], [r].[Id], [r].[Comment], [r].[CreatedAt], [r].[ProductId], [r].[Rating], [r].[UpdatedAt], [r].[UserId]
+FROM (
+    SELECT [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit)
+    ORDER BY [p].[Price] DESC
+    OFFSET @p ROWS FETCH NEXT @p1 ROWS ONLY
+) AS [p0]
+LEFT JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+LEFT JOIN [Reviews] AS [r] ON [p0].[Id] = [r].[ProductId]
+ORDER BY [p0].[Price] DESC, [p0].[Id], [c].[Id], [p1].[Id]
+2026-02-19 19:37:51.540 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.PagedResultDto`1[[TechStore.Shared.DTOs.ProductDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:37:51.551 +07:00 [INF] Executed action TechStore.API.Controllers.ProductsController.GetAll (TechStore.API) in 1260.9378ms
+2026-02-19 19:37:51.554 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:37:51.556 +07:00 [INF] HTTP GET /api/products responded 200 in 1288.3988 ms
+2026-02-19 19:37:51.560 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=8&sortBy=price&sortDescending=true - 200 null application/json; charset=utf-8 3098.7232ms
+2026-02-19 19:37:51.566 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=4&sortBy=newest&sortDescending=true - null null
+2026-02-19 19:37:51.571 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/16/2026 9:03:28 AM', Current time (UTC): '2/19/2026 12:37:51 PM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-19 19:37:51.580 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/16/2026 9:03:28 AM', Current time (UTC): '2/19/2026 12:37:51 PM'.
+2026-02-19 19:37:51.582 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:37:51.584 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.PagedResultDto`1[TechStore.Shared.DTOs.ProductDto]]]] GetAll(TechStore.Shared.DTOs.ProductFilterDto) on controller TechStore.API.Controllers.ProductsController (TechStore.API).
+2026-02-19 19:37:51.596 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+2026-02-19 19:37:51.616 +07:00 [INF] Executed DbCommand (15ms) [Parameters=[@p='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[Brand], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[IsActive], [p0].[LowStockThreshold], [p0].[Name], [p0].[Price], [p0].[RowVersion], [p0].[Slug], [p0].[Specifications], [p0].[StockQuantity], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt], [p1].[Id], [p1].[CreatedAt], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[UpdatedAt], [r].[Id], [r].[Comment], [r].[CreatedAt], [r].[ProductId], [r].[Rating], [r].[UpdatedAt], [r].[UserId]
+FROM (
+    SELECT [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit)
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @p ROWS FETCH NEXT @p1 ROWS ONLY
+) AS [p0]
+LEFT JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+LEFT JOIN [Reviews] AS [r] ON [p0].[Id] = [r].[ProductId]
+ORDER BY [p0].[CreatedAt] DESC, [p0].[Id], [c].[Id], [p1].[Id]
+2026-02-19 19:37:51.629 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.PagedResultDto`1[[TechStore.Shared.DTOs.ProductDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:37:51.638 +07:00 [INF] Executed action TechStore.API.Controllers.ProductsController.GetAll (TechStore.API) in 49.7603ms
+2026-02-19 19:37:51.651 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:37:51.656 +07:00 [INF] HTTP GET /api/products responded 200 in 85.4428 ms
+2026-02-19 19:37:51.668 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=4&sortBy=newest&sortDescending=true - 200 null application/json; charset=utf-8 101.7313ms
+2026-02-19 19:37:51.673 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/categories - null null
+2026-02-19 19:37:51.698 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/16/2026 9:03:28 AM', Current time (UTC): '2/19/2026 12:37:51 PM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-19 19:37:51.713 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/16/2026 9:03:28 AM', Current time (UTC): '2/19/2026 12:37:51 PM'.
+2026-02-19 19:37:51.716 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API)'
+2026-02-19 19:37:51.720 +07:00 [INF] Route matched with {action = "GetAll", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.Collections.Generic.List`1[TechStore.Shared.DTOs.CategoryDto]]]] GetAll() on controller TechStore.API.Controllers.CategoriesController (TechStore.API).
+2026-02-19 19:37:51.758 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-02-19 19:37:51.786 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.Collections.Generic.List`1[[TechStore.Shared.DTOs.CategoryDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-19 19:37:51.802 +07:00 [INF] Executed action TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API) in 48.7237ms
+2026-02-19 19:37:51.808 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API)'
+2026-02-19 19:37:51.818 +07:00 [INF] HTTP GET /api/categories responded 200 in 120.2252 ms
+2026-02-19 19:37:51.821 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/categories - 200 null application/json; charset=utf-8 148.8378ms
+2026-02-19 19:37:51.836 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/wishlist - null null
+2026-02-19 19:37:51.856 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/16/2026 9:03:28 AM', Current time (UTC): '2/19/2026 12:37:51 PM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-19 19:37:51.865 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/16/2026 9:03:28 AM', Current time (UTC): '2/19/2026 12:37:51 PM'.
+2026-02-19 19:37:51.871 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-19 19:37:51.873 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-19 19:37:51.875 +07:00 [INF] HTTP GET /api/wishlist responded 401 in 19.7569 ms
+2026-02-19 19:37:51.881 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/wishlist - 401 0 null 45.0018ms
+2026-02-19 19:37:51.922 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/cart - null null
+2026-02-19 19:37:52.070 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/16/2026 9:03:28 AM', Current time (UTC): '2/19/2026 12:37:52 PM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-19 19:37:52.287 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/16/2026 9:03:28 AM', Current time (UTC): '2/19/2026 12:37:52 PM'.
+2026-02-19 19:37:52.829 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-19 19:37:53.153 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-19 19:37:53.159 +07:00 [INF] HTTP GET /api/cart responded 401 in 1088.8769 ms
+2026-02-19 19:37:53.174 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/cart - 401 0 null 1252.7584ms
+2026-02-19 19:38:00.906 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/cart - application/json; charset=utf-8 28
+2026-02-19 19:38:01.008 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/16/2026 9:03:28 AM', Current time (UTC): '2/19/2026 12:38:01 PM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-02-19 19:38:01.043 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2/16/2026 9:03:28 AM', Current time (UTC): '2/19/2026 12:38:01 PM'.
+2026-02-19 19:38:01.045 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-19 19:38:01.049 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-19 19:38:01.050 +07:00 [INF] HTTP POST /api/cart responded 401 in 43.1048 ms
+2026-02-19 19:38:01.060 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/cart - 401 0 null 153.1279ms
+2026-02-19 19:38:07.895 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/auth/login - application/json; charset=utf-8 54
+2026-02-19 19:38:07.903 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.AuthController.Login (TechStore.API)'
+2026-02-19 19:38:07.923 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.AuthResponseDto]]] Login(TechStore.Shared.DTOs.LoginDto) on controller TechStore.API.Controllers.AuthController (TechStore.API).
+2026-02-19 19:38:08.001 +07:00 [INF] Executed DbCommand (39ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-19 19:38:09.027 +07:00 [INF] Executed DbCommand (24ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-19 19:38:09.103 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[@user_Id='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreatedAt], [r].[ExpiresAt], [r].[ReplacedByToken], [r].[RevokedAt], [r].[Token], [r].[UpdatedAt], [r].[UserId]
+FROM [RefreshTokens] AS [r]
+WHERE [r].[UserId] = @user_Id AND ([r].[RevokedAt] IS NOT NULL OR [r].[ExpiresAt] <= GETUTCDATE())
+2026-02-19 19:38:09.515 +07:00 [INF] Executed DbCommand (17ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450), @p5='?' (DbType = DateTime2), @p6='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RefreshTokens] ([CreatedAt], [ExpiresAt], [ReplacedByToken], [RevokedAt], [Token], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2026-02-19 19:38:09.591 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @userId
+2026-02-19 19:38:09.698 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.AuthResponseDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:38:09.721 +07:00 [INF] Executed action TechStore.API.Controllers.AuthController.Login (TechStore.API) in 1794.1499ms
+2026-02-19 19:38:09.751 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.AuthController.Login (TechStore.API)'
+2026-02-19 19:38:09.754 +07:00 [INF] HTTP POST /api/auth/login responded 200 in 1851.4145 ms
+2026-02-19 19:38:09.766 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/auth/login - 200 null application/json; charset=utf-8 1871.0402ms
+2026-02-19 19:38:09.866 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=8&sortBy=price&sortDescending=true - null null
+2026-02-19 19:38:09.906 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:38:09.918 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.PagedResultDto`1[TechStore.Shared.DTOs.ProductDto]]]] GetAll(TechStore.Shared.DTOs.ProductFilterDto) on controller TechStore.API.Controllers.ProductsController (TechStore.API).
+2026-02-19 19:38:09.950 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+2026-02-19 19:38:09.968 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[@p='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[Brand], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[IsActive], [p0].[LowStockThreshold], [p0].[Name], [p0].[Price], [p0].[RowVersion], [p0].[Slug], [p0].[Specifications], [p0].[StockQuantity], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt], [p1].[Id], [p1].[CreatedAt], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[UpdatedAt], [r].[Id], [r].[Comment], [r].[CreatedAt], [r].[ProductId], [r].[Rating], [r].[UpdatedAt], [r].[UserId]
+FROM (
+    SELECT [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit)
+    ORDER BY [p].[Price] DESC
+    OFFSET @p ROWS FETCH NEXT @p1 ROWS ONLY
+) AS [p0]
+LEFT JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+LEFT JOIN [Reviews] AS [r] ON [p0].[Id] = [r].[ProductId]
+ORDER BY [p0].[Price] DESC, [p0].[Id], [c].[Id], [p1].[Id]
+2026-02-19 19:38:10.018 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.PagedResultDto`1[[TechStore.Shared.DTOs.ProductDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:38:10.473 +07:00 [INF] Executed action TechStore.API.Controllers.ProductsController.GetAll (TechStore.API) in 537.7746ms
+2026-02-19 19:38:10.481 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:38:10.483 +07:00 [INF] HTTP GET /api/products responded 200 in 598.7653 ms
+2026-02-19 19:38:10.486 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=8&sortBy=price&sortDescending=true - 200 null application/json; charset=utf-8 619.597ms
+2026-02-19 19:38:10.497 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=4&sortBy=newest&sortDescending=true - null null
+2026-02-19 19:38:10.506 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:38:10.509 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.PagedResultDto`1[TechStore.Shared.DTOs.ProductDto]]]] GetAll(TechStore.Shared.DTOs.ProductFilterDto) on controller TechStore.API.Controllers.ProductsController (TechStore.API).
+2026-02-19 19:38:10.525 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+2026-02-19 19:38:10.558 +07:00 [INF] Executed DbCommand (21ms) [Parameters=[@p='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[Brand], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[IsActive], [p0].[LowStockThreshold], [p0].[Name], [p0].[Price], [p0].[RowVersion], [p0].[Slug], [p0].[Specifications], [p0].[StockQuantity], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt], [p1].[Id], [p1].[CreatedAt], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[UpdatedAt], [r].[Id], [r].[Comment], [r].[CreatedAt], [r].[ProductId], [r].[Rating], [r].[UpdatedAt], [r].[UserId]
+FROM (
+    SELECT [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit)
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @p ROWS FETCH NEXT @p1 ROWS ONLY
+) AS [p0]
+LEFT JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+LEFT JOIN [Reviews] AS [r] ON [p0].[Id] = [r].[ProductId]
+ORDER BY [p0].[CreatedAt] DESC, [p0].[Id], [c].[Id], [p1].[Id]
+2026-02-19 19:38:11.000 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.PagedResultDto`1[[TechStore.Shared.DTOs.ProductDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:38:11.004 +07:00 [INF] Executed action TechStore.API.Controllers.ProductsController.GetAll (TechStore.API) in 486.0111ms
+2026-02-19 19:38:11.019 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:38:11.022 +07:00 [INF] HTTP GET /api/products responded 200 in 520.9046 ms
+2026-02-19 19:38:11.025 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=4&sortBy=newest&sortDescending=true - 200 null application/json; charset=utf-8 527.6422ms
+2026-02-19 19:38:11.030 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/categories - null null
+2026-02-19 19:38:11.257 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API)'
+2026-02-19 19:38:11.261 +07:00 [INF] Route matched with {action = "GetAll", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.Collections.Generic.List`1[TechStore.Shared.DTOs.CategoryDto]]]] GetAll() on controller TechStore.API.Controllers.CategoriesController (TechStore.API).
+2026-02-19 19:38:11.271 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-02-19 19:38:11.279 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.Collections.Generic.List`1[[TechStore.Shared.DTOs.CategoryDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-19 19:38:11.284 +07:00 [INF] Executed action TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API) in 16.4455ms
+2026-02-19 19:38:11.329 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API)'
+2026-02-19 19:38:11.332 +07:00 [INF] HTTP GET /api/categories responded 200 in 74.5459 ms
+2026-02-19 19:38:11.334 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/categories - 200 null application/json; charset=utf-8 304.1329ms
+2026-02-19 19:38:11.342 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/wishlist - null null
+2026-02-19 19:38:11.545 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API)'
+2026-02-19 19:38:11.562 +07:00 [INF] Route matched with {action = "GetWishlist", controller = "Wishlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.Collections.Generic.List`1[TechStore.Shared.DTOs.WishlistItemDto]]]] GetWishlist() on controller TechStore.API.Controllers.WishlistController (TechStore.API).
+2026-02-19 19:38:11.601 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[CreatedAt], [w].[ProductId], [w].[UpdatedAt], [w].[UserId]
+FROM [Wishlists] AS [w]
+WHERE [w].[UserId] = @userId
+2026-02-19 19:38:11.665 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.Collections.Generic.List`1[[TechStore.Shared.DTOs.WishlistItemDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-19 19:38:12.472 +07:00 [INF] Executed action TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API) in 902.4911ms
+2026-02-19 19:38:12.567 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API)'
+2026-02-19 19:38:12.569 +07:00 [INF] HTTP GET /api/wishlist responded 200 in 1024.6025 ms
+2026-02-19 19:38:12.572 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/wishlist - 200 null application/json; charset=utf-8 1230.2391ms
+2026-02-19 19:38:12.584 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/cart - null null
+2026-02-19 19:38:12.593 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:38:12.607 +07:00 [INF] Route matched with {action = "GetCart", controller = "Cart"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.CartSummaryDto]]] GetCart() on controller TechStore.API.Controllers.CartController (TechStore.API).
+2026-02-19 19:38:12.634 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[ProductId], [c].[Quantity], [c].[UpdatedAt], [c].[UserId]
+FROM [CartItems] AS [c]
+WHERE [c].[UserId] = @userId
+2026-02-19 19:38:12.644 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.CartSummaryDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:38:12.652 +07:00 [INF] Executed action TechStore.API.Controllers.CartController.GetCart (TechStore.API) in 39.7564ms
+2026-02-19 19:38:12.701 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:38:12.706 +07:00 [INF] HTTP GET /api/cart responded 200 in 113.8771 ms
+2026-02-19 19:38:12.715 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/cart - 200 null application/json; charset=utf-8 130.5979ms
+2026-02-19 19:38:16.197 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/cart - application/json; charset=utf-8 28
+2026-02-19 19:38:16.284 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CartController.AddToCart (TechStore.API)'
+2026-02-19 19:38:16.304 +07:00 [INF] Route matched with {action = "AddToCart", controller = "Cart"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.String]]] AddToCart(TechStore.Shared.DTOs.AddToCartDto) on controller TechStore.API.Controllers.CartController (TechStore.API).
+2026-02-19 19:38:16.366 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-19 19:38:16.429 +07:00 [INF] Executed DbCommand (24ms) [Parameters=[@userId='?' (Size = 450), @dto_ProductId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[ProductId], [c].[Quantity], [c].[UpdatedAt], [c].[UserId]
+FROM [CartItems] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[ProductId] = @dto_ProductId
+2026-02-19 19:38:16.550 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [CartItems] ([CreatedAt], [ProductId], [Quantity], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2026-02-19 19:38:16.577 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-19 19:38:16.586 +07:00 [INF] Executed action TechStore.API.Controllers.CartController.AddToCart (TechStore.API) in 270.8381ms
+2026-02-19 19:38:16.597 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CartController.AddToCart (TechStore.API)'
+2026-02-19 19:38:16.605 +07:00 [INF] HTTP POST /api/cart responded 200 in 321.4686 ms
+2026-02-19 19:38:16.821 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/cart - 200 null application/json; charset=utf-8 623.154ms
+2026-02-19 19:38:16.847 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=8&sortBy=price&sortDescending=true - null null
+2026-02-19 19:38:17.345 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:38:17.348 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.PagedResultDto`1[TechStore.Shared.DTOs.ProductDto]]]] GetAll(TechStore.Shared.DTOs.ProductFilterDto) on controller TechStore.API.Controllers.ProductsController (TechStore.API).
+2026-02-19 19:38:17.365 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+2026-02-19 19:38:17.385 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[@p='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[Brand], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[IsActive], [p0].[LowStockThreshold], [p0].[Name], [p0].[Price], [p0].[RowVersion], [p0].[Slug], [p0].[Specifications], [p0].[StockQuantity], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt], [p1].[Id], [p1].[CreatedAt], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[UpdatedAt], [r].[Id], [r].[Comment], [r].[CreatedAt], [r].[ProductId], [r].[Rating], [r].[UpdatedAt], [r].[UserId]
+FROM (
+    SELECT [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit)
+    ORDER BY [p].[Price] DESC
+    OFFSET @p ROWS FETCH NEXT @p1 ROWS ONLY
+) AS [p0]
+LEFT JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+LEFT JOIN [Reviews] AS [r] ON [p0].[Id] = [r].[ProductId]
+ORDER BY [p0].[Price] DESC, [p0].[Id], [c].[Id], [p1].[Id]
+2026-02-19 19:38:17.642 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.PagedResultDto`1[[TechStore.Shared.DTOs.ProductDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:38:17.796 +07:00 [INF] Executed action TechStore.API.Controllers.ProductsController.GetAll (TechStore.API) in 437.8525ms
+2026-02-19 19:38:17.816 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:38:17.818 +07:00 [INF] HTTP GET /api/products responded 200 in 472.5822 ms
+2026-02-19 19:38:17.821 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=8&sortBy=price&sortDescending=true - 200 null application/json; charset=utf-8 974.2578ms
+2026-02-19 19:38:17.837 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=4&sortBy=newest&sortDescending=true - null null
+2026-02-19 19:38:17.846 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:38:17.849 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.PagedResultDto`1[TechStore.Shared.DTOs.ProductDto]]]] GetAll(TechStore.Shared.DTOs.ProductFilterDto) on controller TechStore.API.Controllers.ProductsController (TechStore.API).
+2026-02-19 19:38:17.879 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+2026-02-19 19:38:17.903 +07:00 [INF] Executed DbCommand (16ms) [Parameters=[@p='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[Brand], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[IsActive], [p0].[LowStockThreshold], [p0].[Name], [p0].[Price], [p0].[RowVersion], [p0].[Slug], [p0].[Specifications], [p0].[StockQuantity], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt], [p1].[Id], [p1].[CreatedAt], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[UpdatedAt], [r].[Id], [r].[Comment], [r].[CreatedAt], [r].[ProductId], [r].[Rating], [r].[UpdatedAt], [r].[UserId]
+FROM (
+    SELECT [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit)
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @p ROWS FETCH NEXT @p1 ROWS ONLY
+) AS [p0]
+LEFT JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+LEFT JOIN [Reviews] AS [r] ON [p0].[Id] = [r].[ProductId]
+ORDER BY [p0].[CreatedAt] DESC, [p0].[Id], [c].[Id], [p1].[Id]
+2026-02-19 19:38:17.926 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.PagedResultDto`1[[TechStore.Shared.DTOs.ProductDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:38:17.934 +07:00 [INF] Executed action TechStore.API.Controllers.ProductsController.GetAll (TechStore.API) in 59.69ms
+2026-02-19 19:38:17.973 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:38:17.980 +07:00 [INF] HTTP GET /api/products responded 200 in 134.6399 ms
+2026-02-19 19:38:18.084 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=4&sortBy=newest&sortDescending=true - 200 null application/json; charset=utf-8 247.2168ms
+2026-02-19 19:38:18.097 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/categories - null null
+2026-02-19 19:38:18.135 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API)'
+2026-02-19 19:38:18.145 +07:00 [INF] Route matched with {action = "GetAll", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.Collections.Generic.List`1[TechStore.Shared.DTOs.CategoryDto]]]] GetAll() on controller TechStore.API.Controllers.CategoriesController (TechStore.API).
+2026-02-19 19:38:18.399 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-02-19 19:38:18.419 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.Collections.Generic.List`1[[TechStore.Shared.DTOs.CategoryDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-19 19:38:18.620 +07:00 [INF] Executed action TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API) in 223.9565ms
+2026-02-19 19:38:18.662 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API)'
+2026-02-19 19:38:18.666 +07:00 [INF] HTTP GET /api/categories responded 200 in 531.4663 ms
+2026-02-19 19:38:19.163 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/categories - 200 null application/json; charset=utf-8 1065.5433ms
+2026-02-19 19:38:19.175 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/wishlist - null null
+2026-02-19 19:38:19.193 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API)'
+2026-02-19 19:38:19.196 +07:00 [INF] Route matched with {action = "GetWishlist", controller = "Wishlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.Collections.Generic.List`1[TechStore.Shared.DTOs.WishlistItemDto]]]] GetWishlist() on controller TechStore.API.Controllers.WishlistController (TechStore.API).
+2026-02-19 19:38:19.212 +07:00 [INF] Executed DbCommand (9ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[CreatedAt], [w].[ProductId], [w].[UpdatedAt], [w].[UserId]
+FROM [Wishlists] AS [w]
+WHERE [w].[UserId] = @userId
+2026-02-19 19:38:19.234 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.Collections.Generic.List`1[[TechStore.Shared.DTOs.WishlistItemDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-19 19:38:19.246 +07:00 [INF] Executed action TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API) in 44.8054ms
+2026-02-19 19:38:19.936 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/cart - application/json; charset=utf-8 28
+2026-02-19 19:38:20.164 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API)'
+2026-02-19 19:38:20.573 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CartController.AddToCart (TechStore.API)'
+2026-02-19 19:38:20.608 +07:00 [INF] HTTP GET /api/wishlist responded 200 in 1415.4378 ms
+2026-02-19 19:38:20.610 +07:00 [INF] Route matched with {action = "AddToCart", controller = "Cart"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.String]]] AddToCart(TechStore.Shared.DTOs.AddToCartDto) on controller TechStore.API.Controllers.CartController (TechStore.API).
+2026-02-19 19:38:20.997 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/wishlist - 200 null application/json; charset=utf-8 1822.0513ms
+2026-02-19 19:38:21.009 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/cart - null null
+2026-02-19 19:38:21.031 +07:00 [INF] Executed DbCommand (14ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-19 19:38:21.036 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:38:21.041 +07:00 [INF] Route matched with {action = "GetCart", controller = "Cart"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.CartSummaryDto]]] GetCart() on controller TechStore.API.Controllers.CartController (TechStore.API).
+2026-02-19 19:38:21.053 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[@userId='?' (Size = 450), @dto_ProductId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[ProductId], [c].[Quantity], [c].[UpdatedAt], [c].[UserId]
+FROM [CartItems] AS [c]
+WHERE [c].[UserId] = @userId AND [c].[ProductId] = @dto_ProductId
+2026-02-19 19:38:21.063 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[ProductId], [c].[Quantity], [c].[UpdatedAt], [c].[UserId]
+FROM [CartItems] AS [c]
+WHERE [c].[UserId] = @userId
+2026-02-19 19:38:21.072 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [CartItems] ([CreatedAt], [ProductId], [Quantity], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2026-02-19 19:38:21.078 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-19 19:38:21.081 +07:00 [INF] Executed action TechStore.API.Controllers.CartController.AddToCart (TechStore.API) in 66.7817ms
+2026-02-19 19:38:21.083 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CartController.AddToCart (TechStore.API)'
+2026-02-19 19:38:21.085 +07:00 [INF] HTTP POST /api/cart responded 200 in 512.5581 ms
+2026-02-19 19:38:21.089 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/cart - 200 null application/json; charset=utf-8 1153.187ms
+2026-02-19 19:38:21.105 +07:00 [INF] Executed DbCommand (21ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-19 19:38:21.209 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=8&sortBy=price&sortDescending=true - null null
+2026-02-19 19:38:21.374 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[@product_Id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedAt], [p].[DisplayOrder], [p].[ImageUrl], [p].[IsPrimary], [p].[ProductId], [p].[UpdatedAt]
+FROM [ProductImages] AS [p]
+WHERE [p].[ProductId] = @product_Id AND [p].[IsPrimary] = CAST(1 AS bit)
+2026-02-19 19:38:21.376 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:38:21.389 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.CartSummaryDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:38:21.392 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.PagedResultDto`1[TechStore.Shared.DTOs.ProductDto]]]] GetAll(TechStore.Shared.DTOs.ProductFilterDto) on controller TechStore.API.Controllers.ProductsController (TechStore.API).
+2026-02-19 19:38:21.398 +07:00 [INF] Executed action TechStore.API.Controllers.CartController.GetCart (TechStore.API) in 353.1868ms
+2026-02-19 19:38:21.423 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:38:21.432 +07:00 [INF] HTTP GET /api/cart responded 200 in 397.2061 ms
+2026-02-19 19:38:21.433 +07:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+2026-02-19 19:38:21.439 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/cart - 200 null application/json; charset=utf-8 429.6884ms
+2026-02-19 19:38:21.496 +07:00 [INF] Executed DbCommand (41ms) [Parameters=[@p='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[Brand], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[IsActive], [p0].[LowStockThreshold], [p0].[Name], [p0].[Price], [p0].[RowVersion], [p0].[Slug], [p0].[Specifications], [p0].[StockQuantity], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt], [p1].[Id], [p1].[CreatedAt], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[UpdatedAt], [r].[Id], [r].[Comment], [r].[CreatedAt], [r].[ProductId], [r].[Rating], [r].[UpdatedAt], [r].[UserId]
+FROM (
+    SELECT [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit)
+    ORDER BY [p].[Price] DESC
+    OFFSET @p ROWS FETCH NEXT @p1 ROWS ONLY
+) AS [p0]
+LEFT JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+LEFT JOIN [Reviews] AS [r] ON [p0].[Id] = [r].[ProductId]
+ORDER BY [p0].[Price] DESC, [p0].[Id], [c].[Id], [p1].[Id]
+2026-02-19 19:38:21.513 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.PagedResultDto`1[[TechStore.Shared.DTOs.ProductDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:38:21.517 +07:00 [INF] Executed action TechStore.API.Controllers.ProductsController.GetAll (TechStore.API) in 102.6119ms
+2026-02-19 19:38:21.521 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:38:21.523 +07:00 [INF] HTTP GET /api/products responded 200 in 147.5477 ms
+2026-02-19 19:38:21.526 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=8&sortBy=price&sortDescending=true - 200 null application/json; charset=utf-8 317.0722ms
+2026-02-19 19:38:21.533 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=4&sortBy=newest&sortDescending=true - null null
+2026-02-19 19:38:21.539 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:38:21.542 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.PagedResultDto`1[TechStore.Shared.DTOs.ProductDto]]]] GetAll(TechStore.Shared.DTOs.ProductFilterDto) on controller TechStore.API.Controllers.ProductsController (TechStore.API).
+2026-02-19 19:38:21.554 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+2026-02-19 19:38:21.572 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[@p='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[Brand], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[IsActive], [p0].[LowStockThreshold], [p0].[Name], [p0].[Price], [p0].[RowVersion], [p0].[Slug], [p0].[Specifications], [p0].[StockQuantity], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt], [p1].[Id], [p1].[CreatedAt], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[UpdatedAt], [r].[Id], [r].[Comment], [r].[CreatedAt], [r].[ProductId], [r].[Rating], [r].[UpdatedAt], [r].[UserId]
+FROM (
+    SELECT [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit)
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @p ROWS FETCH NEXT @p1 ROWS ONLY
+) AS [p0]
+LEFT JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+LEFT JOIN [Reviews] AS [r] ON [p0].[Id] = [r].[ProductId]
+ORDER BY [p0].[CreatedAt] DESC, [p0].[Id], [c].[Id], [p1].[Id]
+2026-02-19 19:38:21.588 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.PagedResultDto`1[[TechStore.Shared.DTOs.ProductDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:38:21.593 +07:00 [INF] Executed action TechStore.API.Controllers.ProductsController.GetAll (TechStore.API) in 46.602ms
+2026-02-19 19:38:21.599 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:38:21.832 +07:00 [INF] HTTP GET /api/products responded 200 in 292.8690 ms
+2026-02-19 19:38:22.123 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=4&sortBy=newest&sortDescending=true - 200 null application/json; charset=utf-8 590.2837ms
+2026-02-19 19:38:22.124 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/categories - null null
+2026-02-19 19:38:22.349 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API)'
+2026-02-19 19:38:22.355 +07:00 [INF] Route matched with {action = "GetAll", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.Collections.Generic.List`1[TechStore.Shared.DTOs.CategoryDto]]]] GetAll() on controller TechStore.API.Controllers.CategoriesController (TechStore.API).
+2026-02-19 19:38:22.364 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-02-19 19:38:22.370 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.Collections.Generic.List`1[[TechStore.Shared.DTOs.CategoryDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-19 19:38:22.374 +07:00 [INF] Executed action TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API) in 13.5242ms
+2026-02-19 19:38:22.381 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API)'
+2026-02-19 19:38:22.383 +07:00 [INF] HTTP GET /api/categories responded 200 in 34.6364 ms
+2026-02-19 19:38:22.387 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/categories - 200 null application/json; charset=utf-8 262.8504ms
+2026-02-19 19:38:22.390 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/wishlist - null null
+2026-02-19 19:38:22.408 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API)'
+2026-02-19 19:38:22.410 +07:00 [INF] Route matched with {action = "GetWishlist", controller = "Wishlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.Collections.Generic.List`1[TechStore.Shared.DTOs.WishlistItemDto]]]] GetWishlist() on controller TechStore.API.Controllers.WishlistController (TechStore.API).
+2026-02-19 19:38:22.521 +07:00 [INF] Executed DbCommand (62ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[CreatedAt], [w].[ProductId], [w].[UpdatedAt], [w].[UserId]
+FROM [Wishlists] AS [w]
+WHERE [w].[UserId] = @userId
+2026-02-19 19:38:22.947 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.Collections.Generic.List`1[[TechStore.Shared.DTOs.WishlistItemDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-19 19:38:22.956 +07:00 [INF] Executed action TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API) in 497.8495ms
+2026-02-19 19:38:23.150 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API)'
+2026-02-19 19:38:23.157 +07:00 [INF] HTTP GET /api/wishlist responded 200 in 748.5653 ms
+2026-02-19 19:38:23.160 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/wishlist - 200 null application/json; charset=utf-8 769.6822ms
+2026-02-19 19:38:23.161 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/cart - null null
+2026-02-19 19:38:23.447 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:38:23.451 +07:00 [INF] Route matched with {action = "GetCart", controller = "Cart"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.CartSummaryDto]]] GetCart() on controller TechStore.API.Controllers.CartController (TechStore.API).
+2026-02-19 19:38:23.463 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[ProductId], [c].[Quantity], [c].[UpdatedAt], [c].[UserId]
+FROM [CartItems] AS [c]
+WHERE [c].[UserId] = @userId
+2026-02-19 19:38:23.476 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-19 19:38:23.488 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@product_Id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedAt], [p].[DisplayOrder], [p].[ImageUrl], [p].[IsPrimary], [p].[ProductId], [p].[UpdatedAt]
+FROM [ProductImages] AS [p]
+WHERE [p].[ProductId] = @product_Id AND [p].[IsPrimary] = CAST(1 AS bit)
+2026-02-19 19:38:23.495 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-19 19:38:23.509 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@product_Id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedAt], [p].[DisplayOrder], [p].[ImageUrl], [p].[IsPrimary], [p].[ProductId], [p].[UpdatedAt]
+FROM [ProductImages] AS [p]
+WHERE [p].[ProductId] = @product_Id AND [p].[IsPrimary] = CAST(1 AS bit)
+2026-02-19 19:38:23.703 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.CartSummaryDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:38:23.742 +07:00 [INF] Executed action TechStore.API.Controllers.CartController.GetCart (TechStore.API) in 284.7366ms
+2026-02-19 19:38:23.745 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:38:23.747 +07:00 [INF] HTTP GET /api/cart responded 200 in 300.3326 ms
+2026-02-19 19:38:23.753 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/cart - 200 null application/json; charset=utf-8 591.3393ms
+2026-02-19 19:38:26.504 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/cart - null null
+2026-02-19 19:38:26.525 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:38:26.556 +07:00 [INF] Route matched with {action = "GetCart", controller = "Cart"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.CartSummaryDto]]] GetCart() on controller TechStore.API.Controllers.CartController (TechStore.API).
+2026-02-19 19:38:26.570 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[ProductId], [c].[Quantity], [c].[UpdatedAt], [c].[UserId]
+FROM [CartItems] AS [c]
+WHERE [c].[UserId] = @userId
+2026-02-19 19:38:26.579 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-19 19:38:26.592 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@product_Id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedAt], [p].[DisplayOrder], [p].[ImageUrl], [p].[IsPrimary], [p].[ProductId], [p].[UpdatedAt]
+FROM [ProductImages] AS [p]
+WHERE [p].[ProductId] = @product_Id AND [p].[IsPrimary] = CAST(1 AS bit)
+2026-02-19 19:38:26.602 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-19 19:38:26.610 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@product_Id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedAt], [p].[DisplayOrder], [p].[ImageUrl], [p].[IsPrimary], [p].[ProductId], [p].[UpdatedAt]
+FROM [ProductImages] AS [p]
+WHERE [p].[ProductId] = @product_Id AND [p].[IsPrimary] = CAST(1 AS bit)
+2026-02-19 19:38:26.629 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.CartSummaryDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:38:26.638 +07:00 [INF] Executed action TechStore.API.Controllers.CartController.GetCart (TechStore.API) in 75.5452ms
+2026-02-19 19:38:26.812 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:38:26.816 +07:00 [INF] HTTP GET /api/cart responded 200 in 291.4953 ms
+2026-02-19 19:38:26.820 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/cart - 200 null application/json; charset=utf-8 316.8803ms
+2026-02-19 19:38:26.852 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/wishlist - null null
+2026-02-19 19:38:26.863 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API)'
+2026-02-19 19:38:26.866 +07:00 [INF] Route matched with {action = "GetWishlist", controller = "Wishlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.Collections.Generic.List`1[TechStore.Shared.DTOs.WishlistItemDto]]]] GetWishlist() on controller TechStore.API.Controllers.WishlistController (TechStore.API).
+2026-02-19 19:38:26.873 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[CreatedAt], [w].[ProductId], [w].[UpdatedAt], [w].[UserId]
+FROM [Wishlists] AS [w]
+WHERE [w].[UserId] = @userId
+2026-02-19 19:38:26.884 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.Collections.Generic.List`1[[TechStore.Shared.DTOs.WishlistItemDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-19 19:38:26.887 +07:00 [INF] Executed action TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API) in 18.9474ms
+2026-02-19 19:38:26.893 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API)'
+2026-02-19 19:38:26.896 +07:00 [INF] HTTP GET /api/wishlist responded 200 in 32.8697 ms
+2026-02-19 19:38:27.063 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/wishlist - 200 null application/json; charset=utf-8 211.345ms
+2026-02-19 19:38:27.066 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/cart - null null
+2026-02-19 19:38:27.076 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:38:27.080 +07:00 [INF] Route matched with {action = "GetCart", controller = "Cart"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.CartSummaryDto]]] GetCart() on controller TechStore.API.Controllers.CartController (TechStore.API).
+2026-02-19 19:38:27.090 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[ProductId], [c].[Quantity], [c].[UpdatedAt], [c].[UserId]
+FROM [CartItems] AS [c]
+WHERE [c].[UserId] = @userId
+2026-02-19 19:38:27.104 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-19 19:38:27.844 +07:00 [INF] Executed DbCommand (26ms) [Parameters=[@product_Id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedAt], [p].[DisplayOrder], [p].[ImageUrl], [p].[IsPrimary], [p].[ProductId], [p].[UpdatedAt]
+FROM [ProductImages] AS [p]
+WHERE [p].[ProductId] = @product_Id AND [p].[IsPrimary] = CAST(1 AS bit)
+2026-02-19 19:38:27.911 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-19 19:38:27.924 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@product_Id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedAt], [p].[DisplayOrder], [p].[ImageUrl], [p].[IsPrimary], [p].[ProductId], [p].[UpdatedAt]
+FROM [ProductImages] AS [p]
+WHERE [p].[ProductId] = @product_Id AND [p].[IsPrimary] = CAST(1 AS bit)
+2026-02-19 19:38:27.929 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.CartSummaryDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:38:28.072 +07:00 [INF] Executed action TechStore.API.Controllers.CartController.GetCart (TechStore.API) in 985.9468ms
+2026-02-19 19:38:28.524 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:38:28.592 +07:00 [INF] HTTP GET /api/cart responded 200 in 1516.7403 ms
+2026-02-19 19:38:28.740 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/cart - 200 null application/json; charset=utf-8 1674.5443ms
+2026-02-19 19:38:31.850 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/cart - null null
+2026-02-19 19:38:33.056 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:38:33.061 +07:00 [INF] Route matched with {action = "GetCart", controller = "Cart"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.CartSummaryDto]]] GetCart() on controller TechStore.API.Controllers.CartController (TechStore.API).
+2026-02-19 19:38:33.632 +07:00 [INF] Executed DbCommand (48ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[ProductId], [c].[Quantity], [c].[UpdatedAt], [c].[UserId]
+FROM [CartItems] AS [c]
+WHERE [c].[UserId] = @userId
+2026-02-19 19:38:34.016 +07:00 [INF] Executed DbCommand (33ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-19 19:38:34.719 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@product_Id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedAt], [p].[DisplayOrder], [p].[ImageUrl], [p].[IsPrimary], [p].[ProductId], [p].[UpdatedAt]
+FROM [ProductImages] AS [p]
+WHERE [p].[ProductId] = @product_Id AND [p].[IsPrimary] = CAST(1 AS bit)
+2026-02-19 19:38:34.733 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-19 19:38:35.073 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@product_Id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedAt], [p].[DisplayOrder], [p].[ImageUrl], [p].[IsPrimary], [p].[ProductId], [p].[UpdatedAt]
+FROM [ProductImages] AS [p]
+WHERE [p].[ProductId] = @product_Id AND [p].[IsPrimary] = CAST(1 AS bit)
+2026-02-19 19:38:35.105 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.CartSummaryDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:38:35.281 +07:00 [INF] Executed action TechStore.API.Controllers.CartController.GetCart (TechStore.API) in 1698.813ms
+2026-02-19 19:38:35.459 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:38:35.461 +07:00 [INF] HTTP GET /api/cart responded 200 in 2405.0204 ms
+2026-02-19 19:38:35.464 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/cart - 200 null application/json; charset=utf-8 3613.6241ms
+2026-02-19 19:38:35.496 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/wishlist - null null
+2026-02-19 19:38:35.511 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API)'
+2026-02-19 19:38:35.515 +07:00 [INF] Route matched with {action = "GetWishlist", controller = "Wishlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.Collections.Generic.List`1[TechStore.Shared.DTOs.WishlistItemDto]]]] GetWishlist() on controller TechStore.API.Controllers.WishlistController (TechStore.API).
+2026-02-19 19:38:35.530 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[CreatedAt], [w].[ProductId], [w].[UpdatedAt], [w].[UserId]
+FROM [Wishlists] AS [w]
+WHERE [w].[UserId] = @userId
+2026-02-19 19:38:35.536 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.Collections.Generic.List`1[[TechStore.Shared.DTOs.WishlistItemDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-19 19:38:35.703 +07:00 [INF] Executed action TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API) in 182.6318ms
+2026-02-19 19:38:35.714 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API)'
+2026-02-19 19:38:35.717 +07:00 [INF] HTTP GET /api/wishlist responded 200 in 206.6594 ms
+2026-02-19 19:38:35.721 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/wishlist - 200 null application/json; charset=utf-8 224.7441ms
+2026-02-19 19:38:35.722 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/cart - null null
+2026-02-19 19:38:36.269 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:38:36.284 +07:00 [INF] Route matched with {action = "GetCart", controller = "Cart"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.CartSummaryDto]]] GetCart() on controller TechStore.API.Controllers.CartController (TechStore.API).
+2026-02-19 19:38:36.768 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[ProductId], [c].[Quantity], [c].[UpdatedAt], [c].[UserId]
+FROM [CartItems] AS [c]
+WHERE [c].[UserId] = @userId
+2026-02-19 19:38:36.783 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-19 19:38:36.799 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@product_Id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedAt], [p].[DisplayOrder], [p].[ImageUrl], [p].[IsPrimary], [p].[ProductId], [p].[UpdatedAt]
+FROM [ProductImages] AS [p]
+WHERE [p].[ProductId] = @product_Id AND [p].[IsPrimary] = CAST(1 AS bit)
+2026-02-19 19:38:36.807 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-19 19:38:36.822 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@product_Id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedAt], [p].[DisplayOrder], [p].[ImageUrl], [p].[IsPrimary], [p].[ProductId], [p].[UpdatedAt]
+FROM [ProductImages] AS [p]
+WHERE [p].[ProductId] = @product_Id AND [p].[IsPrimary] = CAST(1 AS bit)
+2026-02-19 19:38:36.846 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.CartSummaryDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:38:36.849 +07:00 [INF] Executed action TechStore.API.Controllers.CartController.GetCart (TechStore.API) in 84.5392ms
+2026-02-19 19:38:37.275 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:38:37.295 +07:00 [INF] HTTP GET /api/cart responded 200 in 1026.6729 ms
+2026-02-19 19:38:37.302 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/cart - 200 null application/json; charset=utf-8 1579.9365ms
+2026-02-19 19:38:46.010 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/cart - null null
+2026-02-19 19:38:46.040 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:38:46.091 +07:00 [INF] Route matched with {action = "GetCart", controller = "Cart"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.CartSummaryDto]]] GetCart() on controller TechStore.API.Controllers.CartController (TechStore.API).
+2026-02-19 19:38:46.172 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[ProductId], [c].[Quantity], [c].[UpdatedAt], [c].[UserId]
+FROM [CartItems] AS [c]
+WHERE [c].[UserId] = @userId
+2026-02-19 19:38:46.189 +07:00 [INF] Executed DbCommand (9ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-19 19:38:46.203 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@product_Id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedAt], [p].[DisplayOrder], [p].[ImageUrl], [p].[IsPrimary], [p].[ProductId], [p].[UpdatedAt]
+FROM [ProductImages] AS [p]
+WHERE [p].[ProductId] = @product_Id AND [p].[IsPrimary] = CAST(1 AS bit)
+2026-02-19 19:38:46.214 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-19 19:38:46.589 +07:00 [INF] Executed DbCommand (43ms) [Parameters=[@product_Id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedAt], [p].[DisplayOrder], [p].[ImageUrl], [p].[IsPrimary], [p].[ProductId], [p].[UpdatedAt]
+FROM [ProductImages] AS [p]
+WHERE [p].[ProductId] = @product_Id AND [p].[IsPrimary] = CAST(1 AS bit)
+2026-02-19 19:38:46.723 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.CartSummaryDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:38:46.732 +07:00 [INF] Executed action TechStore.API.Controllers.CartController.GetCart (TechStore.API) in 571.881ms
+2026-02-19 19:38:46.767 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:38:46.792 +07:00 [INF] HTTP GET /api/cart responded 200 in 752.3290 ms
+2026-02-19 19:38:46.804 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/cart - 200 null application/json; charset=utf-8 793.569ms
+2026-02-19 19:38:46.828 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/orders - application/json; charset=utf-8 156
+2026-02-19 19:38:46.956 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.OrdersController.Create (TechStore.API)'
+2026-02-19 19:38:47.269 +07:00 [INF] Route matched with {action = "Create", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.OrderDto]]] Create(TechStore.Shared.DTOs.CreateOrderDto) on controller TechStore.API.Controllers.OrdersController (TechStore.API).
+2026-02-19 19:38:47.450 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-19 19:38:47.477 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-19 19:38:47.832 +07:00 [INF] Executed DbCommand (38ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (Size = 450), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 450), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (DbType = DateTime2), @p12='?' (Size = 450), @p25='?' (DbType = Int32), @p13='?' (Size = 450), @p14='?' (DbType = Int32), @p15='?' (DbType = DateTime2), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (DbType = Int32), @p19='?' (Size = 4000), @p20='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p26='?' (Size = 8) (DbType = Binary), @p21='?' (Size = 450), @p22='?' (Size = 4000), @p23='?' (DbType = Int32), @p24='?' (DbType = DateTime2), @p39='?' (DbType = Int32), @p27='?' (Size = 450), @p28='?' (DbType = Int32), @p29='?' (DbType = DateTime2), @p30='?' (Size = 4000), @p31='?' (DbType = Boolean), @p32='?' (DbType = Int32), @p33='?' (Size = 4000), @p34='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p40='?' (Size = 8) (DbType = Binary), @p35='?' (Size = 450), @p36='?' (Size = 4000), @p37='?' (DbType = Int32), @p38='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([CouponCode], [CreatedAt], [DiscountAmount], [Note], [OrderDate], [PaymentMethod], [PaymentStatus], [PhoneNumber], [ShippingAddress], [Status], [TotalAmount], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id], INSERTED.[RowVersion]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+UPDATE [Products] SET [Brand] = @p13, [CategoryId] = @p14, [CreatedAt] = @p15, [Description] = @p16, [IsActive] = @p17, [LowStockThreshold] = @p18, [Name] = @p19, [Price] = @p20, [Slug] = @p21, [Specifications] = @p22, [StockQuantity] = @p23, [UpdatedAt] = @p24
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p25 AND [RowVersion] = @p26;
+UPDATE [Products] SET [Brand] = @p27, [CategoryId] = @p28, [CreatedAt] = @p29, [Description] = @p30, [IsActive] = @p31, [LowStockThreshold] = @p32, [Name] = @p33, [Price] = @p34, [Slug] = @p35, [Specifications] = @p36, [StockQuantity] = @p37, [UpdatedAt] = @p38
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p39 AND [RowVersion] = @p40;
+2026-02-19 19:38:47.899 +07:00 [INF] Executed DbCommand (28ms) [Parameters=[@p41='?' (DbType = DateTime2), @p42='?' (DbType = Int32), @p43='?' (DbType = Int32), @p44='?' (DbType = Int32), @p45='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p46='?' (DbType = DateTime2), @p47='?' (DbType = DateTime2), @p48='?' (DbType = Int32), @p49='?' (DbType = Int32), @p50='?' (DbType = Int32), @p51='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p52='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [OrderItems] USING (
+VALUES (@p41, @p42, @p43, @p44, @p45, @p46, 0),
+(@p47, @p48, @p49, @p50, @p51, @p52, 1)) AS i ([CreatedAt], [OrderId], [ProductId], [Quantity], [UnitPrice], [UpdatedAt], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([CreatedAt], [OrderId], [ProductId], [Quantity], [UnitPrice], [UpdatedAt])
+VALUES (i.[CreatedAt], i.[OrderId], i.[ProductId], i.[Quantity], i.[UnitPrice], i.[UpdatedAt])
+OUTPUT INSERTED.[Id], i._Position;
+2026-02-19 19:38:48.483 +07:00 [INF] Executing CreatedAtActionResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.OrderDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:38:48.561 +07:00 [INF] Executed action TechStore.API.Controllers.OrdersController.Create (TechStore.API) in 1286.9157ms
+2026-02-19 19:38:49.010 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.OrdersController.Create (TechStore.API)'
+2026-02-19 19:38:49.021 +07:00 [INF] Executed DbCommand (22ms) [Parameters=[@p='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @p
+2026-02-19 19:38:49.028 +07:00 [INF] HTTP POST /api/orders responded 201 in 2072.0552 ms
+2026-02-19 19:38:49.061 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/orders - 201 null application/json; charset=utf-8 2232.4429ms
+2026-02-19 19:38:49.061 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CouponCode], [o].[CreatedAt], [o].[DiscountAmount], [o].[Note], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PhoneNumber], [o].[RowVersion], [o].[ShippingAddress], [o].[Status], [o].[TotalAmount], [o].[UpdatedAt], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Id] = @p
+2026-02-19 19:38:49.100 +07:00 [WRN] SMTP not configured, skipping email to testuser_auto@example.com: TechStore - Order #2011 Confirmed!
+2026-02-19 19:38:49.111 +07:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5019/api/cart/clear - null null
+2026-02-19 19:38:49.236 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/cart - null null
+2026-02-19 19:38:49.286 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CartController.ClearCart (TechStore.API)'
+2026-02-19 19:38:49.291 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:38:49.304 +07:00 [INF] Route matched with {action = "GetCart", controller = "Cart"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.CartSummaryDto]]] GetCart() on controller TechStore.API.Controllers.CartController (TechStore.API).
+2026-02-19 19:38:49.309 +07:00 [INF] Route matched with {action = "ClearCart", controller = "Cart"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.String]]] ClearCart() on controller TechStore.API.Controllers.CartController (TechStore.API).
+2026-02-19 19:38:49.323 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[ProductId], [c].[Quantity], [c].[UpdatedAt], [c].[UserId]
+FROM [CartItems] AS [c]
+WHERE [c].[UserId] = @userId
+2026-02-19 19:38:49.336 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[ProductId], [c].[Quantity], [c].[UpdatedAt], [c].[UserId]
+FROM [CartItems] AS [c]
+WHERE [c].[UserId] = @userId
+2026-02-19 19:38:49.342 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-19 19:38:49.519 +07:00 [INF] Executed DbCommand (100ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [CartItems]
+OUTPUT 1
+WHERE [Id] = @p0;
+DELETE FROM [CartItems]
+OUTPUT 1
+WHERE [Id] = @p1;
+2026-02-19 19:38:49.532 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[@product_Id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedAt], [p].[DisplayOrder], [p].[ImageUrl], [p].[IsPrimary], [p].[ProductId], [p].[UpdatedAt]
+FROM [ProductImages] AS [p]
+WHERE [p].[ProductId] = @product_Id AND [p].[IsPrimary] = CAST(1 AS bit)
+2026-02-19 19:38:49.546 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-19 19:38:49.555 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-19 19:38:49.558 +07:00 [INF] Executed action TechStore.API.Controllers.CartController.ClearCart (TechStore.API) in 233.4383ms
+2026-02-19 19:38:49.573 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@product_Id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatedAt], [p].[DisplayOrder], [p].[ImageUrl], [p].[IsPrimary], [p].[ProductId], [p].[UpdatedAt]
+FROM [ProductImages] AS [p]
+WHERE [p].[ProductId] = @product_Id AND [p].[IsPrimary] = CAST(1 AS bit)
+2026-02-19 19:38:49.573 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CartController.ClearCart (TechStore.API)'
+2026-02-19 19:38:49.581 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.CartSummaryDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:38:49.583 +07:00 [INF] HTTP DELETE /api/cart/clear responded 200 in 297.2614 ms
+2026-02-19 19:38:49.586 +07:00 [INF] Executed action TechStore.API.Controllers.CartController.GetCart (TechStore.API) in 268.2144ms
+2026-02-19 19:38:49.592 +07:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5019/api/cart/clear - 200 null application/json; charset=utf-8 481.7976ms
+2026-02-19 19:38:49.599 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:38:49.640 +07:00 [INF] HTTP GET /api/cart responded 200 in 349.2504 ms
+2026-02-19 19:38:49.644 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/cart - 200 null application/json; charset=utf-8 408.1535ms
+2026-02-19 19:38:49.648 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5019/api/orders - application/json; charset=utf-8 156
+2026-02-19 19:38:49.660 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.OrdersController.Create (TechStore.API)'
+2026-02-19 19:38:49.667 +07:00 [INF] Route matched with {action = "Create", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.OrderDto]]] Create(TechStore.Shared.DTOs.CreateOrderDto) on controller TechStore.API.Controllers.OrdersController (TechStore.API).
+2026-02-19 19:38:49.685 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-19 19:38:49.772 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @p
+2026-02-19 19:38:49.931 +07:00 [INF] Executed DbCommand (71ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (Size = 450), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 450), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (DbType = DateTime2), @p12='?' (Size = 450), @p25='?' (DbType = Int32), @p13='?' (Size = 450), @p14='?' (DbType = Int32), @p15='?' (DbType = DateTime2), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (DbType = Int32), @p19='?' (Size = 4000), @p20='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p26='?' (Size = 8) (DbType = Binary), @p21='?' (Size = 450), @p22='?' (Size = 4000), @p23='?' (DbType = Int32), @p24='?' (DbType = DateTime2), @p39='?' (DbType = Int32), @p27='?' (Size = 450), @p28='?' (DbType = Int32), @p29='?' (DbType = DateTime2), @p30='?' (Size = 4000), @p31='?' (DbType = Boolean), @p32='?' (DbType = Int32), @p33='?' (Size = 4000), @p34='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p40='?' (Size = 8) (DbType = Binary), @p35='?' (Size = 450), @p36='?' (Size = 4000), @p37='?' (DbType = Int32), @p38='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([CouponCode], [CreatedAt], [DiscountAmount], [Note], [OrderDate], [PaymentMethod], [PaymentStatus], [PhoneNumber], [ShippingAddress], [Status], [TotalAmount], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id], INSERTED.[RowVersion]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+UPDATE [Products] SET [Brand] = @p13, [CategoryId] = @p14, [CreatedAt] = @p15, [Description] = @p16, [IsActive] = @p17, [LowStockThreshold] = @p18, [Name] = @p19, [Price] = @p20, [Slug] = @p21, [Specifications] = @p22, [StockQuantity] = @p23, [UpdatedAt] = @p24
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p25 AND [RowVersion] = @p26;
+UPDATE [Products] SET [Brand] = @p27, [CategoryId] = @p28, [CreatedAt] = @p29, [Description] = @p30, [IsActive] = @p31, [LowStockThreshold] = @p32, [Name] = @p33, [Price] = @p34, [Slug] = @p35, [Specifications] = @p36, [StockQuantity] = @p37, [UpdatedAt] = @p38
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p39 AND [RowVersion] = @p40;
+2026-02-19 19:38:50.482 +07:00 [INF] Executed DbCommand (39ms) [Parameters=[@p41='?' (DbType = DateTime2), @p42='?' (DbType = Int32), @p43='?' (DbType = Int32), @p44='?' (DbType = Int32), @p45='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p46='?' (DbType = DateTime2), @p47='?' (DbType = DateTime2), @p48='?' (DbType = Int32), @p49='?' (DbType = Int32), @p50='?' (DbType = Int32), @p51='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p52='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [OrderItems] USING (
+VALUES (@p41, @p42, @p43, @p44, @p45, @p46, 0),
+(@p47, @p48, @p49, @p50, @p51, @p52, 1)) AS i ([CreatedAt], [OrderId], [ProductId], [Quantity], [UnitPrice], [UpdatedAt], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([CreatedAt], [OrderId], [ProductId], [Quantity], [UnitPrice], [UpdatedAt])
+VALUES (i.[CreatedAt], i.[OrderId], i.[ProductId], i.[Quantity], i.[UnitPrice], i.[UpdatedAt])
+OUTPUT INSERTED.[Id], i._Position;
+2026-02-19 19:38:50.862 +07:00 [INF] Executing CreatedAtActionResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.OrderDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:38:50.866 +07:00 [INF] Executed action TechStore.API.Controllers.OrdersController.Create (TechStore.API) in 1193.4713ms
+2026-02-19 19:38:50.869 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.OrdersController.Create (TechStore.API)'
+2026-02-19 19:38:50.871 +07:00 [INF] HTTP POST /api/orders responded 201 in 1211.0800 ms
+2026-02-19 19:38:50.874 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5019/api/orders - 201 null application/json; charset=utf-8 1225.4592ms
+2026-02-19 19:38:50.877 +07:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5019/api/cart/clear - null null
+2026-02-19 19:38:50.885 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CartController.ClearCart (TechStore.API)'
+2026-02-19 19:38:50.887 +07:00 [INF] Route matched with {action = "ClearCart", controller = "Cart"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.String]]] ClearCart() on controller TechStore.API.Controllers.CartController (TechStore.API).
+2026-02-19 19:38:50.896 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[ProductId], [c].[Quantity], [c].[UpdatedAt], [c].[UserId]
+FROM [CartItems] AS [c]
+WHERE [c].[UserId] = @userId
+2026-02-19 19:38:50.970 +07:00 [INF] Executed DbCommand (18ms) [Parameters=[@p='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @p
+2026-02-19 19:38:50.980 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-19 19:38:50.986 +07:00 [INF] Executed action TechStore.API.Controllers.CartController.ClearCart (TechStore.API) in 95.1909ms
+2026-02-19 19:38:50.988 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CartController.ClearCart (TechStore.API)'
+2026-02-19 19:38:50.990 +07:00 [INF] HTTP DELETE /api/cart/clear responded 200 in 105.0868 ms
+2026-02-19 19:38:50.993 +07:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5019/api/cart/clear - 200 null application/json; charset=utf-8 115.8733ms
+2026-02-19 19:38:51.081 +07:00 [INF] Executed DbCommand (97ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CouponCode], [o].[CreatedAt], [o].[DiscountAmount], [o].[Note], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PhoneNumber], [o].[RowVersion], [o].[ShippingAddress], [o].[Status], [o].[TotalAmount], [o].[UpdatedAt], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Id] = @p
+2026-02-19 19:38:51.279 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/wishlist - null null
+2026-02-19 19:38:51.367 +07:00 [WRN] SMTP not configured, skipping email to testuser_auto@example.com: TechStore - Order #2012 Confirmed!
+2026-02-19 19:38:51.373 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API)'
+2026-02-19 19:38:51.394 +07:00 [INF] Route matched with {action = "GetWishlist", controller = "Wishlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.Collections.Generic.List`1[TechStore.Shared.DTOs.WishlistItemDto]]]] GetWishlist() on controller TechStore.API.Controllers.WishlistController (TechStore.API).
+2026-02-19 19:38:51.670 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[CreatedAt], [w].[ProductId], [w].[UpdatedAt], [w].[UserId]
+FROM [Wishlists] AS [w]
+WHERE [w].[UserId] = @userId
+2026-02-19 19:38:52.059 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.Collections.Generic.List`1[[TechStore.Shared.DTOs.WishlistItemDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-19 19:38:52.106 +07:00 [INF] Executed action TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API) in 447.1015ms
+2026-02-19 19:38:52.132 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API)'
+2026-02-19 19:38:52.134 +07:00 [INF] HTTP GET /api/wishlist responded 200 in 760.7969 ms
+2026-02-19 19:38:52.136 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/wishlist - 200 null application/json; charset=utf-8 856.6512ms
+2026-02-19 19:38:52.142 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/cart - null null
+2026-02-19 19:38:52.153 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:38:52.158 +07:00 [INF] Route matched with {action = "GetCart", controller = "Cart"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.CartSummaryDto]]] GetCart() on controller TechStore.API.Controllers.CartController (TechStore.API).
+2026-02-19 19:38:52.168 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[ProductId], [c].[Quantity], [c].[UpdatedAt], [c].[UserId]
+FROM [CartItems] AS [c]
+WHERE [c].[UserId] = @userId
+2026-02-19 19:38:52.174 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.CartSummaryDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:38:52.181 +07:00 [INF] Executed action TechStore.API.Controllers.CartController.GetCart (TechStore.API) in 15.9906ms
+2026-02-19 19:38:52.186 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:38:52.190 +07:00 [INF] HTTP GET /api/cart responded 200 in 37.2332 ms
+2026-02-19 19:38:52.194 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/cart - 200 null application/json; charset=utf-8 51.7827ms
+2026-02-19 19:39:43.149 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/orders/2012 - null null
+2026-02-19 19:39:43.164 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.OrdersController.GetById (TechStore.API)'
+2026-02-19 19:39:43.208 +07:00 [INF] Route matched with {action = "GetById", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.OrderDto]]] GetById(Int32) on controller TechStore.API.Controllers.OrdersController (TechStore.API).
+2026-02-19 19:39:43.465 +07:00 [INF] Executed DbCommand (78ms) [Parameters=[@request_Id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o1].[Id], [o1].[CouponCode], [o1].[CreatedAt], [o1].[DiscountAmount], [o1].[Note], [o1].[OrderDate], [o1].[PaymentMethod], [o1].[PaymentStatus], [o1].[PhoneNumber], [o1].[RowVersion], [o1].[ShippingAddress], [o1].[Status], [o1].[TotalAmount], [o1].[UpdatedAt], [o1].[UserId], [s].[Id], [s].[CreatedAt], [s].[OrderId], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[UpdatedAt], [s].[Id0], [s].[Brand], [s].[CategoryId], [s].[CreatedAt0], [s].[Description], [s].[IsActive], [s].[LowStockThreshold], [s].[Name], [s].[Price], [s].[RowVersion], [s].[Slug], [s].[Specifications], [s].[StockQuantity], [s].[UpdatedAt0]
+FROM (
+    SELECT TOP(1) [o].[Id], [o].[CouponCode], [o].[CreatedAt], [o].[DiscountAmount], [o].[Note], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PhoneNumber], [o].[RowVersion], [o].[ShippingAddress], [o].[Status], [o].[TotalAmount], [o].[UpdatedAt], [o].[UserId]
+    FROM [Orders] AS [o]
+    WHERE [o].[Id] = @request_Id
+) AS [o1]
+LEFT JOIN (
+    SELECT [o0].[Id], [o0].[CreatedAt], [o0].[OrderId], [o0].[ProductId], [o0].[Quantity], [o0].[UnitPrice], [o0].[UpdatedAt], [p].[Id] AS [Id0], [p].[Brand], [p].[CategoryId], [p].[CreatedAt] AS [CreatedAt0], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt] AS [UpdatedAt0]
+    FROM [OrderItems] AS [o0]
+    INNER JOIN [Products] AS [p] ON [o0].[ProductId] = [p].[Id]
+) AS [s] ON [o1].[Id] = [s].[OrderId]
+ORDER BY [o1].[Id], [s].[Id]
+2026-02-19 19:39:43.909 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.OrderDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:39:43.913 +07:00 [INF] Executed action TechStore.API.Controllers.OrdersController.GetById (TechStore.API) in 594.1543ms
+2026-02-19 19:39:43.924 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.OrdersController.GetById (TechStore.API)'
+2026-02-19 19:39:43.927 +07:00 [INF] HTTP GET /api/orders/2012 responded 200 in 763.5558 ms
+2026-02-19 19:39:43.932 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/orders/2012 - 200 null application/json; charset=utf-8 782.7187ms
+2026-02-19 19:39:43.944 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/payments/order/2012 - null null
+2026-02-19 19:39:43.956 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.PaymentsController.GetByOrder (TechStore.API)'
+2026-02-19 19:39:43.976 +07:00 [INF] Route matched with {action = "GetByOrder", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.Collections.Generic.List`1[TechStore.Shared.DTOs.PaymentDto]]]] GetByOrder(Int32) on controller TechStore.API.Controllers.PaymentsController (TechStore.API).
+2026-02-19 19:39:44.040 +07:00 [INF] Executed DbCommand (52ms) [Parameters=[@p='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CouponCode], [o].[CreatedAt], [o].[DiscountAmount], [o].[Note], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PhoneNumber], [o].[RowVersion], [o].[ShippingAddress], [o].[Status], [o].[TotalAmount], [o].[UpdatedAt], [o].[UserId]
+FROM [Orders] AS [o]
+WHERE [o].[Id] = @p
+2026-02-19 19:39:44.230 +07:00 [INF] Executed DbCommand (14ms) [Parameters=[@orderId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[OrderId], [p].[PaymentMethod], [p].[Status], [p].[Amount], [p].[TransactionId], [p].[BankCode], [p].[CardType], [p].[PaidAt], [p].[CreatedAt]
+FROM [Payments] AS [p]
+WHERE [p].[OrderId] = @orderId
+ORDER BY [p].[CreatedAt] DESC
+2026-02-19 19:39:44.244 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.Collections.Generic.List`1[[TechStore.Shared.DTOs.PaymentDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-19 19:39:44.259 +07:00 [INF] Executed action TechStore.API.Controllers.PaymentsController.GetByOrder (TechStore.API) in 279.3551ms
+2026-02-19 19:39:44.433 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.PaymentsController.GetByOrder (TechStore.API)'
+2026-02-19 19:39:44.440 +07:00 [INF] HTTP GET /api/payments/order/2012 responded 200 in 484.3525 ms
+2026-02-19 19:39:44.624 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/payments/order/2012 - 200 null application/json; charset=utf-8 679.886ms
+2026-02-19 19:39:44.662 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/wishlist - null null
+2026-02-19 19:39:44.712 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API)'
+2026-02-19 19:39:44.715 +07:00 [INF] Route matched with {action = "GetWishlist", controller = "Wishlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.Collections.Generic.List`1[TechStore.Shared.DTOs.WishlistItemDto]]]] GetWishlist() on controller TechStore.API.Controllers.WishlistController (TechStore.API).
+2026-02-19 19:39:44.731 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[CreatedAt], [w].[ProductId], [w].[UpdatedAt], [w].[UserId]
+FROM [Wishlists] AS [w]
+WHERE [w].[UserId] = @userId
+2026-02-19 19:39:44.745 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.Collections.Generic.List`1[[TechStore.Shared.DTOs.WishlistItemDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-19 19:39:44.761 +07:00 [INF] Executed action TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API) in 39.1714ms
+2026-02-19 19:39:44.857 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API)'
+2026-02-19 19:39:44.897 +07:00 [INF] HTTP GET /api/wishlist responded 200 in 186.3254 ms
+2026-02-19 19:39:44.906 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/wishlist - 200 null application/json; charset=utf-8 243.8982ms
+2026-02-19 19:39:44.926 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/cart - null null
+2026-02-19 19:39:44.942 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:39:44.945 +07:00 [INF] Route matched with {action = "GetCart", controller = "Cart"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.CartSummaryDto]]] GetCart() on controller TechStore.API.Controllers.CartController (TechStore.API).
+2026-02-19 19:39:44.954 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[ProductId], [c].[Quantity], [c].[UpdatedAt], [c].[UserId]
+FROM [CartItems] AS [c]
+WHERE [c].[UserId] = @userId
+2026-02-19 19:39:44.964 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.CartSummaryDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:39:44.967 +07:00 [INF] Executed action TechStore.API.Controllers.CartController.GetCart (TechStore.API) in 18.44ms
+2026-02-19 19:39:44.973 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:39:44.978 +07:00 [INF] HTTP GET /api/cart responded 200 in 35.6470 ms
+2026-02-19 19:39:44.980 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/cart - 200 null application/json; charset=utf-8 54.3878ms
+2026-02-19 19:40:02.018 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/orders/my-orders - null null
+2026-02-19 19:40:02.084 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.OrdersController.GetMyOrders (TechStore.API)'
+2026-02-19 19:40:02.106 +07:00 [INF] Route matched with {action = "GetMyOrders", controller = "Orders"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.Collections.Generic.List`1[TechStore.Shared.DTOs.OrderDto]]]] GetMyOrders() on controller TechStore.API.Controllers.OrdersController (TechStore.API).
+2026-02-19 19:40:02.278 +07:00 [INF] Executed DbCommand (108ms) [Parameters=[@request_UserId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CouponCode], [o].[CreatedAt], [o].[DiscountAmount], [o].[Note], [o].[OrderDate], [o].[PaymentMethod], [o].[PaymentStatus], [o].[PhoneNumber], [o].[RowVersion], [o].[ShippingAddress], [o].[Status], [o].[TotalAmount], [o].[UpdatedAt], [o].[UserId], [s].[Id], [s].[CreatedAt], [s].[OrderId], [s].[ProductId], [s].[Quantity], [s].[UnitPrice], [s].[UpdatedAt], [s].[Id0], [s].[Brand], [s].[CategoryId], [s].[CreatedAt0], [s].[Description], [s].[IsActive], [s].[LowStockThreshold], [s].[Name], [s].[Price], [s].[RowVersion], [s].[Slug], [s].[Specifications], [s].[StockQuantity], [s].[UpdatedAt0]
+FROM [Orders] AS [o]
+LEFT JOIN (
+    SELECT [o0].[Id], [o0].[CreatedAt], [o0].[OrderId], [o0].[ProductId], [o0].[Quantity], [o0].[UnitPrice], [o0].[UpdatedAt], [p].[Id] AS [Id0], [p].[Brand], [p].[CategoryId], [p].[CreatedAt] AS [CreatedAt0], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt] AS [UpdatedAt0]
+    FROM [OrderItems] AS [o0]
+    INNER JOIN [Products] AS [p] ON [o0].[ProductId] = [p].[Id]
+) AS [s] ON [o].[Id] = [s].[OrderId]
+WHERE [o].[UserId] = @request_UserId
+ORDER BY [o].[OrderDate] DESC, [o].[Id], [s].[Id]
+2026-02-19 19:40:02.865 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.Collections.Generic.List`1[[TechStore.Shared.DTOs.OrderDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-19 19:40:02.878 +07:00 [INF] Executed action TechStore.API.Controllers.OrdersController.GetMyOrders (TechStore.API) in 753.1779ms
+2026-02-19 19:40:02.889 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.OrdersController.GetMyOrders (TechStore.API)'
+2026-02-19 19:40:02.892 +07:00 [INF] HTTP GET /api/orders/my-orders responded 200 in 807.8708 ms
+2026-02-19 19:40:02.898 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/orders/my-orders - 200 null application/json; charset=utf-8 879.3795ms
+2026-02-19 19:40:02.934 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/wishlist - null null
+2026-02-19 19:40:02.943 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API)'
+2026-02-19 19:40:02.957 +07:00 [INF] Route matched with {action = "GetWishlist", controller = "Wishlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.Collections.Generic.List`1[TechStore.Shared.DTOs.WishlistItemDto]]]] GetWishlist() on controller TechStore.API.Controllers.WishlistController (TechStore.API).
+2026-02-19 19:40:03.006 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[CreatedAt], [w].[ProductId], [w].[UpdatedAt], [w].[UserId]
+FROM [Wishlists] AS [w]
+WHERE [w].[UserId] = @userId
+2026-02-19 19:40:03.014 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.Collections.Generic.List`1[[TechStore.Shared.DTOs.WishlistItemDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-19 19:40:03.056 +07:00 [INF] Executed action TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API) in 55.258ms
+2026-02-19 19:40:03.071 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API)'
+2026-02-19 19:40:03.110 +07:00 [INF] HTTP GET /api/wishlist responded 200 in 167.8003 ms
+2026-02-19 19:40:03.154 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/wishlist - 200 null application/json; charset=utf-8 220.0647ms
+2026-02-19 19:40:03.172 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/cart - null null
+2026-02-19 19:40:03.223 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:40:03.225 +07:00 [INF] Route matched with {action = "GetCart", controller = "Cart"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.CartSummaryDto]]] GetCart() on controller TechStore.API.Controllers.CartController (TechStore.API).
+2026-02-19 19:40:03.239 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[ProductId], [c].[Quantity], [c].[UpdatedAt], [c].[UserId]
+FROM [CartItems] AS [c]
+WHERE [c].[UserId] = @userId
+2026-02-19 19:40:03.273 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.CartSummaryDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:40:03.289 +07:00 [INF] Executed action TechStore.API.Controllers.CartController.GetCart (TechStore.API) in 61.5556ms
+2026-02-19 19:40:03.300 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:40:03.414 +07:00 [INF] HTTP GET /api/cart responded 200 in 191.7890 ms
+2026-02-19 19:40:03.421 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/cart - 200 null application/json; charset=utf-8 249.0377ms
+2026-02-19 19:40:09.819 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=8&sortBy=price&sortDescending=true - null null
+2026-02-19 19:40:09.906 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:40:09.908 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.PagedResultDto`1[TechStore.Shared.DTOs.ProductDto]]]] GetAll(TechStore.Shared.DTOs.ProductFilterDto) on controller TechStore.API.Controllers.ProductsController (TechStore.API).
+2026-02-19 19:40:09.925 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+2026-02-19 19:40:09.954 +07:00 [INF] Executed DbCommand (18ms) [Parameters=[@p='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[Brand], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[IsActive], [p0].[LowStockThreshold], [p0].[Name], [p0].[Price], [p0].[RowVersion], [p0].[Slug], [p0].[Specifications], [p0].[StockQuantity], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt], [p1].[Id], [p1].[CreatedAt], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[UpdatedAt], [r].[Id], [r].[Comment], [r].[CreatedAt], [r].[ProductId], [r].[Rating], [r].[UpdatedAt], [r].[UserId]
+FROM (
+    SELECT [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit)
+    ORDER BY [p].[Price] DESC
+    OFFSET @p ROWS FETCH NEXT @p1 ROWS ONLY
+) AS [p0]
+LEFT JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+LEFT JOIN [Reviews] AS [r] ON [p0].[Id] = [r].[ProductId]
+ORDER BY [p0].[Price] DESC, [p0].[Id], [c].[Id], [p1].[Id]
+2026-02-19 19:40:09.990 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.PagedResultDto`1[[TechStore.Shared.DTOs.ProductDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:40:10.150 +07:00 [INF] Executed action TechStore.API.Controllers.ProductsController.GetAll (TechStore.API) in 232.1038ms
+2026-02-19 19:40:10.175 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:40:10.177 +07:00 [INF] HTTP GET /api/products responded 200 in 270.6966 ms
+2026-02-19 19:40:10.184 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=8&sortBy=price&sortDescending=true - 200 null application/json; charset=utf-8 364.7509ms
+2026-02-19 19:40:10.200 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=4&sortBy=newest&sortDescending=true - null null
+2026-02-19 19:40:10.205 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:40:10.208 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.PagedResultDto`1[TechStore.Shared.DTOs.ProductDto]]]] GetAll(TechStore.Shared.DTOs.ProductFilterDto) on controller TechStore.API.Controllers.ProductsController (TechStore.API).
+2026-02-19 19:40:10.219 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+2026-02-19 19:40:10.239 +07:00 [INF] Executed DbCommand (15ms) [Parameters=[@p='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[Brand], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[IsActive], [p0].[LowStockThreshold], [p0].[Name], [p0].[Price], [p0].[RowVersion], [p0].[Slug], [p0].[Specifications], [p0].[StockQuantity], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt], [p1].[Id], [p1].[CreatedAt], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[UpdatedAt], [r].[Id], [r].[Comment], [r].[CreatedAt], [r].[ProductId], [r].[Rating], [r].[UpdatedAt], [r].[UserId]
+FROM (
+    SELECT [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit)
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @p ROWS FETCH NEXT @p1 ROWS ONLY
+) AS [p0]
+LEFT JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+LEFT JOIN [Reviews] AS [r] ON [p0].[Id] = [r].[ProductId]
+ORDER BY [p0].[CreatedAt] DESC, [p0].[Id], [c].[Id], [p1].[Id]
+2026-02-19 19:40:10.254 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.PagedResultDto`1[[TechStore.Shared.DTOs.ProductDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:40:10.260 +07:00 [INF] Executed action TechStore.API.Controllers.ProductsController.GetAll (TechStore.API) in 46ms
+2026-02-19 19:40:10.271 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:40:10.277 +07:00 [INF] HTTP GET /api/products responded 200 in 71.7480 ms
+2026-02-19 19:40:10.284 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=4&sortBy=newest&sortDescending=true - 200 null application/json; charset=utf-8 83.5391ms
+2026-02-19 19:40:10.293 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/categories - null null
+2026-02-19 19:40:10.310 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API)'
+2026-02-19 19:40:10.317 +07:00 [INF] Route matched with {action = "GetAll", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.Collections.Generic.List`1[TechStore.Shared.DTOs.CategoryDto]]]] GetAll() on controller TechStore.API.Controllers.CategoriesController (TechStore.API).
+2026-02-19 19:40:10.333 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-02-19 19:40:10.339 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.Collections.Generic.List`1[[TechStore.Shared.DTOs.CategoryDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-19 19:40:10.343 +07:00 [INF] Executed action TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API) in 15.3302ms
+2026-02-19 19:40:10.356 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API)'
+2026-02-19 19:40:10.361 +07:00 [INF] HTTP GET /api/categories responded 200 in 51.6992 ms
+2026-02-19 19:40:10.371 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/categories - 200 null application/json; charset=utf-8 78.5896ms
+2026-02-19 19:40:10.374 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/wishlist - null null
+2026-02-19 19:40:10.425 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API)'
+2026-02-19 19:40:10.427 +07:00 [INF] Route matched with {action = "GetWishlist", controller = "Wishlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.Collections.Generic.List`1[TechStore.Shared.DTOs.WishlistItemDto]]]] GetWishlist() on controller TechStore.API.Controllers.WishlistController (TechStore.API).
+2026-02-19 19:40:10.455 +07:00 [INF] Executed DbCommand (23ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[CreatedAt], [w].[ProductId], [w].[UpdatedAt], [w].[UserId]
+FROM [Wishlists] AS [w]
+WHERE [w].[UserId] = @userId
+2026-02-19 19:40:10.669 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.Collections.Generic.List`1[[TechStore.Shared.DTOs.WishlistItemDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-19 19:40:10.678 +07:00 [INF] Executed action TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API) in 246.4633ms
+2026-02-19 19:40:10.687 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API)'
+2026-02-19 19:40:10.689 +07:00 [INF] HTTP GET /api/wishlist responded 200 in 264.8554 ms
+2026-02-19 19:40:10.691 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/wishlist - 200 null application/json; charset=utf-8 316.6188ms
+2026-02-19 19:40:10.693 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/cart - null null
+2026-02-19 19:40:10.757 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:40:10.758 +07:00 [INF] Route matched with {action = "GetCart", controller = "Cart"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.CartSummaryDto]]] GetCart() on controller TechStore.API.Controllers.CartController (TechStore.API).
+2026-02-19 19:40:10.767 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[ProductId], [c].[Quantity], [c].[UpdatedAt], [c].[UserId]
+FROM [CartItems] AS [c]
+WHERE [c].[UserId] = @userId
+2026-02-19 19:40:10.776 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.CartSummaryDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:40:10.793 +07:00 [INF] Executed action TechStore.API.Controllers.CartController.GetCart (TechStore.API) in 29.4003ms
+2026-02-19 19:40:10.806 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:40:10.811 +07:00 [INF] HTTP GET /api/cart responded 200 in 54.7269 ms
+2026-02-19 19:40:10.818 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/cart - 200 null application/json; charset=utf-8 125.295ms
+2026-02-19 19:41:11.218 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=12&categoryId=6 - null null
+2026-02-19 19:41:11.234 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:41:11.240 +07:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.PagedResultDto`1[TechStore.Shared.DTOs.ProductDto]]]] GetAll(TechStore.Shared.DTOs.ProductFilterDto) on controller TechStore.API.Controllers.ProductsController (TechStore.API).
+2026-02-19 19:41:11.328 +07:00 [INF] Executed DbCommand (70ms) [Parameters=[@filter_CategoryId_Value='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit) AND [p].[CategoryId] = @filter_CategoryId_Value
+2026-02-19 19:41:12.558 +07:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-02-19 19:41:12.898 +07:00 [INF] Executed DbCommand (206ms) [Parameters=[@filter_CategoryId_Value='?' (DbType = Int32), @p='?' (DbType = Int32), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[Brand], [p0].[CategoryId], [p0].[CreatedAt], [p0].[Description], [p0].[IsActive], [p0].[LowStockThreshold], [p0].[Name], [p0].[Price], [p0].[RowVersion], [p0].[Slug], [p0].[Specifications], [p0].[StockQuantity], [p0].[UpdatedAt], [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt], [p1].[Id], [p1].[CreatedAt], [p1].[DisplayOrder], [p1].[ImageUrl], [p1].[IsPrimary], [p1].[ProductId], [p1].[UpdatedAt], [r].[Id], [r].[Comment], [r].[CreatedAt], [r].[ProductId], [r].[Rating], [r].[UpdatedAt], [r].[UserId]
+FROM (
+    SELECT [p].[Id], [p].[Brand], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[IsActive], [p].[LowStockThreshold], [p].[Name], [p].[Price], [p].[RowVersion], [p].[Slug], [p].[Specifications], [p].[StockQuantity], [p].[UpdatedAt]
+    FROM [Products] AS [p]
+    WHERE [p].[IsActive] = CAST(1 AS bit) AND [p].[CategoryId] = @filter_CategoryId_Value
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @p ROWS FETCH NEXT @p2 ROWS ONLY
+) AS [p0]
+LEFT JOIN [Categories] AS [c] ON [p0].[CategoryId] = [c].[Id]
+LEFT JOIN [ProductImages] AS [p1] ON [p0].[Id] = [p1].[ProductId]
+LEFT JOIN [Reviews] AS [r] ON [p0].[Id] = [r].[ProductId]
+ORDER BY [p0].[CreatedAt] DESC, [p0].[Id], [c].[Id], [p1].[Id]
+2026-02-19 19:41:13.083 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.PagedResultDto`1[[TechStore.Shared.DTOs.ProductDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:41:13.088 +07:00 [INF] Executed action TechStore.API.Controllers.ProductsController.GetAll (TechStore.API) in 1840.2572ms
+2026-02-19 19:41:13.094 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.ProductsController.GetAll (TechStore.API)'
+2026-02-19 19:41:13.096 +07:00 [INF] HTTP GET /api/products responded 200 in 1863.0286 ms
+2026-02-19 19:41:13.099 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/products?page=1&pageSize=12&categoryId=6 - 200 null application/json; charset=utf-8 1881.5006ms
+2026-02-19 19:41:13.100 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/categories - null null
+2026-02-19 19:41:13.149 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API)'
+2026-02-19 19:41:13.152 +07:00 [INF] Route matched with {action = "GetAll", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.Collections.Generic.List`1[TechStore.Shared.DTOs.CategoryDto]]]] GetAll() on controller TechStore.API.Controllers.CategoriesController (TechStore.API).
+2026-02-19 19:41:13.200 +07:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Description], [c].[ImageUrl], [c].[Name], [c].[Slug], [c].[UpdatedAt]
+FROM [Categories] AS [c]
+2026-02-19 19:41:13.352 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.Collections.Generic.List`1[[TechStore.Shared.DTOs.CategoryDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-19 19:41:13.396 +07:00 [INF] Executed action TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API) in 237.9837ms
+2026-02-19 19:41:13.400 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CategoriesController.GetAll (TechStore.API)'
+2026-02-19 19:41:13.403 +07:00 [INF] HTTP GET /api/categories responded 200 in 253.8922 ms
+2026-02-19 19:41:13.405 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/categories - 200 null application/json; charset=utf-8 304.9643ms
+2026-02-19 19:41:13.407 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/products/brands - null null
+2026-02-19 19:41:14.189 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.ProductsController.GetBrands (TechStore.API)'
+2026-02-19 19:41:15.716 +07:00 [INF] Route matched with {action = "GetBrands", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.Collections.Generic.List`1[System.String]]]] GetBrands() on controller TechStore.API.Controllers.ProductsController (TechStore.API).
+2026-02-19 19:41:15.894 +07:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Brand]
+FROM (
+    SELECT DISTINCT [p].[Brand]
+    FROM [Products] AS [p]
+    WHERE [p].[Brand] IS NOT NULL AND [p].[IsActive] = CAST(1 AS bit)
+) AS [p0]
+ORDER BY [p0].[Brand]
+2026-02-19 19:41:15.899 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-19 19:41:15.905 +07:00 [INF] Executed action TechStore.API.Controllers.ProductsController.GetBrands (TechStore.API) in 51.9505ms
+2026-02-19 19:41:16.160 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.ProductsController.GetBrands (TechStore.API)'
+2026-02-19 19:41:16.165 +07:00 [INF] HTTP GET /api/products/brands responded 200 in 1976.4940 ms
+2026-02-19 19:41:16.167 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/products/brands - 200 null application/json; charset=utf-8 2760.1781ms
+2026-02-19 19:41:16.665 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/products/price-range - null null
+2026-02-19 19:41:16.672 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.ProductsController.GetPriceRange (TechStore.API)'
+2026-02-19 19:41:16.716 +07:00 [INF] Route matched with {action = "GetPriceRange", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.Object]]] GetPriceRange() on controller TechStore.API.Controllers.ProductsController (TechStore.API).
+2026-02-19 19:41:17.286 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT MIN([p].[Price])
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+2026-02-19 19:41:17.746 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT MAX([p].[Price])
+FROM [Products] AS [p]
+WHERE [p].[IsActive] = CAST(1 AS bit)
+2026-02-19 19:41:17.772 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-19 19:41:17.788 +07:00 [INF] Executed action TechStore.API.Controllers.ProductsController.GetPriceRange (TechStore.API) in 541.8995ms
+2026-02-19 19:41:17.796 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.ProductsController.GetPriceRange (TechStore.API)'
+2026-02-19 19:41:17.944 +07:00 [INF] HTTP GET /api/products/price-range responded 200 in 1272.2702 ms
+2026-02-19 19:41:18.269 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/products/price-range - 200 null application/json; charset=utf-8 1603.6408ms
+2026-02-19 19:41:18.347 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/wishlist - null null
+2026-02-19 19:41:18.589 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API)'
+2026-02-19 19:41:18.811 +07:00 [INF] Route matched with {action = "GetWishlist", controller = "Wishlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[System.Collections.Generic.List`1[TechStore.Shared.DTOs.WishlistItemDto]]]] GetWishlist() on controller TechStore.API.Controllers.WishlistController (TechStore.API).
+2026-02-19 19:41:18.837 +07:00 [INF] Executed DbCommand (20ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[CreatedAt], [w].[ProductId], [w].[UpdatedAt], [w].[UserId]
+FROM [Wishlists] AS [w]
+WHERE [w].[UserId] = @userId
+2026-02-19 19:41:18.849 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[System.Collections.Generic.List`1[[TechStore.Shared.DTOs.WishlistItemDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-19 19:41:18.852 +07:00 [INF] Executed action TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API) in 35.965ms
+2026-02-19 19:41:19.102 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.WishlistController.GetWishlist (TechStore.API)'
+2026-02-19 19:41:19.103 +07:00 [INF] HTTP GET /api/wishlist responded 200 in 514.7984 ms
+2026-02-19 19:41:19.386 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/wishlist - 200 null application/json; charset=utf-8 1039.3245ms
+2026-02-19 19:41:19.395 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5019/api/cart - null null
+2026-02-19 19:41:19.688 +07:00 [INF] Executing endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:41:19.698 +07:00 [INF] Route matched with {action = "GetCart", controller = "Cart"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[TechStore.Shared.Responses.ApiResponse`1[TechStore.Shared.DTOs.CartSummaryDto]]] GetCart() on controller TechStore.API.Controllers.CartController (TechStore.API).
+2026-02-19 19:41:19.718 +07:00 [INF] Executed DbCommand (16ms) [Parameters=[@userId='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[ProductId], [c].[Quantity], [c].[UpdatedAt], [c].[UserId]
+FROM [CartItems] AS [c]
+WHERE [c].[UserId] = @userId
+2026-02-19 19:41:19.983 +07:00 [INF] Executing OkObjectResult, writing value of type 'TechStore.Shared.Responses.ApiResponse`1[[TechStore.Shared.DTOs.CartSummaryDto, TechStore.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-02-19 19:41:19.994 +07:00 [INF] Executed action TechStore.API.Controllers.CartController.GetCart (TechStore.API) in 293.3423ms
+2026-02-19 19:41:20.441 +07:00 [INF] Executed endpoint 'TechStore.API.Controllers.CartController.GetCart (TechStore.API)'
+2026-02-19 19:41:20.444 +07:00 [INF] HTTP GET /api/cart responded 200 in 756.9390 ms
+2026-02-19 19:41:20.470 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5019/api/cart - 200 null application/json; charset=utf-8 1074.3528ms
+2026-02-19 19:47:14.690 +07:00 [INF] Start installing Hangfire SQL objects...
+2026-02-19 19:47:20.524 +07:00 [INF] Hangfire SQL objects installed.
+2026-02-19 19:47:21.308 +07:00 [INF] User profile is available. Using 'C:\Users\maiti\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-19 19:47:24.436 +07:00 [INF] Executed DbCommand (88ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-19 19:47:25.793 +07:00 [INF] Executed DbCommand (9ms) [Parameters=[@normalizedName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @normalizedName
+2026-02-19 19:47:25.969 +07:00 [INF] Executed DbCommand (65ms) [Parameters=[@normalizedUserName='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[AvatarUrl], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-02-19 19:47:26.393 +07:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Categories] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-19 19:47:26.695 +07:00 [INF] Now listening on: http://localhost:5019
+2026-02-19 19:47:26.765 +07:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: (localdb)\mssqllocaldb@TechStoreDb'
+2026-02-19 19:47:26.834 +07:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-02-19 19:47:26.856 +07:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-02-19 19:47:27.218 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-19 19:47:27.511 +07:00 [INF] Server desktop-gde40bi:14492:6a32ee21 successfully announced in 322.4064 ms
+2026-02-19 19:47:27.515 +07:00 [INF] Hosting environment: Development
+2026-02-19 19:47:27.558 +07:00 [INF] Server desktop-gde40bi:14492:6a32ee21 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-02-19 19:47:27.563 +07:00 [INF] Content root path: C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.API
+2026-02-19 19:47:27.847 +07:00 [INF] Server desktop-gde40bi:14492:6a32ee21 all the dispatchers started
+2026-02-19 19:52:27.591 +07:00 [INF] 1 servers were removed due to timeout
