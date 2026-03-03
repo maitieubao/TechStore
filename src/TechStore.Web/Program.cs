@@ -8,8 +8,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor();
 
-// API Base URL
-var apiBaseUrl = builder.Configuration["ApiBaseUrl"] ?? "http://localhost:5019";
+// API Base URL - fallback to localhost for local dev
+var apiBaseUrl = builder.Configuration["ApiBaseUrl"];
+if (string.IsNullOrWhiteSpace(apiBaseUrl) || !Uri.IsWellFormedUriString(apiBaseUrl, UriKind.Absolute))
+{
+    apiBaseUrl = "http://localhost:5019";
+}
+
 
 // Register HttpClient for each API service
 void RegisterApiService<TInterface, TImplementation>(string? baseUrl = null)
