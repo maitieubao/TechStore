@@ -1,5 +1,6 @@
 using System.Text;
 using Hangfire;
+using Hangfire.MemoryStorage;
 using Hangfire.PostgreSql;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -77,10 +78,8 @@ try
 
         if (!string.IsNullOrEmpty(pgUrlHangfire))
         {
-            var uri = new Uri(pgUrlHangfire);
-            var port = uri.Port > 0 ? uri.Port : 5432;
-            var pgConnStr = $"Host={uri.Host};Port={port};Database={uri.LocalPath.Substring(1)};Username={uri.UserInfo.Split(':')[0]};Password={uri.UserInfo.Split(':')[1]};SslMode=Require;TrustServerCertificate=True;";
-            configuration.UsePostgreSqlStorage(c => c.UseNpgsqlConnection(pgConnStr));
+            // On Render: use InMemoryStorage to avoid interfering with EnsureCreatedAsync
+            configuration.UseMemoryStorage();
         }
         else
         {
@@ -126,14 +125,13 @@ try
     var app = builder.Build();
 
     // Configure the HTTP request pipeline.
-    if (app.Environment.IsDevelopment())
+    // Enable Swagger in all environments for API testing
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
     {
-        app.UseSwagger();
-        app.UseSwaggerUI(c =>
-        {
-            c.SwaggerEndpoint("/swagger/v1/swagger.json", "TechStore API v1");
-        });
-    }
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "TechStore API v1");
+        c.RoutePrefix = string.Empty; // Swagger at root URL
+    });
 
     // Hangfire Dashboard (Recommend securing this in production)
     app.UseHangfireDashboard("/hangfire");
