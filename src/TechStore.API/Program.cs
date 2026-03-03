@@ -76,9 +76,15 @@ try
             .UseRecommendedSerializerSettings();
 
         if (!string.IsNullOrEmpty(pgUrlHangfire))
-            configuration.UsePostgreSqlStorage(c => c.UseNpgsqlConnection(pgUrlHangfire));
+        {
+            var uri = new Uri(pgUrlHangfire);
+            var pgConnStr = $"Host={uri.Host};Port={uri.Port};Database={uri.LocalPath.Substring(1)};Username={uri.UserInfo.Split(':')[0]};Password={uri.UserInfo.Split(':')[1]};SslMode=Require;TrustServerCertificate=True;";
+            configuration.UsePostgreSqlStorage(c => c.UseNpgsqlConnection(pgConnStr));
+        }
         else
+        {
             configuration.UseSqlServerStorage(builder.Configuration.GetConnectionString("DefaultConnection"));
+        }
     });
 
     builder.Services.AddHangfireServer();
@@ -150,6 +156,9 @@ try
         var services = scope.ServiceProvider;
         try
         {
+            var context = services.GetRequiredService<TechStore.Infrastructure.Persistence.AppDbContext>();
+            await context.Database.EnsureCreatedAsync();
+
             await TechStore.Infrastructure.Identity.IdentitySeeder.SeedAsync(services);
             await TechStore.Infrastructure.Identity.DataSeeder.SeedDataAsync(services);
         }

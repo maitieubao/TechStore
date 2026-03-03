@@ -27,7 +27,10 @@ namespace TechStore.Infrastructure
                 if (!string.IsNullOrEmpty(pgUrl))
                 {
                     // Render PostgreSQL: convert DATABASE_URL to Npgsql format
-                    options.UseNpgsql(pgUrl,
+                    var uri = new Uri(pgUrl);
+                    var pgConnStr = $"Host={uri.Host};Port={uri.Port};Database={uri.LocalPath.Substring(1)};Username={uri.UserInfo.Split(':')[0]};Password={uri.UserInfo.Split(':')[1]};SslMode=Require;TrustServerCertificate=True;";
+
+                    options.UseNpgsql(pgConnStr,
                         b => b.MigrationsAssembly(typeof(AppDbContext).Assembly.FullName));
                 }
                 else

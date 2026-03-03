@@ -10,6 +10,7 @@
         "dependencies": {
           "Google.Apis.Auth": "1.73.0",
           "Hangfire.AspNetCore": "1.8.23",
+          "Hangfire.PostgreSql": "1.21.1",
           "Hangfire.SqlServer": "1.8.23",
           "Microsoft.AspNetCore.Authentication.Google": "8.0.15",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.15",
@@ -81,6 +82,17 @@
           "lib/net5.0/Dapper.dll": {
             "assemblyVersion": "2.0.0.0",
             "fileVersion": "2.0.123.33578"
+          }
+        }
+      },
+      "Dapper.AOT/1.0.48": {
+        "dependencies": {
+          "System.Collections.Immutable": "9.0.1"
+        },
+        "runtime": {
+          "lib/net8.0/Dapper.AOT.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.48.20364"
           }
         }
       },
@@ -219,16 +231,17 @@
           }
         }
       },
-      "Hangfire.PostgreSql/1.20.9": {
+      "Hangfire.PostgreSql/1.21.1": {
         "dependencies": {
           "Dapper": "2.0.123",
+          "Dapper.AOT": "1.0.48",
           "Hangfire.Core": "1.8.23",
           "Npgsql": "8.0.6"
         },
         "runtime": {
           "lib/netstandard2.0/Hangfire.PostgreSql.dll": {
-            "assemblyVersion": "1.20.9.0",
-            "fileVersion": "1.20.9.0"
+            "assemblyVersion": "1.21.1.0",
+            "fileVersion": "1.21.1.0"
           }
         }
       },
@@ -336,6 +349,9 @@
         }
       },
       "Microsoft.CodeAnalysis.Common/4.5.0": {
+        "dependencies": {
+          "System.Collections.Immutable": "9.0.1"
+        },
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.CodeAnalysis.dll": {
             "assemblyVersion": "4.5.0.0",
@@ -1222,6 +1238,14 @@
           }
         }
       },
+      "System.Collections.Immutable/9.0.1": {
+        "runtime": {
+          "lib/net8.0/System.Collections.Immutable.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.124.61010"
+          }
+        }
+      },
       "System.Composition/6.0.0": {
         "dependencies": {
           "System.Composition.AttributedModel": "6.0.0",
@@ -1518,7 +1542,7 @@
         "dependencies": {
           "Google.Apis.Auth": "1.73.0",
           "Hangfire.Core": "1.8.23",
-          "Hangfire.PostgreSql": "1.20.9",
+          "Hangfire.PostgreSql": "1.21.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.15",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.15",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.15",
@@ -1588,6 +1612,13 @@
       "path": "dapper/2.0.123",
       "hashPath": "dapper.2.0.123.nupkg.sha512"
     },
+    "Dapper.AOT/1.0.48": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rsLM3yKr4g+YKKox9lhc8D+kz67P7Q9+xdyn1LmCsoYr1kYpJSm+Nt6slo5UrfUrcTiGJ57zUlyO8XUdV7G7iA==",
+      "path": "dapper.aot/1.0.48",
+      "hashPath": "dapper.aot.1.0.48.nupkg.sha512"
+    },
     "FluentValidation/12.1.1": {
       "type": "package",
       "serviceable": true,
@@ -1644,12 +1675,12 @@
       "path": "hangfire.netcore/1.8.23",
       "hashPath": "hangfire.netcore.1.8.23.nupkg.sha512"
     },
-    "Hangfire.PostgreSql/1.20.9": {
+    "Hangfire.PostgreSql/1.21.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-lq6zWz4hn9+5i6rOkkvI2HZ9g39ZclVwb6Qgj5ROD29BAGquYqtBD/6pY2WDeCB1ZHRfLT9ps2Vmvy1V94A/DA==",
-      "path": "hangfire.postgresql/1.20.9",
-      "hashPath": "hangfire.postgresql.1.20.9.nupkg.sha512"
+      "sha512": "sha512-hFNZAxv+1p72/XCZdImnH6ovCzZ2DKAMTOI8CReT0P3yw/k0b0YJP2teA18agNH1ZYInPzhtxGk8hx5n2cxbbQ==",
+      "path": "hangfire.postgresql/1.21.1",
+      "hashPath": "hangfire.postgresql.1.21.1.nupkg.sha512"
     },
     "Hangfire.SqlServer/1.8.23": {
       "type": "package",
@@ -2147,6 +2178,13 @@
       "sha512": "sha512-GLltyqEsE5/3IE+zYRP5sNa1l44qKl9v+bfdMcwg+M9qnQf47wK3H0SUR/T+3N4JEQXF3vV4CSuuo0rsg+nq2A==",
       "path": "system.codedom/7.0.0",
       "hashPath": "system.codedom.7.0.0.nupkg.sha512"
+    },
+    "System.Collections.Immutable/9.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qt4+ClsZYKzar/Rw1zbt0t9iuBUCLVNsjXicEuVQyKL7143CwhWzI2gTwzz8AhSaFYVHnpcb8SBGA+zaY4weUg==",
+      "path": "system.collections.immutable/9.0.1",
+      "hashPath": "system.collections.immutable.9.0.1.nupkg.sha512"
     },
     "System.Composition/6.0.0": {
       "type": "package",

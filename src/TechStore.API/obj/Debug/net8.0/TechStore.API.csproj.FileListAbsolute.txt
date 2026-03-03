@@ -221,3 +221,5 @@ C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.API\bin\Debug\net8.0
 C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.API\bin\Debug\net8.0\Npgsql.dll
 C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.API\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.API\obj\Debug\net8.0\TechStore.API.sourcelink.json
+C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.API\bin\Debug\net8.0\Dapper.AOT.dll
+C:\Users\maiti\OneDrive\Desktop\NET\TechStore\src\TechStore.API\bin\Debug\net8.0\System.Collections.Immutable.dll
