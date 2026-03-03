@@ -1,0 +1,19 @@
+## Build output
+**/bin/
+**/obj/
+publish/
+
+## User-specific files
+*.user
+*.suo
+.vs/
+
+## Logs
+*.log
+
+## Secrets
+appsettings.Development.json
+
+## OS
+.DS_Store
+Thumbs.db
