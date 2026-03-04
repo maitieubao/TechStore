@@ -156,7 +156,30 @@ try
         try
         {
             var context = services.GetRequiredService<TechStore.Infrastructure.Persistence.AppDbContext>();
-            await context.Database.EnsureCreatedAsync();
+
+            // Smart schema creation: check if app tables actually exist
+            // (EnsureCreatedAsync skips if DB already has any schema, e.g. from Hangfire)
+            var conn = context.Database.GetDbConnection();
+            await conn.OpenAsync();
+            bool tablesMissing;
+            using (var cmd = conn.CreateCommand())
+            {
+                // Check for AspNetRoles table (created by ASP.NET Identity)
+                cmd.CommandText = "SELECT COUNT(1) FROM information_schema.tables WHERE table_name = 'AspNetRoles'";
+                var result = await cmd.ExecuteScalarAsync();
+                tablesMissing = Convert.ToInt32(result) == 0;
+            }
+
+            if (tablesMissing)
+            {
+                Log.Information("App tables not found. Running EnsureCreatedAsync to create schema...");
+                await context.Database.EnsureCreatedAsync();
+                Log.Information("Schema created successfully.");
+            }
+            else
+            {
+                Log.Information("App schema already exists. Skipping EnsureCreatedAsync.");
+            }
 
             await TechStore.Infrastructure.Identity.IdentitySeeder.SeedAsync(services);
             await TechStore.Infrastructure.Identity.DataSeeder.SeedDataAsync(services);
