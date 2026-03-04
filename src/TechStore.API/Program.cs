@@ -3,12 +3,14 @@ using Hangfire;
 using Hangfire.MemoryStorage;
 using Hangfire.PostgreSql;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
 using TechStore.API.Middlewares;
 using TechStore.Application;
 using TechStore.Infrastructure;
+
 
 // Configure Serilog
 Log.Logger = new LoggerConfiguration()
